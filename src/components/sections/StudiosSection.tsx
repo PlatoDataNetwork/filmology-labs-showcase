@@ -63,13 +63,13 @@ const StudiosSection = () => {
           {spaces.map((space, index) => (
             <div 
               key={index} 
-              className="steel-gradient-card rounded-lg p-6"
+              className="steel-gradient-card rounded-lg p-6 h-full flex flex-col"
             >
               <div className="flex items-center gap-3 mb-4">
                 <space.icon className="w-5 h-5 text-foreground" />
                 <h3 className="text-xl font-medium">{space.title}</h3>
               </div>
-              <p className="text-muted-foreground mb-4 leading-relaxed">
+              <p className="text-muted-foreground mb-4 leading-relaxed flex-grow">
                 {space.description}
               </p>
               <p className="label-editorial text-foreground">{space.specs}</p>
