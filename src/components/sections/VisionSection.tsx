@@ -4,19 +4,19 @@ const VisionSection = () => {
   const pillars = [
     {
       title: 'Adaptive Reuse',
-      description: 'Transforming historic mill structures into vibrant creative spaces—preserving character while embracing modern production demands and breathing new life into architectural treasures.',
+      description: 'Transforming historic mill structures into vibrant creative spaces—preserving character while embracing modern production demands. Breathing new life into architectural treasures that tell the story of American industry.',
       specs: 'Historic preservation meets innovation',
       icon: RefreshCw,
     },
     {
       title: 'Creative Future',
-      description: 'Sound stages, production suites, and collaborative workspaces equipped for filmmakers and digital creators of all scales. Purpose-built for the next generation of storytellers.',
+      description: 'Sound stages, production suites, and collaborative workspaces equipped for filmmakers and digital creators of all scales. Purpose-built facilities designed for the next generation of storytellers and content creators.',
       specs: 'Next-generation production facilities',
       icon: Sparkles,
     },
     {
       title: 'Cultural Impact',
-      description: 'Positioning Paterson as a hub for film, media, and innovation while honoring its extraordinary architectural legacy and enriching the local community.',
+      description: 'Positioning Paterson as a hub for film, media, and innovation while honoring its extraordinary architectural legacy. Creating economic opportunities and enriching the local community for generations to come.',
       specs: 'Establishing the Paterson Film District',
       icon: Building2,
     },
@@ -58,13 +58,13 @@ const VisionSection = () => {
           {pillars.map((pillar, index) => (
             <div 
               key={index} 
-              className="steel-gradient-card rounded-lg p-6"
+              className="steel-gradient-card rounded-lg p-6 h-full flex flex-col"
             >
               <div className="flex items-center gap-3 mb-4">
                 <pillar.icon className="w-5 h-5 text-foreground" />
                 <h3 className="text-xl font-medium">{pillar.title}</h3>
               </div>
-              <p className="text-muted-foreground mb-4 leading-relaxed">
+              <p className="text-muted-foreground mb-4 leading-relaxed flex-grow">
                 {pillar.description}
               </p>
               <p className="label-editorial text-foreground">{pillar.specs}</p>
