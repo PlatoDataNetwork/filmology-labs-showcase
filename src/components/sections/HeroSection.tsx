@@ -24,16 +24,16 @@ const HeroSection = () => {
       {/* Content */}
       <div className="container-wide relative z-10">
         <div className="max-w-4xl">
-          <p className="text-xs uppercase tracking-[0.2em] font-medium text-foreground/80 mb-4 animate-fade-in-delay-1">
+          <p className="text-xs uppercase tracking-[0.2em] font-medium text-foreground/80 mb-4 animate-fade-in-delay-1 drop-shadow-md">
             Content Creation Studios
           </p>
           
-          <h1 className="text-foreground mb-6 animate-fade-in-delay-2">
+          <h1 className="text-foreground mb-6 animate-fade-in-delay-2 drop-shadow-lg">
             Where Industrial Heritage<br />
             Meets Creative Future
           </h1>
           
-          <p className="text-body-large max-w-2xl mb-10 animate-fade-in-delay-3">
+          <p className="text-body-large max-w-2xl mb-10 animate-fade-in-delay-3 drop-shadow-md">
             A state-of-the-art film and television production campus 
             in Paterson's historic mill district—designed for the creators of tomorrow.
           </p>
