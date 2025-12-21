@@ -5,19 +5,19 @@ const VisionSection = () => {
     {
       title: 'Adaptive Reuse',
       description: 'Transforming historic mill structures into vibrant creative spaces—preserving character while embracing modern production demands. Breathing new life into architectural treasures that tell the story of American industry.',
-      specs: 'Historic preservation meets innovation',
+      specs: 'Preservation Meets Innovation',
       icon: RefreshCw,
     },
     {
       title: 'Creative Future',
       description: 'Sound stages, production suites, and collaborative workspaces equipped for filmmakers and digital creators of all scales. Purpose-built facilities designed for the next generation of storytellers and content creators.',
-      specs: 'Next-generation production facilities',
+      specs: 'Next Gen production facilities',
       icon: Sparkles,
     },
     {
       title: 'Cultural Impact',
       description: 'Positioning Paterson as a hub for film, media, and innovation while honoring its extraordinary architectural legacy. Creating economic opportunities and enriching the local community for generations to come.',
-      specs: 'Establishing the Paterson Film District',
+      specs: 'The Paterson Film District',
       icon: Building2,
     },
   ];
