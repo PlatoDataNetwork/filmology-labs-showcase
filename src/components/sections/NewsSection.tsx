@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const newsItems = [
   {
-    date: 'December 2024',
+    date: 'December 2025',
     category: 'Announcement',
     title: 'Filmology Labs Announces Groundbreaking Ceremony for 2026',
     excerpt: 'The highly anticipated production campus in Paterson\'s historic mill district is set to break ground in early 2026, marking a transformative new chapter for New Jersey\'s film and television industry. This landmark development will bring world-class production facilities to the heart of Paterson\'s Great Falls district, creating hundreds of jobs and establishing the region as a premier destination for filmmakers and content creators.',
@@ -11,12 +11,12 @@ const newsItems = [
     slug: '/news/groundbreaking-2026',
   },
   {
-    date: 'November 2024',
+    date: 'October 2025',
     category: 'Partnership',
-    title: 'Strategic Partnership with VERZA TV',
-    excerpt: 'Filmology Labs partners with VERZA TV to create dedicated production facilities for short-form vertical content.',
+    title: 'E! Channel Founder to Launch the First U.S. Platform for Microdramas',
+    excerpt: 'The founder of E! Entertainment Television, Alan Mruvka, is set to launch the first-ever U.S. platform for microdramas with Verza TV. The vertical microdrama market surpassed $6.5 billion in revenue in 2024.',
     featured: false,
-    slug: '#',
+    slug: '/news/verza-tv-microdramas',
   },
   {
     date: 'October 2024',
@@ -103,9 +103,18 @@ const NewsSection = () => {
                 <h4 className="text-lg font-medium mb-2 group-hover:text-primary transition-colors duration-300 cursor-pointer">
                   {item.title}
                 </h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                   {item.excerpt}
                 </p>
+                {item.slug !== '#' && (
+                  <Link
+                    to={item.slug}
+                    className="inline-flex items-center gap-2 text-xs uppercase tracking-wider text-foreground hover:text-primary transition-colors duration-300"
+                  >
+                    Read More
+                    <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" />
+                  </Link>
+                )}
               </article>
             ))}
           </div>
