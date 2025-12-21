@@ -17,7 +17,7 @@ const HeroSection = () => {
           alt="Filmology Labs production studio interior"
           className="w-full h-full object-cover object-top scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent dark:from-background dark:via-background/70 dark:to-background/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-background/10 to-transparent dark:from-background dark:via-background/70 dark:to-background/30" />
         <div className="absolute inset-0 bg-gradient-to-r from-background/30 via-transparent to-transparent dark:from-background/80 dark:via-background/40" />
       </div>
 
