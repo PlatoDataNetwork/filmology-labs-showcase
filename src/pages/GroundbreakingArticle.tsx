@@ -39,11 +39,11 @@ const GroundbreakingArticle = () => {
           <div className="flex items-center gap-4 mb-6">
             <span className="inline-flex items-center gap-2 text-xs uppercase tracking-wider text-primary font-medium">
               <Tag className="w-3 h-3" />
-              Announcement
+              Filmology Announcement
             </span>
             <span className="inline-flex items-center gap-2 text-xs text-muted-foreground">
               <Calendar className="w-3 h-3" />
-              December 2024
+              December 2025
             </span>
           </div>
 

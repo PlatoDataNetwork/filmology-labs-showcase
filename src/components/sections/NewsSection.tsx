@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const newsItems = [
   {
     date: 'December 2025',
-    category: 'Announcement',
+    category: 'Filmology Announcement',
     title: 'Filmology Labs Announces Groundbreaking Ceremony for 2026',
     excerpt: 'The highly anticipated production campus in Paterson\'s historic mill district is set to break ground in early 2026, marking a transformative new chapter for New Jersey\'s film and television industry. This landmark development will bring world-class production facilities to the heart of Paterson\'s Great Falls district, creating hundreds of jobs and establishing the region as a premier destination for filmmakers and content creators.',
     excerpt2: 'The campus will feature multiple sound stages, post-production suites, and collaborative workspaces designed for the creators of tomorrow. Led by E! Entertainment Television founder Alan Mruvka, this ambitious project represents one of the most significant investments in the region\'s creative economy in decades.',
