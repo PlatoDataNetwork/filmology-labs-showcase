@@ -20,7 +20,7 @@ const newsItems = [
     slug: '/news/verza-tv-microdramas',
   },
   {
-    date: 'October 2024',
+    date: 'December 2025',
     category: 'Community',
     title: 'Paterson Film District Vision Unveiled',
     excerpt: 'Community leaders and stakeholders gather to celebrate the vision for transforming Paterson into a premier film destination. The initiative marks a historic moment for the city\'s creative future.',
@@ -28,7 +28,7 @@ const newsItems = [
     slug: '/news/paterson-film-district',
   },
   {
-    date: 'September 2024',
+    date: 'December 2025',
     category: 'Industry',
     title: 'New Jersey Film Tax Credit Program Expansion',
     excerpt: 'Recent legislation strengthens incentives for productions choosing New Jersey as their home base. The expanded program positions the state as one of the most competitive filming destinations on the East Coast.',
