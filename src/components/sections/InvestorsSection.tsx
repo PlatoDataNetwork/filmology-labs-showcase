@@ -1,0 +1,85 @@
+import { ArrowRight, Lock, TrendingUp, Building2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+const InvestorsSection = () => {
+  return (
+    <section id="investors" className="section-padding bg-background">
+      <div className="container-wide">
+        {/* Header */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 md:mb-16">
+          <div>
+            <p className="label-editorial mb-4">Investment Opportunity</p>
+            <h2>Partner with Filmology Labs</h2>
+          </div>
+        </div>
+
+        {/* Content Grid */}
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+          {/* Left - Description */}
+          <div className="flex flex-col justify-center">
+            <p className="text-body-large mb-8">
+              Join us in building the future of entertainment production. Filmology Labs 
+              represents a unique opportunity to invest in a transformative development 
+              that combines historic preservation with cutting-edge production technology.
+            </p>
+            
+            <div className="space-y-6 mb-8">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <TrendingUp className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-medium mb-1">Strong Market Demand</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Growing demand for production space in the Northeast region with limited supply.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Building2 className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-medium mb-1">Prime Location</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Strategic positioning near NYC with competitive New Jersey tax incentives.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right - CTA Card */}
+          <div className="steel-gradient-card rounded-lg p-8 md:p-10 flex flex-col justify-center">
+            <div className="flex items-center gap-3 mb-6">
+              <Lock className="w-5 h-5 text-primary" />
+              <span className="text-xs uppercase tracking-wider text-primary font-medium">
+                Accredited Investors
+              </span>
+            </div>
+            
+            <h3 className="text-2xl md:text-3xl font-light leading-tight mb-4">
+              Access Exclusive Investment Materials
+            </h3>
+            
+            <p className="text-muted-foreground leading-relaxed mb-8">
+              Detailed financial projections, development timelines, and partnership 
+              opportunities are available in our secure investor portal.
+            </p>
+            
+            <Link
+              to="/investor-login"
+              className="group inline-flex items-center gap-3 bg-primary text-primary-foreground px-6 py-4 rounded-md hover:bg-primary/90 transition-colors duration-300 w-fit"
+            >
+              <span className="text-sm uppercase tracking-wider font-medium">Investor Login</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default InvestorsSection;
