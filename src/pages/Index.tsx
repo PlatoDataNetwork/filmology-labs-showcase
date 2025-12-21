@@ -11,15 +11,11 @@ import CTASection from '@/components/sections/CTASection';
 import Footer from '@/components/Footer';
 
 const Index = () => {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
-    // Check system preference on mount
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setIsDark(prefersDark);
-    if (prefersDark) {
-      document.documentElement.classList.add('dark');
-    }
+    // Set dark mode as default
+    document.documentElement.classList.add('dark');
   }, []);
 
   const toggleTheme = () => {
