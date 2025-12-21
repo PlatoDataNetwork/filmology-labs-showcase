@@ -10,7 +10,7 @@ const LeadershipSection = () => {
             <img
               src={alanMruvka}
               alt="Alan Mruvka, Founder of E! Entertainment Television"
-              className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+              className="w-full h-full object-cover"
             />
           </div>
 
