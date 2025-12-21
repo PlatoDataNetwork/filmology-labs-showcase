@@ -5,7 +5,7 @@ const StudiosSection = () => {
   const spaces = [
     {
       title: 'Sound Stages',
-      description: 'Professional-grade sound stages with high ceilings, soundproofing, and flexible configurations for film, television, and commercial production.',
+      description: 'Professional-grade sound stages with high ceilings, soundproofing, and flexible configurations for film, television, and commercial production. Built to accommodate projects of any scale with precision acoustics.',
       specs: 'Up to 63\' × 54\' clear span',
     },
     {
