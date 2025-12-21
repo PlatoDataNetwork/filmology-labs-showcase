@@ -4,13 +4,13 @@ const LeadershipSection = () => {
   return (
     <section id="leadership" className="section-padding bg-background">
       <div className="container-wide">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-stretch">
           {/* Image */}
-          <div className="aspect-square max-w-md mx-auto lg:mx-0 overflow-hidden rounded-lg">
+          <div className="overflow-hidden rounded-lg">
             <img
               src={alanMruvka}
               alt="Alan Mruvka, Founder of E! Entertainment Television"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-top"
             />
           </div>
 
