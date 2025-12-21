@@ -6,7 +6,8 @@ const newsItems = [
     date: 'December 2025',
     category: 'Announcement',
     title: 'Filmology Labs Announces Groundbreaking Ceremony for 2026',
-    excerpt: 'The highly anticipated production campus in Paterson\'s historic mill district is set to break ground in early 2026, marking a transformative new chapter for New Jersey\'s film and television industry. This landmark development will bring world-class production facilities to the heart of Paterson\'s Great Falls district, creating hundreds of jobs and establishing the region as a premier destination for filmmakers and content creators. The campus will feature multiple sound stages, post-production suites, and collaborative workspaces designed for the creators of tomorrow.',
+    excerpt: 'The highly anticipated production campus in Paterson\'s historic mill district is set to break ground in early 2026, marking a transformative new chapter for New Jersey\'s film and television industry. This landmark development will bring world-class production facilities to the heart of Paterson\'s Great Falls district, creating hundreds of jobs and establishing the region as a premier destination for filmmakers and content creators.',
+    excerpt2: 'The campus will feature multiple sound stages, post-production suites, and collaborative workspaces designed for the creators of tomorrow. Led by E! Entertainment Television founder Alan Mruvka, this ambitious project represents one of the most significant investments in the region\'s creative economy in decades.',
     featured: true,
     slug: '/news/groundbreaking-2026',
   },
@@ -73,16 +74,25 @@ const NewsSection = () => {
                 <h3 className="text-2xl md:text-3xl font-light leading-tight mb-6 group-hover:text-primary transition-colors duration-300">
                   {featuredNews.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed mb-6 flex-grow">
-                  {featuredNews.excerpt}
-                </p>
-                <Link
-                  to={featuredNews.slug}
-                  className="inline-flex items-center gap-2 text-sm uppercase tracking-wider text-foreground hover:text-primary transition-colors duration-300"
-                >
-                  Read More
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                </Link>
+                <div className="flex-grow space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    {featuredNews.excerpt}
+                  </p>
+                  {featuredNews.excerpt2 && (
+                    <p className="text-muted-foreground leading-relaxed">
+                      {featuredNews.excerpt2}
+                    </p>
+                  )}
+                </div>
+                <div className="mt-6">
+                  <Link
+                    to={featuredNews.slug}
+                    className="inline-flex items-center gap-2 text-sm uppercase tracking-wider text-foreground hover:text-primary transition-colors duration-300"
+                  >
+                    Read More
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  </Link>
+                </div>
               </div>
             </article>
           )}
