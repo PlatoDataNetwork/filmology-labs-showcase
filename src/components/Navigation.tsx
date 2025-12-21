@@ -44,7 +44,7 @@ const Navigation = ({ isDark, toggleTheme }: NavigationProps) => {
           {/* Logo */}
           <a
             href="#"
-            className="flex flex-col items-start leading-none"
+            className="flex flex-col items-center leading-none"
             onClick={(e) => {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -53,7 +53,7 @@ const Navigation = ({ isDark, toggleTheme }: NavigationProps) => {
             <span className="text-lg md:text-xl font-bold tracking-[0.18em] text-foreground">
               FILMOLOGY LABS
             </span>
-            <span className="text-[8px] md:text-[10px] font-medium tracking-[0.35em] text-foreground/80 mt-0.5">
+            <span className="text-[8px] md:text-[10px] font-medium tracking-[0.32em] text-foreground/80 mt-1">
               CONTENT CREATION STUDIOS
             </span>
           </a>
