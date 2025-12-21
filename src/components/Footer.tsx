@@ -6,13 +6,13 @@ const Footer = () => {
       <div className="container-wide">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           {/* Logo & Tagline */}
-          <div className="text-center md:text-left">
-            <p className="text-lg font-semibold tracking-tight mb-1">
+          <div className="flex flex-col items-center md:items-start leading-none">
+            <span className="text-lg md:text-xl font-bold tracking-[0.18em] text-foreground">
               FILMOLOGY LABS
-            </p>
-            <p className="text-sm text-muted-foreground">
-              Content Creation Studios
-            </p>
+            </span>
+            <span className="text-[8px] md:text-[10px] font-medium tracking-[0.32em] text-foreground/80 mt-1">
+              CONTENT CREATION STUDIOS
+            </span>
           </div>
 
           {/* Credits */}
