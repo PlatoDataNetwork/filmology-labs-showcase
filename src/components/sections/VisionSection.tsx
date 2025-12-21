@@ -1,4 +1,24 @@
+import { RefreshCw, Sparkles, Building2 } from 'lucide-react';
+
 const VisionSection = () => {
+  const pillars = [
+    {
+      title: 'Adaptive Reuse',
+      description: 'Transforming historic mill structures into vibrant creative spaces—preserving character while embracing modern production demands.',
+      icon: RefreshCw,
+    },
+    {
+      title: 'Creative Future',
+      description: 'Sound stages, production suites, and collaborative workspaces equipped for filmmakers and digital creators of all scales.',
+      icon: Sparkles,
+    },
+    {
+      title: 'Cultural Impact',
+      description: 'Positioning Paterson as a hub for film, media, and innovation while honoring its extraordinary architectural legacy.',
+      icon: Building2,
+    },
+  ];
+
   return (
     <section id="vision" className="section-padding bg-background">
       <div className="container-narrow">
@@ -31,30 +51,21 @@ const VisionSection = () => {
         <div className="divider my-16 md:my-24" />
 
         {/* Three Pillars */}
-        <div className="grid md:grid-cols-3 gap-12 md:gap-8">
-          <div className="text-center md:text-left">
-            <p className="label-editorial mb-4">Adaptive Reuse</p>
-            <p className="text-muted-foreground leading-relaxed">
-              Transforming historic mill structures into vibrant creative spaces—
-              preserving character while embracing modern production demands.
-            </p>
-          </div>
-
-          <div className="text-center md:text-left">
-            <p className="label-editorial mb-4">Creative Future</p>
-            <p className="text-muted-foreground leading-relaxed">
-              Sound stages, production suites, and collaborative workspaces 
-              equipped for filmmakers and digital creators of all scales.
-            </p>
-          </div>
-
-          <div className="text-center md:text-left">
-            <p className="label-editorial mb-4">Cultural Impact</p>
-            <p className="text-muted-foreground leading-relaxed">
-              Positioning Paterson as a hub for film, media, and innovation 
-              while honoring its extraordinary architectural legacy.
-            </p>
-          </div>
+        <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+          {pillars.map((pillar, index) => (
+            <div 
+              key={index} 
+              className="border-t border-border pt-6 transition-all duration-300 hover:bg-accent/30 hover:pl-4 rounded-lg cursor-default group"
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <pillar.icon className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors duration-300" />
+                <h3 className="text-xl font-medium group-hover:text-foreground transition-colors duration-300">{pillar.title}</h3>
+              </div>
+              <p className="text-muted-foreground leading-relaxed">
+                {pillar.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
