@@ -59,7 +59,7 @@ const StudiosSection = () => {
         </div>
 
         {/* Spaces Grid */}
-        <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
           {spaces.map((space, index) => (
             <div 
               key={index} 
