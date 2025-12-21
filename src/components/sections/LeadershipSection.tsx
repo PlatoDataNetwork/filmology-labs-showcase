@@ -4,7 +4,7 @@ const LeadershipSection = () => {
   return (
     <section id="leadership" className="section-padding bg-background">
       <div className="container-wide">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-stretch">
           {/* Image */}
           <div className="overflow-hidden rounded-lg">
             <img
@@ -47,14 +47,14 @@ const LeadershipSection = () => {
             </div>
 
             {/* Credentials */}
-            <div className="mt-10 grid grid-cols-2 gap-6">
-              <div className="steel-gradient-card rounded-lg p-4">
-                <p className="text-2xl font-semibold text-foreground">$15B+</p>
-                <p className="text-sm text-muted-foreground">E! Entertainment valuation</p>
+            <div className="mt-8 md:mt-10 grid grid-cols-2 gap-4 md:gap-6">
+              <div className="steel-gradient-card rounded-lg p-3 md:p-4">
+                <p className="text-xl md:text-2xl font-semibold text-foreground">$15B+</p>
+                <p className="text-xs md:text-sm text-muted-foreground">E! Entertainment valuation</p>
               </div>
-              <div className="steel-gradient-card rounded-lg p-4">
-                <p className="text-2xl font-semibold text-foreground">80+</p>
-                <p className="text-sm text-muted-foreground">VERZA TV original titles</p>
+              <div className="steel-gradient-card rounded-lg p-3 md:p-4">
+                <p className="text-xl md:text-2xl font-semibold text-foreground">80+</p>
+                <p className="text-xs md:text-sm text-muted-foreground">VERZA TV original titles</p>
               </div>
             </div>
           </div>

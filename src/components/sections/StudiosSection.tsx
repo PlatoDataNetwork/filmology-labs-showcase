@@ -59,20 +59,20 @@ const StudiosSection = () => {
         </div>
 
         {/* Spaces Grid */}
-        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {spaces.map((space, index) => (
             <div 
               key={index} 
-              className="steel-gradient-card rounded-lg p-6 h-full flex flex-col"
+              className="steel-gradient-card rounded-lg px-5 py-5 md:p-6 h-full flex flex-col"
             >
-              <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center gap-3 mb-3 md:mb-4">
                 <space.icon className="w-5 h-5 text-foreground" />
-                <h3 className="text-xl font-medium">{space.title}</h3>
+                <h3 className="text-lg md:text-xl font-medium">{space.title}</h3>
               </div>
-              <p className="text-muted-foreground mb-4 leading-relaxed flex-grow">
+              <p className="text-sm md:text-base text-muted-foreground mb-3 md:mb-4 leading-relaxed flex-grow">
                 {space.description}
               </p>
-              <p className="label-editorial text-foreground">{space.specs}</p>
+              <p className="label-editorial text-foreground text-xs md:text-sm">{space.specs}</p>
             </div>
           ))}
         </div>

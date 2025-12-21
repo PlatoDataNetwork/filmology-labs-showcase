@@ -64,7 +64,7 @@ const NewsSection = () => {
           {/* Featured Article */}
           {featuredNews && (
             <article className="group h-full">
-              <div className="steel-gradient-card rounded-lg p-8 flex flex-col h-full">
+              <div className="steel-gradient-card rounded-lg p-5 md:p-8 flex flex-col h-full">
                 <div className="flex items-center gap-4 mb-6">
                   <span className="text-xs uppercase tracking-wider text-primary font-medium">
                     {featuredNews.category}
