@@ -4,13 +4,13 @@ const VisionSection = () => {
   const pillars = [
     {
       title: 'Adaptive Reuse',
-      description: 'Transforming historic mill structures into vibrant creative spaces—preserving character while embracing modern production demands.',
+      description: 'Transforming historic mill structures into vibrant creative spaces—preserving character while embracing modern production demands and breathing new life into architectural treasures.',
       specs: 'Historic preservation meets innovation',
       icon: RefreshCw,
     },
     {
       title: 'Creative Future',
-      description: 'Sound stages, production suites, and collaborative workspaces equipped for filmmakers and digital creators of all scales.',
+      description: 'Sound stages, production suites, and collaborative workspaces equipped for filmmakers and digital creators of all scales. Purpose-built for the next generation of storytellers.',
       specs: 'Next-generation production facilities',
       icon: Sparkles,
     },
