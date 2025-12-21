@@ -35,14 +35,14 @@ const VisionSection = () => {
 
         {/* Body Copy */}
         <div className="max-w-3xl mx-auto space-y-6">
-          <p className="text-body-large text-center">
+          <p className="text-body-large text-left">
             Filmology Labs represents a bold new chapter in the ongoing reinvention 
             of Paterson's historic mill district. Once a powerhouse of American industry, 
             this remarkable complex is now being transformed into a state-of-the-art 
             film and television production studio.
           </p>
           
-          <p className="text-body-large text-center">
+          <p className="text-body-large text-left">
             Our vision pairs the authenticity and architectural character of Paterson's 
             industrial heritage with the cutting-edge tools and flexible environments 
             demanded by today's content producers—sparking the establishment of the 
