@@ -27,12 +27,23 @@ const HeritageSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           {/* Left: Image */}
           <div className="order-2 lg:order-1">
-            <div className="aspect-[4/5] overflow-hidden rounded-lg sticky top-24">
-              <img
-                src={aerialView}
-                alt="Aerial view of Filmology Labs historic mill complex"
-                className="w-full h-full object-cover"
-              />
+            <div className="sticky top-24 space-y-6">
+              <div className="aspect-[4/5] overflow-hidden rounded-lg">
+                <img
+                  src={aerialView}
+                  alt="Aerial view of Filmology Labs historic mill complex"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              
+              {/* Federal Opportunity Zone Badge */}
+              <div className="p-6 bg-accent rounded-lg">
+                <p className="label-editorial mb-2">Federal Opportunity Zone</p>
+                <p className="text-sm text-muted-foreground">
+                  Located in a designated Federal Opportunity Zone, offering significant 
+                  investment incentives for qualified projects.
+                </p>
+              </div>
             </div>
           </div>
 
@@ -65,14 +76,6 @@ const HeritageSection = () => {
               ))}
             </div>
 
-            {/* Federal Opportunity Zone Badge */}
-            <div className="mt-12 p-6 bg-accent rounded-lg">
-              <p className="label-editorial mb-2">Federal Opportunity Zone</p>
-              <p className="text-sm text-muted-foreground">
-                Located in a designated Federal Opportunity Zone, offering significant 
-                investment incentives for qualified projects.
-              </p>
-            </div>
           </div>
         </div>
       </div>
