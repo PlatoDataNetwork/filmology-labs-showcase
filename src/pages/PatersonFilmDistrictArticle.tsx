@@ -83,6 +83,19 @@ const PatersonFilmDistrictArticle = () => {
               extraordinary architectural heritage."
             </p>
 
+            <blockquote className="border-l-2 border-primary pl-6 my-8 italic text-foreground">
+              <p className="leading-relaxed mb-4">
+                "When I first saw the historic mills of Paterson, I immediately recognized 
+                their potential. These buildings tell the story of American innovation—and 
+                now they will write the next chapter in American entertainment. The Paterson 
+                Film District isn't just about building sound stages; it's about creating 
+                a legacy that honors the past while empowering the creators of tomorrow."
+              </p>
+              <cite className="text-sm text-muted-foreground not-italic">
+                — Alan Mruvka, Founder of Filmology Labs and E! Entertainment Television
+              </cite>
+            </blockquote>
+
             <h2 className="text-2xl font-light mt-12 mb-6 text-foreground">Community at the Center</h2>
             
             <p className="leading-relaxed">

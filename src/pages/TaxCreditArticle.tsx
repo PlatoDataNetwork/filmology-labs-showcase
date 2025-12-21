@@ -97,6 +97,20 @@ const TaxCreditArticle = () => {
               tax credits—create a compelling package for productions of all sizes.
             </p>
 
+            <blockquote className="border-l-2 border-primary pl-6 my-8 italic text-foreground">
+              <p className="leading-relaxed mb-4">
+                "The expansion of New Jersey's film tax credit program is a game-changer 
+                for our industry. It sends a clear message that this state is serious 
+                about becoming a major player in entertainment production. At Filmology Labs, 
+                we're building facilities that will allow productions to take full advantage 
+                of these incentives while accessing world-class infrastructure right here 
+                in Paterson."
+              </p>
+              <cite className="text-sm text-muted-foreground not-italic">
+                — Alan Mruvka, Founder of Filmology Labs and E! Entertainment Television
+              </cite>
+            </blockquote>
+
             <p className="leading-relaxed">
               "New Jersey has everything productions need: world-class talent, diverse 
               locations from urban streets to pristine beaches, and now one of the 
