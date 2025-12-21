@@ -16,7 +16,7 @@ const VisionSection = () => {
     },
     {
       title: 'Cultural Impact',
-      description: 'Positioning Paterson as a hub for film, media, and innovation while honoring its extraordinary architectural legacy.',
+      description: 'Positioning Paterson as a hub for film, media, and innovation while honoring its extraordinary architectural legacy and enriching the local community.',
       specs: 'Establishing the Paterson Film District',
       icon: Building2,
     },
