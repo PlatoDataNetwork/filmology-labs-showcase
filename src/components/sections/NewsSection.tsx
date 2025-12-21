@@ -6,7 +6,7 @@ const newsItems = [
     date: 'December 2025',
     category: 'Announcement',
     title: 'Filmology Labs Announces Groundbreaking Ceremony for 2026',
-    excerpt: 'The highly anticipated production campus in Paterson\'s historic mill district is set to break ground in early 2026, marking a transformative new chapter for New Jersey\'s film and television industry. This landmark development will bring world-class production facilities to the heart of Paterson\'s Great Falls district, creating hundreds of jobs and establishing the region as a premier destination for filmmakers and content creators.',
+    excerpt: 'The highly anticipated production campus in Paterson\'s historic mill district is set to break ground in early 2026, marking a transformative new chapter for New Jersey\'s film and television industry. This landmark development will bring world-class production facilities to the heart of Paterson\'s Great Falls district, creating hundreds of jobs and establishing the region as a premier destination for filmmakers and content creators. The campus will feature multiple sound stages, post-production suites, and collaborative workspaces designed for the creators of tomorrow.',
     featured: true,
     slug: '/news/groundbreaking-2026',
   },
@@ -62,8 +62,8 @@ const NewsSection = () => {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Featured Article */}
           {featuredNews && (
-            <article className="group lg:row-span-2">
-              <div className="h-full steel-gradient-card rounded-lg p-8 flex flex-col">
+            <article className="group">
+              <div className="steel-gradient-card rounded-lg p-8 flex flex-col">
                 <div className="flex items-center gap-4 mb-6">
                   <span className="text-xs uppercase tracking-wider text-primary font-medium">
                     {featuredNews.category}
@@ -73,7 +73,7 @@ const NewsSection = () => {
                 <h3 className="text-2xl md:text-3xl font-light leading-tight mb-6 group-hover:text-primary transition-colors duration-300">
                   {featuredNews.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed mb-8 flex-grow">
+                <p className="text-muted-foreground leading-relaxed mb-6">
                   {featuredNews.excerpt}
                 </p>
                 <Link
