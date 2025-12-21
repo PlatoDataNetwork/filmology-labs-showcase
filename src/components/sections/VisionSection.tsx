@@ -54,7 +54,7 @@ const VisionSection = () => {
         <div className="divider my-16 md:my-24" />
 
         {/* Three Pillars */}
-        <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
           {pillars.map((pillar, index) => (
             <div 
               key={index} 
