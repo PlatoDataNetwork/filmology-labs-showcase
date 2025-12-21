@@ -1,24 +1,24 @@
-import { RefreshCw, Sparkles, Building2 } from 'lucide-react';
+import { RefreshCw, Sparkles, Globe } from 'lucide-react';
 
 const VisionSection = () => {
   const pillars = [
     {
       title: 'Adaptive Reuse',
       description: 'Transforming historic mill structures into vibrant creative spaces—preserving character while embracing modern production demands. Breathing new life into architectural treasures that tell the story of American industry.',
-      specs: 'Preservation Meets Innovation',
+      specs: 'Heritage Meets Progress',
       icon: RefreshCw,
     },
     {
       title: 'Creative Future',
       description: 'Sound stages, production suites, and collaborative workspaces equipped for filmmakers and digital creators of all scales. Purpose-built facilities designed for the next generation of storytellers and content creators.',
-      specs: 'Next Gen production facilities',
+      specs: 'Future-Ready Studios',
       icon: Sparkles,
     },
     {
       title: 'Cultural Impact',
       description: 'Positioning Paterson as a hub for film, media, and innovation while honoring its extraordinary architectural legacy. Creating economic opportunities and enriching the local community for generations to come.',
       specs: 'The Paterson Film District',
-      icon: Building2,
+      icon: Globe,
     },
   ];
 
