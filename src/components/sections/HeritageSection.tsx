@@ -37,7 +37,7 @@ const HeritageSection = () => {
               </div>
               
               {/* Federal Opportunity Zone Badge */}
-              <div className="p-6 bg-accent rounded-lg">
+              <div className="p-6 steel-gradient-card rounded-lg">
                 <p className="label-editorial mb-2">Federal Opportunity Zone</p>
                 <p className="text-sm text-muted-foreground">
                   Located in a designated Federal Opportunity Zone, offering significant 
@@ -67,7 +67,7 @@ const HeritageSection = () => {
             {/* Benefits */}
             <div className="space-y-8">
               {benefits.map((benefit, index) => (
-                <div key={index} className="border-l-2 border-border pl-6">
+                <div key={index} className="border-l-2 steel-accent-border pl-6">
                   <h4 className="font-medium mb-2">{benefit.title}</h4>
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     {benefit.description}

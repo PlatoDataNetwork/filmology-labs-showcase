@@ -48,11 +48,11 @@ const LeadershipSection = () => {
 
             {/* Credentials */}
             <div className="mt-10 grid grid-cols-2 gap-6">
-              <div className="border-l-2 border-border pl-4">
+              <div className="steel-gradient-card rounded-lg p-4">
                 <p className="text-2xl font-semibold text-foreground">$15B+</p>
                 <p className="text-sm text-muted-foreground">E! Entertainment valuation</p>
               </div>
-              <div className="border-l-2 border-border pl-4">
+              <div className="steel-gradient-card rounded-lg p-4">
                 <p className="text-2xl font-semibold text-foreground">80+</p>
                 <p className="text-sm text-muted-foreground">VERZA TV original titles</p>
               </div>
