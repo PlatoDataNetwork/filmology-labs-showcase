@@ -67,7 +67,7 @@ const VisionSection = () => {
               <p className="text-muted-foreground mb-4 leading-relaxed flex-grow">
                 {pillar.description}
               </p>
-              <p className="label-editorial text-foreground">{pillar.specs}</p>
+              <p className="label-editorial text-foreground whitespace-nowrap">{pillar.specs}</p>
             </div>
           ))}
         </div>
