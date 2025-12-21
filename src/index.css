@@ -12,56 +12,56 @@
 
 @layer base {
   :root {
-    /* Light Mode - Warm Industrial */
-    --background: 40 20% 97%;
-    --foreground: 30 10% 12%;
+    /* Light Mode - Clean White */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
 
-    --card: 40 15% 95%;
-    --card-foreground: 30 10% 12%;
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 10%;
 
-    --popover: 40 20% 97%;
-    --popover-foreground: 30 10% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
 
-    /* Primary - Deep charcoal with warmth */
-    --primary: 30 8% 15%;
-    --primary-foreground: 40 20% 97%;
+    /* Primary - Deep charcoal */
+    --primary: 0 0% 12%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Warm stone */
-    --secondary: 35 12% 90%;
-    --secondary-foreground: 30 10% 20%;
+    /* Secondary - Light grey */
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 15%;
 
-    /* Muted - Soft concrete */
-    --muted: 35 8% 92%;
-    --muted-foreground: 30 8% 45%;
+    /* Muted - Soft grey */
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 45%;
 
-    /* Accent - Warm brick undertone */
-    --accent: 20 25% 88%;
-    --accent-foreground: 20 20% 25%;
+    /* Accent - Light grey */
+    --accent: 0 0% 92%;
+    --accent-foreground: 0 0% 20%;
 
     /* Industrial accents */
     --steel: 210 8% 55%;
     --brick: 15 45% 45%;
-    --concrete: 35 6% 75%;
+    --concrete: 0 0% 75%;
     --wood: 30 35% 40%;
 
     --destructive: 0 65% 50%;
-    --destructive-foreground: 40 20% 97%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 35 12% 88%;
-    --input: 35 12% 88%;
-    --ring: 30 8% 15%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 12%;
 
     --radius: 0.375rem;
 
     /* Sidebar */
-    --sidebar-background: 40 15% 96%;
-    --sidebar-foreground: 30 10% 25%;
-    --sidebar-primary: 30 8% 15%;
-    --sidebar-primary-foreground: 40 20% 97%;
-    --sidebar-accent: 35 12% 92%;
-    --sidebar-accent-foreground: 30 10% 20%;
-    --sidebar-border: 35 12% 88%;
-    --sidebar-ring: 30 8% 15%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 20%;
+    --sidebar-primary: 0 0% 12%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 94%;
+    --sidebar-accent-foreground: 0 0% 15%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 0 0% 12%;
   }
 
   .dark {
