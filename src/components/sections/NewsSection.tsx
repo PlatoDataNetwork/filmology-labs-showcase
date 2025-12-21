@@ -1,12 +1,14 @@
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const newsItems = [
   {
     date: 'December 2024',
     category: 'Announcement',
-    title: 'Filmology Labs Announces Groundbreaking Ceremony for 2025',
-    excerpt: 'The highly anticipated production campus in Paterson\'s historic mill district is set to break ground in early 2025, marking a new era for New Jersey\'s film industry.',
+    title: 'Filmology Labs Announces Groundbreaking Ceremony for 2026',
+    excerpt: 'The highly anticipated production campus in Paterson\'s historic mill district is set to break ground in early 2026, marking a transformative new chapter for New Jersey\'s film and television industry. This landmark development will bring world-class production facilities to the heart of Paterson\'s Great Falls district, creating hundreds of jobs and establishing the region as a premier destination for filmmakers and content creators.',
     featured: true,
+    slug: '/news/groundbreaking-2026',
   },
   {
     date: 'November 2024',
@@ -14,6 +16,7 @@ const newsItems = [
     title: 'Strategic Partnership with VERZA TV',
     excerpt: 'Filmology Labs partners with VERZA TV to create dedicated production facilities for short-form vertical content.',
     featured: false,
+    slug: '#',
   },
   {
     date: 'October 2024',
@@ -21,6 +24,7 @@ const newsItems = [
     title: 'Paterson Film District Vision Unveiled',
     excerpt: 'Community leaders and stakeholders gather to celebrate the vision for transforming Paterson into a premier film destination.',
     featured: false,
+    slug: '#',
   },
   {
     date: 'September 2024',
@@ -28,6 +32,7 @@ const newsItems = [
     title: 'New Jersey Film Tax Credit Program Expansion',
     excerpt: 'Recent legislation strengthens incentives for productions choosing New Jersey as their home base.',
     featured: false,
+    slug: '#',
   },
 ];
 
@@ -71,13 +76,13 @@ const NewsSection = () => {
                 <p className="text-muted-foreground leading-relaxed mb-8 flex-grow">
                   {featuredNews.excerpt}
                 </p>
-                <a
-                  href="#"
+                <Link
+                  to={featuredNews.slug}
                   className="inline-flex items-center gap-2 text-sm uppercase tracking-wider text-foreground hover:text-primary transition-colors duration-300"
                 >
                   Read More
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                </a>
+                </Link>
               </div>
             </article>
           )}
