@@ -5,23 +5,26 @@ const VisionSection = () => {
     {
       title: 'Adaptive Reuse',
       description: 'Transforming historic mill structures into vibrant creative spaces—preserving character while embracing modern production demands.',
+      specs: 'Historic preservation meets innovation',
       icon: RefreshCw,
     },
     {
       title: 'Creative Future',
       description: 'Sound stages, production suites, and collaborative workspaces equipped for filmmakers and digital creators of all scales.',
+      specs: 'Next-generation production facilities',
       icon: Sparkles,
     },
     {
       title: 'Cultural Impact',
       description: 'Positioning Paterson as a hub for film, media, and innovation while honoring its extraordinary architectural legacy.',
+      specs: 'Establishing the Paterson Film District',
       icon: Building2,
     },
   ];
 
   return (
     <section id="vision" className="section-padding bg-background">
-      <div className="container-narrow">
+      <div className="container-wide">
         {/* Label */}
         <p className="label-editorial mb-12 md:mb-16 text-center">Our Vision</p>
 
@@ -31,7 +34,7 @@ const VisionSection = () => {
         </h2>
 
         {/* Body Copy */}
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12">
+        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12">
           <p className="text-body-large">
             Filmology Labs represents a bold new chapter in the ongoing reinvention 
             of Paterson's historic mill district. Once a powerhouse of American industry, 
@@ -61,9 +64,10 @@ const VisionSection = () => {
                 <pillar.icon className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors duration-300" />
                 <h3 className="text-xl font-medium group-hover:text-foreground transition-colors duration-300">{pillar.title}</h3>
               </div>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground mb-4 leading-relaxed">
                 {pillar.description}
               </p>
+              <p className="label-editorial text-foreground">{pillar.specs}</p>
             </div>
           ))}
         </div>
