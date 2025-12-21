@@ -25,6 +25,7 @@ const Navigation = ({ isDark, toggleTheme }: NavigationProps) => {
     { href: '#heritage', label: 'Heritage' },
     { href: '#location', label: 'Location' },
     { href: '#leadership', label: 'Leadership' },
+    { href: '#news', label: 'News' },
   ];
 
   const scrollToSection = (href: string) => {
