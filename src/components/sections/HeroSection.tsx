@@ -31,12 +31,12 @@ const HeroSection = () => {
             Content Creation Studios
           </p>
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light leading-[1.1] text-foreground mb-8 animate-fade-in-delay-2">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light leading-[1.1] text-foreground mb-6 md:mb-8 animate-fade-in-delay-2">
             Where Industrial Heritage<br />
             Meets Creative Future
           </h1>
           
-          <p className="text-lg md:text-xl lg:text-2xl leading-relaxed font-light text-foreground/90 dark:text-muted-foreground max-w-2xl mb-12 animate-fade-in-delay-3">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed font-light text-foreground/90 dark:text-muted-foreground max-w-2xl mb-8 md:mb-12 animate-fade-in-delay-3">
             A state-of-the-art film and television production campus 
             in Paterson's historic mill district—designed for the creators of tomorrow.
           </p>
