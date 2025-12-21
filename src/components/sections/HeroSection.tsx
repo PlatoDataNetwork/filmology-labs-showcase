@@ -59,8 +59,8 @@ const HeroSection = () => {
       </div>
 
       {/* Location Badge */}
-      <div className="absolute bottom-8 right-8 hidden lg:block animate-fade-in-delay-4">
-        <p className="text-xs text-muted-foreground uppercase tracking-wider">
+      <div className="absolute bottom-8 right-8 hidden lg:block animate-fade-in-delay-4 z-10">
+        <p className="text-xs text-foreground/80 dark:text-muted-foreground uppercase tracking-wider">
           61 State Street<br />
           Paterson, New Jersey
         </p>
