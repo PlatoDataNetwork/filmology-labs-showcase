@@ -58,7 +58,7 @@ const VisionSection = () => {
           {pillars.map((pillar, index) => (
             <div 
               key={index} 
-              className="border-t border-border pt-6"
+              className="pt-6"
             >
               <div className="flex items-center gap-3 mb-3">
                 <pillar.icon className="w-5 h-5 text-muted-foreground" />
