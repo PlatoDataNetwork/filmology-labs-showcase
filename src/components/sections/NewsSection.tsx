@@ -59,11 +59,11 @@ const NewsSection = () => {
         </div>
 
         {/* News Grid */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
           {/* Featured Article */}
           {featuredNews && (
-            <article className="group">
-              <div className="steel-gradient-card rounded-lg p-8 flex flex-col">
+            <article className="group h-full">
+              <div className="steel-gradient-card rounded-lg p-8 flex flex-col h-full">
                 <div className="flex items-center gap-4 mb-6">
                   <span className="text-xs uppercase tracking-wider text-primary font-medium">
                     {featuredNews.category}
@@ -73,7 +73,7 @@ const NewsSection = () => {
                 <h3 className="text-2xl md:text-3xl font-light leading-tight mb-6 group-hover:text-primary transition-colors duration-300">
                   {featuredNews.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed mb-6">
+                <p className="text-muted-foreground leading-relaxed mb-6 flex-grow">
                   {featuredNews.excerpt}
                 </p>
                 <Link
@@ -88,7 +88,7 @@ const NewsSection = () => {
           )}
 
           {/* Other Articles */}
-          <div className="space-y-6">
+          <div className="flex flex-col justify-between">
             {otherNews.map((item, index) => (
               <article
                 key={index}
