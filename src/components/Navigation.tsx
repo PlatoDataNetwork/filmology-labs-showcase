@@ -44,13 +44,18 @@ const Navigation = ({ isDark, toggleTheme }: NavigationProps) => {
           {/* Logo */}
           <a
             href="#"
-            className="text-lg md:text-xl font-semibold tracking-tight text-foreground"
+            className="flex flex-col items-start leading-none"
             onClick={(e) => {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
           >
-            FILMOLOGY LABS
+            <span className="text-lg md:text-xl font-bold tracking-tight text-foreground">
+              FILMOLOGY LABS
+            </span>
+            <span className="text-[8px] md:text-[10px] font-medium tracking-[0.25em] text-foreground/80 mt-0.5">
+              CONTENT CREATION STUDIOS
+            </span>
           </a>
 
           {/* Desktop Navigation */}
