@@ -42,7 +42,7 @@ const PatersonFilmDistrictArticle = () => {
             </span>
             <span className="inline-flex items-center gap-2 text-xs text-muted-foreground">
               <Calendar className="w-3 h-3" />
-              October 2024
+              December 2025
             </span>
           </div>
 
