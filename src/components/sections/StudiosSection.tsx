@@ -10,7 +10,7 @@ const StudiosSection = () => {
     },
     {
       title: 'Production Suites',
-      description: 'Fully-equipped production offices, editing bays, and post-production facilities designed for seamless creative workflows.',
+      description: 'Fully-equipped production offices, editing bays, and post-production facilities designed for seamless creative workflows. Everything you need under one roof to take your project from concept to completion.',
       specs: 'Technology-rich amenities',
     },
     {
