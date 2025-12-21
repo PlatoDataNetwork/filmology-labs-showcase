@@ -63,11 +63,11 @@ const StudiosSection = () => {
           {spaces.map((space, index) => (
             <div 
               key={index} 
-              className="border-t border-border pt-6 transition-all duration-300 hover:bg-accent/30 hover:pl-4 rounded-lg cursor-default group"
+              className="border-t border-border pt-6"
             >
               <div className="flex items-center gap-3 mb-3">
-                <space.icon className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors duration-300" />
-                <h3 className="text-xl font-medium group-hover:text-foreground transition-colors duration-300">{space.title}</h3>
+                <space.icon className="w-5 h-5 text-muted-foreground" />
+                <h3 className="text-xl font-medium">{space.title}</h3>
               </div>
               <p className="text-muted-foreground mb-4 leading-relaxed">
                 {space.description}
