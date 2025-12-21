@@ -24,34 +24,36 @@ const HeroSection = () => {
       {/* Content */}
       <div className="container-wide relative z-10">
         <div className="max-w-4xl">
-          <p className="text-sm md:text-base uppercase tracking-[0.2em] font-normal text-foreground/80 mb-4 animate-fade-in-delay-1 drop-shadow-md">
-            Content Creation Studios
-          </p>
-          
-          <h1 className="text-foreground mb-6 animate-fade-in-delay-2 drop-shadow-lg">
-            Where Industrial Heritage<br />
-            Meets Creative Future
-          </h1>
-          
-          <p className="text-base md:text-lg leading-relaxed font-light text-foreground/80 dark:text-muted-foreground max-w-2xl mb-10 animate-fade-in-delay-3 drop-shadow-md">
-            A state-of-the-art film and television production campus 
-            in Paterson's historic mill district—designed for the creators of tomorrow.
-          </p>
-          
-          <button
-            onClick={scrollToVision}
-            className="group flex items-center gap-3 text-foreground/80 dark:text-muted-foreground hover:text-foreground transition-colors duration-300 animate-fade-in-delay-4"
-          >
-            <span className="text-sm md:text-base uppercase tracking-[0.2em] font-normal">Discover Our Vision</span>
-            <svg
-              className="w-4 h-4 transform group-hover:translate-y-1 transition-transform duration-300"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+          <div className="backdrop-blur-sm bg-background/20 dark:bg-background/30 rounded-xl p-6 md:p-8 -ml-6 md:-ml-8">
+            <p className="text-sm md:text-base uppercase tracking-[0.2em] font-normal text-foreground mb-4 animate-fade-in-delay-1">
+              Content Creation Studios
+            </p>
+            
+            <h1 className="text-foreground mb-6 animate-fade-in-delay-2">
+              Where Industrial Heritage<br />
+              Meets Creative Future
+            </h1>
+            
+            <p className="text-base md:text-lg leading-relaxed font-light text-foreground/90 dark:text-muted-foreground max-w-2xl mb-10 animate-fade-in-delay-3">
+              A state-of-the-art film and television production campus 
+              in Paterson's historic mill district—designed for the creators of tomorrow.
+            </p>
+            
+            <button
+              onClick={scrollToVision}
+              className="group flex items-center gap-3 text-foreground dark:text-muted-foreground hover:text-foreground transition-colors duration-300 animate-fade-in-delay-4"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-          </button>
+              <span className="text-sm md:text-base uppercase tracking-[0.2em] font-normal">Discover Our Vision</span>
+              <svg
+                className="w-4 h-4 transform group-hover:translate-y-1 transition-transform duration-300"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 
