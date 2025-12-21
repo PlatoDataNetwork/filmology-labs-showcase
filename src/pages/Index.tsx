@@ -6,6 +6,7 @@ import StudiosSection from '@/components/sections/StudiosSection';
 import HeritageSection from '@/components/sections/HeritageSection';
 import LocationSection from '@/components/sections/LocationSection';
 import LeadershipSection from '@/components/sections/LeadershipSection';
+import NewsSection from '@/components/sections/NewsSection';
 import CTASection from '@/components/sections/CTASection';
 import Footer from '@/components/Footer';
 
@@ -37,6 +38,7 @@ const Index = () => {
         <HeritageSection />
         <LocationSection />
         <LeadershipSection />
+        <NewsSection />
         <CTASection />
       </main>
 
