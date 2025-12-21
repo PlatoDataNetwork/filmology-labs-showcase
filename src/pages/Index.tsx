@@ -1,12 +1,46 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState, useEffect } from 'react';
+import Navigation from '@/components/Navigation';
+import HeroSection from '@/components/sections/HeroSection';
+import VisionSection from '@/components/sections/VisionSection';
+import StudiosSection from '@/components/sections/StudiosSection';
+import HeritageSection from '@/components/sections/HeritageSection';
+import LocationSection from '@/components/sections/LocationSection';
+import LeadershipSection from '@/components/sections/LeadershipSection';
+import CTASection from '@/components/sections/CTASection';
+import Footer from '@/components/Footer';
 
 const Index = () => {
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    // Check system preference on mount
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setIsDark(prefersDark);
+    if (prefersDark) {
+      document.documentElement.classList.add('dark');
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    setIsDark(!isDark);
+    document.documentElement.classList.toggle('dark');
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background text-foreground">
+      <Navigation isDark={isDark} toggleTheme={toggleTheme} />
+      
+      <main>
+        <HeroSection />
+        <VisionSection />
+        <StudiosSection />
+        <HeritageSection />
+        <LocationSection />
+        <LeadershipSection />
+        <CTASection />
+      </main>
+
+      <Footer />
     </div>
   );
 };
