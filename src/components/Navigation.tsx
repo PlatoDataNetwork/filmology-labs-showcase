@@ -50,10 +50,10 @@ const Navigation = ({ isDark, toggleTheme }: NavigationProps) => {
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
           >
-            <span className="text-lg md:text-xl font-bold tracking-tight text-foreground">
+            <span className="text-lg md:text-xl font-bold tracking-[0.12em] text-foreground">
               FILMOLOGY LABS
             </span>
-            <span className="text-[8px] md:text-[10px] font-medium tracking-[0.25em] text-foreground/80 mt-0.5">
+            <span className="text-[8px] md:text-[10px] font-medium tracking-[0.28em] text-foreground/80 mt-0.5">
               CONTENT CREATION STUDIOS
             </span>
           </a>
