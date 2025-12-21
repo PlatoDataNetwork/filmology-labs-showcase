@@ -102,11 +102,11 @@ const GroundbreakingArticle = () => {
             </p>
 
             <ul className="space-y-3 text-foreground/90">
-              <li className="leading-relaxed">Six professional sound stages with full acoustic treatment</li>
-              <li className="leading-relaxed">Dedicated studios for podcasting and streaming content</li>
-              <li className="leading-relaxed">Post-production facilities including color grading suites and sound mixing stages</li>
-              <li className="leading-relaxed">Production offices and collaborative workspaces</li>
-              <li className="leading-relaxed">On-site equipment rental and support services</li>
+              <li className="leading-relaxed">Six professional sound stages with full acoustic treatment.</li>
+              <li className="leading-relaxed">Dedicated studios for podcasting and streaming content.</li>
+              <li className="leading-relaxed">Post-production facilities including color grading suites and sound mixing stages.</li>
+              <li className="leading-relaxed">Production offices and collaborative workspaces.</li>
+              <li className="leading-relaxed">On-site equipment rental and support services.</li>
             </ul>
 
             <h2 className="text-2xl font-light mt-12 mb-6 text-foreground">Economic Impact</h2>
