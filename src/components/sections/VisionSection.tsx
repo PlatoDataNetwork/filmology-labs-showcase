@@ -58,7 +58,7 @@ const VisionSection = () => {
           {pillars.map((pillar, index) => (
             <div 
               key={index} 
-              className="steel-gradient-card rounded-lg p-6 h-full flex flex-col"
+              className="steel-gradient-card rounded-lg px-8 py-6 h-full flex flex-col"
             >
               <div className="flex items-center gap-3 mb-4">
                 <pillar.icon className="w-5 h-5 text-foreground" />
