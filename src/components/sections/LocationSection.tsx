@@ -34,7 +34,7 @@ const LocationSection = () => {
         <div className="text-center max-w-2xl mx-auto mb-16 md:mb-24">
           <p className="label-editorial mb-4">Location</p>
           <h2 className="mb-6">
-            The Heart of the Paterson Film District
+            The Heart of the Paterson<br />Film District
           </h2>
           <p className="text-body-large">
             Positioned at the crossroads of history and opportunity, with unmatched 
