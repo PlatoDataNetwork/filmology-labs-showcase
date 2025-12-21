@@ -24,7 +24,7 @@ const HeroSection = () => {
       {/* Content */}
       <div className="container-wide relative z-10">
         <div className="max-w-4xl">
-          <p className="text-xs uppercase tracking-[0.2em] font-medium text-foreground/80 mb-4 animate-fade-in-delay-1 drop-shadow-md">
+          <p className="text-lg md:text-xl uppercase tracking-[0.2em] font-medium text-foreground mb-4 animate-fade-in-delay-1 drop-shadow-md">
             Content Creation Studios
           </p>
           
@@ -33,16 +33,16 @@ const HeroSection = () => {
             Meets Creative Future
           </h1>
           
-          <p className="text-lg md:text-xl leading-relaxed text-foreground/70 dark:text-muted-foreground max-w-2xl mb-10 animate-fade-in-delay-3 drop-shadow-md">
+          <p className="text-lg md:text-xl leading-relaxed text-foreground dark:text-muted-foreground max-w-2xl mb-10 animate-fade-in-delay-3 drop-shadow-md">
             A state-of-the-art film and television production campus 
             in Paterson's historic mill district—designed for the creators of tomorrow.
           </p>
           
           <button
             onClick={scrollToVision}
-            className="group flex items-center gap-3 text-sm text-foreground/70 dark:text-muted-foreground hover:text-foreground transition-colors duration-300 animate-fade-in-delay-4"
+            className="group flex items-center gap-3 text-foreground dark:text-muted-foreground hover:text-foreground transition-colors duration-300 animate-fade-in-delay-4"
           >
-            <span className="text-xs uppercase tracking-[0.2em] font-medium">Discover Our Vision</span>
+            <span className="text-lg md:text-xl uppercase tracking-[0.2em] font-medium">Discover Our Vision</span>
             <svg
               className="w-4 h-4 transform group-hover:translate-y-1 transition-transform duration-300"
               fill="none"
