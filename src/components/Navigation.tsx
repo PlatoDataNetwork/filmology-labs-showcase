@@ -38,11 +38,7 @@ const Navigation = ({ isDark, toggleTheme }: NavigationProps) => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] ${
-          isScrolled
-            ? 'bg-background/95 backdrop-blur-xl border-b border-border'
-            : 'bg-gradient-to-b from-background/80 to-transparent'
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] bg-background/95 backdrop-blur-xl border-b border-border`}
       >
         <nav className="container-wide flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
