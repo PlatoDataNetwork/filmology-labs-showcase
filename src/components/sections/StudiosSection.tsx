@@ -18,7 +18,7 @@ const StudiosSection = () => {
     },
     {
       title: 'Flexible Spaces',
-      description: 'Collaborative workspaces, green rooms, and support facilities that adapt to the needs of productions of all scales. Designed to grow with your vision and evolve with your creative demands.',
+      description: 'Collaborative workspaces, green rooms, and support facilities that adapt to the needs of productions of all scales. Designed to grow with your vision and evolve with your creative demands while fostering collaboration.',
       specs: 'Approximately 143,875 SF total',
       icon: LayoutGrid,
     },
