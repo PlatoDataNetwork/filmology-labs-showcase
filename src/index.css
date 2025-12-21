@@ -65,54 +65,54 @@
   }
 
   .dark {
-    /* Dark Mode - Deep graphite with warmth */
-    --background: 30 8% 8%;
-    --foreground: 35 10% 92%;
+    /* Dark Mode - Steel Carbon */
+    --background: 215 15% 6%;
+    --foreground: 210 15% 92%;
 
-    --card: 30 8% 11%;
-    --card-foreground: 35 10% 92%;
+    --card: 215 12% 10%;
+    --card-foreground: 210 15% 92%;
 
-    --popover: 30 8% 10%;
-    --popover-foreground: 35 10% 92%;
+    --popover: 215 12% 8%;
+    --popover-foreground: 210 15% 92%;
 
-    /* Primary - Soft warm white */
-    --primary: 35 10% 92%;
-    --primary-foreground: 30 8% 8%;
+    /* Primary - Cool silver white */
+    --primary: 210 15% 92%;
+    --primary-foreground: 215 15% 6%;
 
-    /* Secondary - Deep steel */
-    --secondary: 30 6% 18%;
-    --secondary-foreground: 35 10% 85%;
+    /* Secondary - Deep steel blue */
+    --secondary: 215 10% 16%;
+    --secondary-foreground: 210 12% 85%;
 
-    /* Muted - Charcoal */
-    --muted: 30 6% 16%;
-    --muted-foreground: 35 6% 55%;
+    /* Muted - Carbon grey */
+    --muted: 215 8% 14%;
+    --muted-foreground: 210 8% 55%;
 
-    /* Accent - Subtle warmth */
-    --accent: 25 8% 20%;
-    --accent-foreground: 35 12% 88%;
+    /* Accent - Steel highlight */
+    --accent: 210 12% 18%;
+    --accent-foreground: 210 15% 90%;
 
-    /* Industrial accents - Dark mode */
-    --steel: 210 6% 45%;
-    --brick: 15 35% 35%;
-    --concrete: 30 4% 35%;
-    --wood: 30 25% 30%;
+    /* Industrial accents - Steel Carbon */
+    --steel: 210 12% 50%;
+    --brick: 15 30% 32%;
+    --concrete: 210 6% 38%;
+    --wood: 25 20% 28%;
 
-    --destructive: 0 55% 40%;
-    --destructive-foreground: 35 10% 92%;
+    --destructive: 0 55% 42%;
+    --destructive-foreground: 210 15% 92%;
 
-    --border: 30 6% 18%;
-    --input: 30 6% 18%;
-    --ring: 35 10% 92%;
+    --border: 215 10% 18%;
+    --input: 215 10% 18%;
+    --ring: 210 15% 92%;
 
-    /* Sidebar Dark */
-    --sidebar-background: 30 8% 10%;
-    --sidebar-foreground: 35 10% 85%;
-    --sidebar-primary: 35 10% 92%;
-    --sidebar-primary-foreground: 30 8% 8%;
-    --sidebar-accent: 30 6% 16%;
-    --sidebar-accent-foreground: 35 10% 88%;
-    --sidebar-border: 30 6% 18%;
-    --sidebar-ring: 35 10% 92%;
+    /* Sidebar Dark - Steel Carbon */
+    --sidebar-background: 215 12% 8%;
+    --sidebar-foreground: 210 12% 85%;
+    --sidebar-primary: 210 15% 92%;
+    --sidebar-primary-foreground: 215 15% 6%;
+    --sidebar-accent: 215 8% 14%;
+    --sidebar-accent-foreground: 210 15% 88%;
+    --sidebar-border: 215 10% 18%;
+    --sidebar-ring: 210 15% 92%;
   }
 }
 
