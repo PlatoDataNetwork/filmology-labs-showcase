@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import entranceDaytime from '@/assets/entrance-daytime.png';
+import ContactFormModal from '@/components/ContactFormModal';
 
 const CTASection = () => {
   return (
@@ -28,11 +29,13 @@ const CTASection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button variant="hero" size="xl" asChild>
-              <a href="mailto:info@filmologylabs.com">
-                Inquire Now
-              </a>
-            </Button>
+            <ContactFormModal
+              trigger={
+                <Button variant="hero" size="xl">
+                  Inquire Now
+                </Button>
+              }
+            />
             <Button variant="hero-outline" size="xl" asChild>
               <a href="mailto:info@filmologylabs.com?subject=Schedule a Visit">
                 Schedule a Visit
