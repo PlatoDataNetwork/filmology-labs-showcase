@@ -54,7 +54,7 @@ const Index = () => {
         <CTASection />
       </main>
 
-      <Footer />
+      <Footer isDark={isDark} />
     </div>
   );
 };

@@ -61,7 +61,7 @@ const Navigation = ({ isDark, toggleTheme }: NavigationProps) => {
             <img
               src={isDark ? logoWhite : logoBlack}
               alt="Filmology Labs Content Creation Studios"
-              className="h-8 md:h-10 w-auto"
+              className="h-10 md:h-14 w-auto"
             />
           </a>
 
