@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Moon, Sun } from 'lucide-react';
+import ContactFormModal from '@/components/ContactFormModal';
 
 interface NavigationProps {
   isDark: boolean;
@@ -83,14 +84,13 @@ const Navigation = ({ isDark, toggleTheme }: NavigationProps) => {
               {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </button>
 
-            <Button
-              variant="hero"
-              size="sm"
-              className="hidden md:flex"
-              asChild
-            >
-              <a href="mailto:info@filmologylabs.com">Inquire</a>
-            </Button>
+            <ContactFormModal
+              trigger={
+                <Button variant="hero" size="sm" className="hidden md:flex">
+                  Inquire
+                </Button>
+              }
+            />
 
             {/* Mobile Menu Toggle */}
             <button
@@ -123,14 +123,14 @@ const Navigation = ({ isDark, toggleTheme }: NavigationProps) => {
               {link.label}
             </button>
           ))}
-          <Button
-            variant="hero"
-            size="lg"
-            className="mt-4"
-            asChild
-          >
-            <a href="mailto:info@filmologylabs.com" onClick={() => setIsMobileMenuOpen(false)}>Inquire</a>
-          </Button>
+          <ContactFormModal
+            trigger={
+              <Button variant="hero" size="lg" className="mt-4">
+                Inquire
+              </Button>
+            }
+            onOpenChange={(open) => !open && setIsMobileMenuOpen(false)}
+          />
         </div>
       </div>
     </>
