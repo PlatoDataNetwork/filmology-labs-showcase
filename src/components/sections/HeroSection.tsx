@@ -25,7 +25,7 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="container-wide relative z-10">
-        <div className="max-w-4xl">
+        <div className="max-w-4xl mx-auto text-center">
           <p className="text-sm md:text-base uppercase tracking-[0.2em] font-normal text-foreground mb-6 animate-fade-in-delay-1">
             Content Creation Studios
           </p>
