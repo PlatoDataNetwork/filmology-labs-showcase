@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+import { useTheme } from '@/hooks/use-theme';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/sections/HeroSection';
 import VisionSection from '@/components/sections/VisionSection';
@@ -12,12 +13,7 @@ import CTASection from '@/components/sections/CTASection';
 import Footer from '@/components/Footer';
 
 const Index = () => {
-  const [isDark, setIsDark] = useState(true);
-
-  useEffect(() => {
-    // Set dark mode as default
-    document.documentElement.classList.add('dark');
-  }, []);
+  const { isDark, toggleTheme } = useTheme();
 
   // Handle hash navigation on page load
   useEffect(() => {
@@ -32,11 +28,6 @@ const Index = () => {
       }, 100);
     }
   }, []);
-
-  const toggleTheme = () => {
-    setIsDark(!isDark);
-    document.documentElement.classList.toggle('dark');
-  };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
