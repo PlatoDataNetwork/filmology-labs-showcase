@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Moon, Sun } from 'lucide-react';
 import ContactFormModal from '@/components/ContactFormModal';
+import logoBlack from '@/assets/filmology-logo-black.png';
+import logoWhite from '@/assets/filmology-logo-white.png';
 
 interface NavigationProps {
   isDark: boolean;
@@ -50,18 +52,17 @@ const Navigation = ({ isDark, toggleTheme }: NavigationProps) => {
           {/* Logo */}
           <a
             href="#"
-            className="flex flex-col items-center leading-none"
+            className="flex items-center"
             onClick={(e) => {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
           >
-            <span className="text-lg md:text-xl font-bold tracking-[0.18em] text-foreground">
-              FILMOLOGY LABS
-            </span>
-            <span className="text-[8px] md:text-[10px] font-medium tracking-[0.32em] text-foreground/80 mt-1">
-              CONTENT CREATION STUDIOS
-            </span>
+            <img
+              src={isDark ? logoWhite : logoBlack}
+              alt="Filmology Labs Content Creation Studios"
+              className="h-8 md:h-10 w-auto"
+            />
           </a>
 
           {/* Desktop Navigation */}
