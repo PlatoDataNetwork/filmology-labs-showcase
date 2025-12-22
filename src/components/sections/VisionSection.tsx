@@ -30,7 +30,7 @@ const VisionSection = () => {
 
         {/* Main Statement */}
         <h2 className="text-center mb-6 max-w-3xl mx-auto">
-          A Bold New Chapter in American Storytelling
+          A Bold New Chapter in<br />American Storytelling
         </h2>
         
         <p className="text-center text-lg md:text-xl text-muted-foreground mb-12 md:mb-16 max-w-2xl mx-auto">
