@@ -1,25 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, Tag } from 'lucide-react';
+import { useTheme } from '@/hooks/use-theme';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 
 const PatersonFilmDistrictArticle = () => {
-  const [isDark, setIsDark] = useState(false);
+  const { isDark, toggleTheme } = useTheme();
 
   useEffect(() => {
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setIsDark(prefersDark);
-    if (prefersDark) {
-      document.documentElement.classList.add('dark');
-    }
     window.scrollTo(0, 0);
   }, []);
-
-  const toggleTheme = () => {
-    setIsDark(!isDark);
-    document.documentElement.classList.toggle('dark');
-  };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
