@@ -238,7 +238,7 @@ const InvestorPortal = () => {
         </div>
       </main>
 
-      <Footer />
+      <Footer isDark={isDark} />
     </div>
   );
 };

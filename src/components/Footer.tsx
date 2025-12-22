@@ -1,18 +1,24 @@
-const Footer = () => {
+import logoBlack from '@/assets/filmology-logo-black.png';
+import logoWhite from '@/assets/filmology-logo-white.png';
+
+interface FooterProps {
+  isDark: boolean;
+}
+
+const Footer = ({ isDark }: FooterProps) => {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="py-12 md:py-16 bg-background border-t border-border">
       <div className="container-wide">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          {/* Logo & Tagline */}
-          <div className="flex flex-col items-center md:items-start leading-none">
-            <span className="text-lg md:text-xl font-bold tracking-[0.18em] text-foreground">
-              FILMOLOGY LABS
-            </span>
-            <span className="text-[8px] md:text-[10px] font-medium tracking-[0.32em] text-foreground/80 mt-1">
-              CONTENT CREATION STUDIOS
-            </span>
+          {/* Logo */}
+          <div className="flex items-center">
+            <img
+              src={isDark ? logoWhite : logoBlack}
+              alt="Filmology Labs Content Creation Studios"
+              className="h-12 md:h-16 w-auto"
+            />
           </div>
 
           {/* Credits */}

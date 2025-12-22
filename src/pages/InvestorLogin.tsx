@@ -122,7 +122,7 @@ const InvestorLogin = () => {
         </div>
       </main>
 
-      <Footer />
+      <Footer isDark={isDark} />
     </div>
   );
 };

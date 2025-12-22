@@ -158,7 +158,7 @@ const PatersonFilmDistrictArticle = () => {
         <div className="h-24" />
       </main>
 
-      <Footer />
+      <Footer isDark={isDark} />
     </div>
   );
 };
