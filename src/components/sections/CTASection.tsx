@@ -36,11 +36,13 @@ const CTASection = () => {
                 </Button>
               }
             />
-            <Button variant="hero-outline" size="xl" asChild>
-              <a href="mailto:info@filmologylabs.com?subject=Schedule a Visit">
-                Schedule a Visit
-              </a>
-            </Button>
+            <ContactFormModal
+              trigger={
+                <Button variant="hero-outline" size="xl">
+                  Schedule a Visit
+                </Button>
+              }
+            />
           </div>
 
           {/* Contact Info */}
