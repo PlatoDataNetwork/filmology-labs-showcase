@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import exterior2 from '@/assets/exterior-2.jpg';
+import entranceDaytime from '@/assets/entrance-daytime.png';
 
 const CTASection = () => {
   return (
@@ -7,8 +7,8 @@ const CTASection = () => {
       {/* Background */}
       <div className="absolute inset-0">
         <img
-          src={exterior2}
-          alt="Filmology Labs exterior"
+          src={entranceDaytime}
+          alt="Filmology Labs entrance"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/40" />
