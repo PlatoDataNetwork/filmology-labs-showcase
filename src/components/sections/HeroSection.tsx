@@ -9,20 +9,21 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-end pb-16 md:pb-24 overflow-hidden">
+    <section className="relative min-h-screen flex items-end pb-8 md:pb-12 overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
           src={heroAerial}
           alt="Filmology Labs Content Creation Studios aerial view"
-          className="w-full h-full object-cover object-center scale-105"
+          className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent dark:from-background dark:via-background/50 dark:to-background/20" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/40 to-transparent dark:from-background/80 dark:via-background/40" />
+        <div className="absolute inset-0 bg-background/30 dark:bg-background/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/20 dark:from-background dark:via-background/60 dark:to-background/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-transparent to-transparent dark:from-background/60" />
       </div>
 
       {/* Frosted glass strip */}
-      <div className="absolute bottom-0 left-0 right-0 backdrop-blur-[2px] bg-background/10 dark:bg-background/20 z-[5] py-16 md:py-24" />
+      <div className="absolute bottom-0 left-0 right-0 backdrop-blur-[2px] bg-background/10 dark:bg-background/20 z-[5] py-8 md:py-12" />
 
       {/* Content */}
       <div className="container-wide relative z-10">
