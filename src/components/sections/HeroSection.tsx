@@ -17,8 +17,8 @@ const HeroSection = () => {
           alt="Filmology Labs Content Creation Studios aerial view"
           className="w-full h-full object-cover object-center scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent dark:from-background dark:via-background/70 dark:to-background/30" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/30 to-transparent dark:from-background/90 dark:via-background/50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent dark:from-background dark:via-background/50 dark:to-background/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/40 to-transparent dark:from-background/80 dark:via-background/40" />
       </div>
 
       {/* Frosted glass strip */}
