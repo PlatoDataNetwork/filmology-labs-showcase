@@ -35,25 +35,6 @@ const HeroSection = () => {
             Meets Creative Future
           </h1>
           
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed font-light text-foreground/90 dark:text-muted-foreground max-w-2xl mb-8 md:mb-12 animate-fade-in-delay-3">
-            A state-of-the-art film and television production campus 
-            in Paterson's historic mill district—designed for the creators of tomorrow.
-          </p>
-          
-          <button
-            onClick={scrollToVision}
-            className="group flex items-center gap-3 text-foreground dark:text-muted-foreground hover:text-foreground transition-colors duration-300 animate-fade-in-delay-4"
-          >
-            <span className="text-sm md:text-base uppercase tracking-[0.2em] font-normal">Discover Our Vision</span>
-            <svg
-              className="w-4 h-4 transform group-hover:translate-y-1 transition-transform duration-300"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-          </button>
         </div>
       </div>
     </section>
