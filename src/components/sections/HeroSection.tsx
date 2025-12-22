@@ -1,4 +1,4 @@
-import heroInterior from '@/assets/hero-interior.jpg';
+import heroAerial from '@/assets/hero-aerial.png';
 
 const HeroSection = () => {
   const scrollToVision = () => {
@@ -13,9 +13,9 @@ const HeroSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src={heroInterior}
-          alt="Filmology Labs production studio interior"
-          className="w-full h-full object-cover object-top scale-105"
+          src={heroAerial}
+          alt="Filmology Labs Content Creation Studios aerial view"
+          className="w-full h-full object-cover object-center scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent dark:from-background dark:via-background/70 dark:to-background/30" />
         <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/30 to-transparent dark:from-background/90 dark:via-background/50" />
