@@ -30,7 +30,10 @@ const Navigation = ({ isDark, toggleTheme }: NavigationProps) => {
     { href: '#investors', label: 'Investors' },
   ];
 
-  const scrollToSection = (href: string) => {
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    // Update URL hash for shareable links
+    window.history.pushState(null, '', href);
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -64,13 +67,14 @@ const Navigation = ({ isDark, toggleTheme }: NavigationProps) => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <button
+              <a
                 key={link.href}
-                onClick={() => scrollToSection(link.href)}
+                href={link.href}
+                onClick={(e) => scrollToSection(e, link.href)}
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
               >
                 {link.label}
-              </button>
+              </a>
             ))}
           </div>
 
@@ -112,16 +116,17 @@ const Navigation = ({ isDark, toggleTheme }: NavigationProps) => {
       >
         <div className="flex flex-col items-center justify-center h-full gap-8">
           {navLinks.map((link, index) => (
-            <button
+            <a
               key={link.href}
-              onClick={() => scrollToSection(link.href)}
+              href={link.href}
+              onClick={(e) => scrollToSection(e, link.href)}
               className={`text-2xl font-medium text-foreground hover:text-muted-foreground transition-all duration-300 ${
                 isMobileMenuOpen ? 'animate-fade-in-up' : ''
               }`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {link.label}
-            </button>
+            </a>
           ))}
           <ContactFormModal
             trigger={
