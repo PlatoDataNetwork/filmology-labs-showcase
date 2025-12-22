@@ -27,7 +27,15 @@ const Footer = ({ isDark }: FooterProps) => {
               A Brainchild of E! Entertainment Television
             </p>
             <p className="text-xs text-muted-foreground mt-1">
-              Architecture by Architectura
+              Architecture by{' '}
+              <a 
+                href="https://www.architectura.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-foreground transition-colors underline-offset-2 hover:underline"
+              >
+                Architectura
+              </a>
             </p>
           </div>
         </div>
