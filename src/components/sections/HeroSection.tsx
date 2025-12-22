@@ -1,4 +1,4 @@
-import heroAerial from '@/assets/hero-aerial.png';
+import heroAerial from '@/assets/hero-aerial-2.png';
 
 const HeroSection = () => {
   const scrollToVision = () => {
