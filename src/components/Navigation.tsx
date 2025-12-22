@@ -87,9 +87,9 @@ const Navigation = ({ isDark, toggleTheme }: NavigationProps) => {
               variant="hero"
               size="sm"
               className="hidden md:flex"
-              onClick={() => scrollToSection('#contact')}
+              asChild
             >
-              Inquire
+              <a href="mailto:info@filmologylabs.com">Inquire</a>
             </Button>
 
             {/* Mobile Menu Toggle */}
@@ -126,10 +126,10 @@ const Navigation = ({ isDark, toggleTheme }: NavigationProps) => {
           <Button
             variant="hero"
             size="lg"
-            onClick={() => scrollToSection('#contact')}
             className="mt-4"
+            asChild
           >
-            Inquire
+            <a href="mailto:info@filmologylabs.com" onClick={() => setIsMobileMenuOpen(false)}>Inquire</a>
           </Button>
         </div>
       </div>
