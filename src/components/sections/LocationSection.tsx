@@ -37,8 +37,7 @@ const LocationSection = () => {
             The Heart of the Paterson<br />Film District
           </h2>
           <p className="text-body-large">
-            Positioned at the crossroads of history and opportunity, with unmatched 
-            access to New York City and the nation's largest media market.
+            Positioned at the crossroads of history and opportunity, with<br className="hidden lg:inline" /> unmatched access to New York City and the nation's largest media market.
           </p>
         </div>
 
