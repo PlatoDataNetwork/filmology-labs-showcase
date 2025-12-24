@@ -8,21 +8,12 @@ import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
 import { useTheme } from '@/hooks/use-theme';
 import { supabase } from '@/integrations/supabase/client';
-import { z } from 'zod';
-
-// Validation schema
-const loginSchema = z.object({
-  email: z.string().email("Invalid email address").max(255),
-  password: z.string().min(1, "Password is required").max(128),
-});
 
 const InvestorLogin = () => {
   const { isDark, toggleTheme } = useTheme();
-  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [errors, setErrors] = useState<{ email?: string; password?: string }>({});
   const navigate = useNavigate();
   const { toast } = useToast();
 
@@ -52,17 +43,13 @@ const InvestorLogin = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setErrors({});
     
-    // Client-side validation
-    const validation = loginSchema.safeParse({ email, password });
-    if (!validation.success) {
-      const fieldErrors: { email?: string; password?: string } = {};
-      validation.error.errors.forEach((err) => {
-        if (err.path[0] === 'email') fieldErrors.email = err.message;
-        if (err.path[0] === 'password') fieldErrors.password = err.message;
+    if (!password) {
+      toast({
+        title: 'Error',
+        description: 'Please enter a password.',
+        variant: 'destructive',
       });
-      setErrors(fieldErrors);
       return;
     }
     
@@ -72,7 +59,6 @@ const InvestorLogin = () => {
       const { data, error } = await supabase.functions.invoke('investor-auth', {
         body: { 
           action: 'login',
-          email: email.toLowerCase().trim(),
           password,
         },
       });
@@ -80,7 +66,7 @@ const InvestorLogin = () => {
       if (error || !data?.success) {
         toast({
           title: 'Access Denied',
-          description: data?.error || 'Invalid email or password. Please try again.',
+          description: data?.error || 'Invalid password. Please try again.',
           variant: 'destructive',
         });
         setIsLoading(false);
@@ -131,28 +117,14 @@ const InvestorLogin = () => {
               </h1>
               
               <p className="text-muted-foreground text-center mb-8">
-                Enter your credentials to access exclusive investment materials and documentation.
+                Enter your password to access exclusive investment materials and documentation.
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <Input
-                    type="email"
-                    placeholder="Email address"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="h-12 bg-background/50 border-border"
-                    autoComplete="email"
-                  />
-                  {errors.email && (
-                    <p className="text-sm text-destructive mt-1">{errors.email}</p>
-                  )}
-                </div>
-                
                 <div className="relative">
                   <Input
                     type={showPassword ? 'text' : 'password'}
-                    placeholder="Password"
+                    placeholder="Enter password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     className="pr-12 h-12 bg-background/50 border-border"
@@ -165,14 +137,11 @@ const InvestorLogin = () => {
                   >
                     {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                   </button>
-                  {errors.password && (
-                    <p className="text-sm text-destructive mt-1">{errors.password}</p>
-                  )}
                 </div>
 
                 <Button
                   type="submit"
-                  disabled={isLoading || !email || !password}
+                  disabled={isLoading || !password}
                   className="w-full h-12 text-sm uppercase tracking-wider"
                 >
                   {isLoading ? 'Verifying...' : 'Access Portal'}
