@@ -28,7 +28,7 @@ const HeroSection = ({ isDark }: HeroSectionProps) => {
           <img 
             src={isDark ? logoWhite : logoBlack} 
             alt="Filmology Labs Content Creation Studios" 
-            className="h-12 md:h-16 lg:h-20 xl:h-24 mx-auto mb-2 md:mb-3 animate-fade-in-delay-1"
+            className="h-[3.4rem] md:h-[4.5rem] lg:h-[5.65rem] xl:h-[6.8rem] mx-auto mb-2 md:mb-3 animate-fade-in-delay-1"
           />
           
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light leading-[1.1] text-foreground mb-6 md:mb-8 animate-fade-in-delay-2">
