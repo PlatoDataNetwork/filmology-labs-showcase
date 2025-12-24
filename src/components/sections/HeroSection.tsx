@@ -1,8 +1,12 @@
 import heroAerial from '@/assets/hero-aerial-new.png';
 import logoWhite from '@/assets/filmology-logo-white.png';
+import logoBlack from '@/assets/filmology-logo-black.png';
 
-const HeroSection = () => {
+interface HeroSectionProps {
+  isDark: boolean;
+}
 
+const HeroSection = ({ isDark }: HeroSectionProps) => {
   return (
     <section className="relative min-h-screen flex items-end pb-0 overflow-hidden">
       {/* Background Image */}
@@ -22,7 +26,7 @@ const HeroSection = () => {
       <div className="container-wide relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <img 
-            src={logoWhite} 
+            src={isDark ? logoWhite : logoBlack} 
             alt="Filmology Labs" 
             className="h-12 md:h-16 lg:h-20 mx-auto mb-3 animate-fade-in-delay-1"
           />
