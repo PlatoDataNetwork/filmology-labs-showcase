@@ -34,7 +34,7 @@ const Index = () => {
       <Navigation isDark={isDark} toggleTheme={toggleTheme} />
       
       <main>
-        <HeroSection />
+        <HeroSection isDark={isDark} />
         <VisionSection />
         <StudiosSection />
         <HeritageSection />
