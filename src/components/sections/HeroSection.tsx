@@ -27,8 +27,8 @@ const HeroSection = ({ isDark }: HeroSectionProps) => {
         <div className="max-w-4xl mx-auto text-center">
           <img 
             src={isDark ? logoWhite : logoBlack} 
-            alt="Filmology Labs" 
-            className="h-12 md:h-16 lg:h-20 mx-auto mb-3 animate-fade-in-delay-1"
+            alt="Filmology Labs Content Creation Studios" 
+            className="h-16 md:h-24 lg:h-32 xl:h-40 mx-auto mb-4 md:mb-6 animate-fade-in-delay-1"
           />
           
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light leading-[1.1] text-foreground mb-6 md:mb-8 animate-fade-in-delay-2">
