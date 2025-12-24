@@ -46,21 +46,21 @@ export type Database = {
           created_at: string
           expires_at: string
           id: string
-          investor_id: string
+          investor_id: string | null
           token: string
         }
         Insert: {
           created_at?: string
           expires_at: string
           id?: string
-          investor_id: string
+          investor_id?: string | null
           token: string
         }
         Update: {
           created_at?: string
           expires_at?: string
           id?: string
-          investor_id?: string
+          investor_id?: string | null
           token?: string
         }
         Relationships: [
