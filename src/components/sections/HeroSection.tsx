@@ -32,8 +32,8 @@ const HeroSection = ({ isDark }: HeroSectionProps) => {
           />
           
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light leading-[1.1] text-foreground mb-6 md:mb-8 animate-fade-in-delay-2">
-            Where Industrial Heritage<br />
-            Meets Creative Future
+            The World's First Vertical<br />
+            Content Creation Studios
           </h1>
           
         </div>
