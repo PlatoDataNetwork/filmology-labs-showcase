@@ -14,7 +14,95 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      contact_submissions: {
+        Row: {
+          company: string | null
+          created_at: string
+          email: string
+          id: string
+          message: string
+          name: string
+        }
+        Insert: {
+          company?: string | null
+          created_at?: string
+          email: string
+          id?: string
+          message: string
+          name: string
+        }
+        Update: {
+          company?: string | null
+          created_at?: string
+          email?: string
+          id?: string
+          message?: string
+          name?: string
+        }
+        Relationships: []
+      }
+      investor_sessions: {
+        Row: {
+          created_at: string
+          expires_at: string
+          id: string
+          investor_id: string
+          token: string
+        }
+        Insert: {
+          created_at?: string
+          expires_at: string
+          id?: string
+          investor_id: string
+          token: string
+        }
+        Update: {
+          created_at?: string
+          expires_at?: string
+          id?: string
+          investor_id?: string
+          token?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "investor_sessions_investor_id_fkey"
+            columns: ["investor_id"]
+            isOneToOne: false
+            referencedRelation: "investor_users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      investor_users: {
+        Row: {
+          company: string | null
+          created_at: string
+          email: string
+          id: string
+          last_login_at: string | null
+          name: string | null
+          password_hash: string
+        }
+        Insert: {
+          company?: string | null
+          created_at?: string
+          email: string
+          id?: string
+          last_login_at?: string | null
+          name?: string | null
+          password_hash: string
+        }
+        Update: {
+          company?: string | null
+          created_at?: string
+          email?: string
+          id?: string
+          last_login_at?: string | null
+          name?: string | null
+          password_hash?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

@@ -6,54 +6,104 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
+import { useTheme } from '@/hooks/use-theme';
+import { supabase } from '@/integrations/supabase/client';
+import { z } from 'zod';
 
-const INVESTOR_PASSWORD = 'FILMOLOGY123@';
+// Validation schema
+const loginSchema = z.object({
+  email: z.string().email("Invalid email address").max(255),
+  password: z.string().min(1, "Password is required").max(128),
+});
 
 const InvestorLogin = () => {
-  const [isDark, setIsDark] = useState(true);
+  const { isDark, toggleTheme } = useTheme();
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [errors, setErrors] = useState<{ email?: string; password?: string }>({});
   const navigate = useNavigate();
   const { toast } = useToast();
 
   useEffect(() => {
-    document.documentElement.classList.add('dark');
     window.scrollTo(0, 0);
     
-    // Check if already authenticated
-    const isAuthenticated = sessionStorage.getItem('investorAuth');
-    if (isAuthenticated === 'true') {
-      navigate('/investor-portal');
-    }
+    // Check if already authenticated via server
+    const checkAuth = async () => {
+      const token = localStorage.getItem('investorToken');
+      if (token) {
+        try {
+          const { data } = await supabase.functions.invoke('investor-auth', {
+            body: { action: 'verify', token },
+          });
+          if (data?.valid) {
+            navigate('/investor-portal');
+          } else {
+            localStorage.removeItem('investorToken');
+          }
+        } catch (error) {
+          localStorage.removeItem('investorToken');
+        }
+      }
+    };
+    checkAuth();
   }, [navigate]);
 
-  const toggleTheme = () => {
-    setIsDark(!isDark);
-    document.documentElement.classList.toggle('dark');
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setErrors({});
+    
+    // Client-side validation
+    const validation = loginSchema.safeParse({ email, password });
+    if (!validation.success) {
+      const fieldErrors: { email?: string; password?: string } = {};
+      validation.error.errors.forEach((err) => {
+        if (err.path[0] === 'email') fieldErrors.email = err.message;
+        if (err.path[0] === 'password') fieldErrors.password = err.message;
+      });
+      setErrors(fieldErrors);
+      return;
+    }
+    
     setIsLoading(true);
 
-    setTimeout(() => {
-      if (password === INVESTOR_PASSWORD) {
-        sessionStorage.setItem('investorAuth', 'true');
-        toast({
-          title: 'Welcome',
-          description: 'Access granted to investor portal.',
-        });
-        navigate('/investor-portal');
-      } else {
+    try {
+      const { data, error } = await supabase.functions.invoke('investor-auth', {
+        body: { 
+          action: 'login',
+          email: email.toLowerCase().trim(),
+          password,
+        },
+      });
+
+      if (error || !data?.success) {
         toast({
           title: 'Access Denied',
-          description: 'Invalid password. Please try again.',
+          description: data?.error || 'Invalid email or password. Please try again.',
           variant: 'destructive',
         });
+        setIsLoading(false);
+        return;
       }
+
+      // Store token securely
+      localStorage.setItem('investorToken', data.token);
+      
+      toast({
+        title: 'Welcome',
+        description: 'Access granted to investor portal.',
+      });
+      navigate('/investor-portal');
+    } catch (error) {
+      toast({
+        title: 'Error',
+        description: 'Unable to connect. Please try again later.',
+        variant: 'destructive',
+      });
+    } finally {
       setIsLoading(false);
-    }, 500);
+    }
   };
 
   return (
@@ -81,17 +131,32 @@ const InvestorLogin = () => {
               </h1>
               
               <p className="text-muted-foreground text-center mb-8">
-                Enter your password to access exclusive investment materials and documentation.
+                Enter your credentials to access exclusive investment materials and documentation.
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <Input
+                    type="email"
+                    placeholder="Email address"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="h-12 bg-background/50 border-border"
+                    autoComplete="email"
+                  />
+                  {errors.email && (
+                    <p className="text-sm text-destructive mt-1">{errors.email}</p>
+                  )}
+                </div>
+                
                 <div className="relative">
                   <Input
                     type={showPassword ? 'text' : 'password'}
-                    placeholder="Enter password"
+                    placeholder="Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     className="pr-12 h-12 bg-background/50 border-border"
+                    autoComplete="current-password"
                   />
                   <button
                     type="button"
@@ -100,11 +165,14 @@ const InvestorLogin = () => {
                   >
                     {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                   </button>
+                  {errors.password && (
+                    <p className="text-sm text-destructive mt-1">{errors.password}</p>
+                  )}
                 </div>
 
                 <Button
                   type="submit"
-                  disabled={isLoading || !password}
+                  disabled={isLoading || !email || !password}
                   className="w-full h-12 text-sm uppercase tracking-wider"
                 >
                   {isLoading ? 'Verifying...' : 'Access Portal'}
