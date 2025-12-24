@@ -1,12 +1,7 @@
 import heroAerial from '@/assets/hero-aerial-new.png';
+import logoWhite from '@/assets/filmology-logo-white.png';
 
 const HeroSection = () => {
-  const scrollToVision = () => {
-    const element = document.querySelector('#vision');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <section className="relative min-h-screen flex items-end pb-0 overflow-hidden">
@@ -26,9 +21,11 @@ const HeroSection = () => {
       {/* Content */}
       <div className="container-wide relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-sm md:text-base uppercase tracking-[0.2em] font-normal text-foreground mb-3 animate-fade-in-delay-1">
-            Content Creation Studios
-          </p>
+          <img 
+            src={logoWhite} 
+            alt="Filmology Labs" 
+            className="h-12 md:h-16 lg:h-20 mx-auto mb-3 animate-fade-in-delay-1"
+          />
           
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light leading-[1.1] text-foreground mb-6 md:mb-8 animate-fade-in-delay-2">
             Where Industrial Heritage<br />
