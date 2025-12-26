@@ -55,6 +55,7 @@ const keyMetrics = [
 ];
 
 const milestones = [
+  { date: 'Q1 2026', title: 'Groundbreaking Ceremony', status: 'upcoming' },
   { date: 'Q1 2026', title: 'Phase 1 Construction Complete', status: 'upcoming' },
   { date: 'Q2 2026', title: 'First Productions Begin', status: 'upcoming' },
   { date: 'Q3 2026', title: 'Full Campus Operational', status: 'upcoming' },
