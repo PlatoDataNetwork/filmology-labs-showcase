@@ -72,7 +72,7 @@ const InvestorsSection = () => {
               to="/investor-login"
               className="group inline-flex items-center gap-3 bg-primary text-primary-foreground px-6 py-4 rounded-md hover:bg-primary/90 transition-colors duration-300 w-fit"
             >
-              <span className="text-sm uppercase tracking-wider font-medium">Investor Login</span>
+              <span className="text-sm uppercase tracking-wider font-medium">Partner Login</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
           </div>
