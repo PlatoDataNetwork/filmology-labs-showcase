@@ -1,6 +1,8 @@
 import { Film, MonitorPlay, LayoutGrid } from 'lucide-react';
 import interiorStudio from '@/assets/interior-studio.jpg';
 import interior2 from '@/assets/interior-2.jpg';
+import interior3 from '@/assets/interior-3.jpg';
+import interior4 from '@/assets/interior-4.jpg';
 
 const StudiosSection = () => {
   const spaces = [
@@ -40,8 +42,8 @@ const StudiosSection = () => {
           </p>
         </div>
 
-        {/* Image Grid */}
-        <div className="grid lg:grid-cols-2 gap-4 md:gap-6 mb-16 md:mb-24">
+        {/* Image Grid - 2x2 */}
+        <div className="grid grid-cols-2 gap-4 md:gap-6 mb-16 md:mb-24">
           <div className="aspect-[4/3] overflow-hidden rounded-lg">
             <img
               src={interiorStudio}
@@ -53,6 +55,20 @@ const StudiosSection = () => {
             <img
               src={interior2}
               alt="Filmology Labs production facility"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-apple"
+            />
+          </div>
+          <div className="aspect-[4/3] overflow-hidden rounded-lg">
+            <img
+              src={interior3}
+              alt="Filmology Labs film production set"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-apple"
+            />
+          </div>
+          <div className="aspect-[4/3] overflow-hidden rounded-lg">
+            <img
+              src={interior4}
+              alt="Filmology Labs studio with equipment"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-apple"
             />
           </div>
