@@ -39,8 +39,8 @@ const Index = () => {
         <LocationSection />
         <LeadershipSection />
         <NewsSection />
-        <InvestorsSection />
         <CTASection />
+        <InvestorsSection />
       </main>
 
       <Footer isDark={isDark} />
