@@ -1,5 +1,5 @@
 import { MapPin, Clock, Building2 } from 'lucide-react';
-import exteriorEntrance from '@/assets/exterior-entrance.png';
+import aerialView from '@/assets/aerial-view.jpg';
 import locationAerial from '@/assets/location-aerial.png';
 
 const LocationSection = () => {
@@ -46,8 +46,8 @@ const LocationSection = () => {
           </div>
           <div className="aspect-[16/9] overflow-hidden rounded-lg">
             <img
-              src={exteriorEntrance}
-              alt="Exterior view of Filmology Labs in Paterson"
+              src={aerialView}
+              alt="Aerial view of Filmology Labs campus in Paterson"
               className="w-full h-full object-cover"
             />
           </div>
