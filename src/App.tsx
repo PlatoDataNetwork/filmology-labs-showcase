@@ -8,8 +8,8 @@ import GroundbreakingArticle from "./pages/GroundbreakingArticle";
 import VerzaTVArticle from "./pages/VerzaTVArticle";
 import PatersonFilmDistrictArticle from "./pages/PatersonFilmDistrictArticle";
 import TaxCreditArticle from "./pages/TaxCreditArticle";
-import InvestorLogin from "./pages/InvestorLogin";
-import InvestorPortal from "./pages/InvestorPortal";
+import PartnerLogin from "./pages/PartnerLogin";
+import PartnerPortal from "./pages/PartnerPortal";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,8 +26,8 @@ const App = () => (
           <Route path="/news/verza-tv-microdramas" element={<VerzaTVArticle />} />
           <Route path="/news/paterson-film-district" element={<PatersonFilmDistrictArticle />} />
           <Route path="/news/nj-tax-credit-expansion" element={<TaxCreditArticle />} />
-          <Route path="/investor-login" element={<InvestorLogin />} />
-          <Route path="/investor-portal" element={<InvestorPortal />} />
+          <Route path="/partner-login" element={<PartnerLogin />} />
+          <Route path="/partner-portal" element={<PartnerPortal />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

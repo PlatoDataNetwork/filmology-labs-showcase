@@ -65,11 +65,11 @@ const InvestorsSection = () => {
             
             <p className="text-muted-foreground leading-relaxed mb-8">
               Detailed financial projections, development timelines, and partnership 
-              opportunities are available in our secure investor portal.
+              opportunities are available in our secure partner portal.
             </p>
             
             <Link
-              to="/investor-login"
+              to="/partner-login"
               className="group inline-flex items-center gap-3 bg-primary text-primary-foreground px-6 py-4 rounded-md hover:bg-primary/90 transition-colors duration-300 w-fit"
             >
               <span className="text-sm uppercase tracking-wider font-medium">Partner Login</span>

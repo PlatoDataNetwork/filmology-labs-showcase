@@ -61,16 +61,16 @@ const milestones = [
   { date: 'Q4 2027', title: 'Full Campus Operational', status: 'upcoming' },
 ];
 
-interface InvestorUser {
+interface PartnerUser {
   email: string;
   name?: string;
   company?: string;
 }
 
-const InvestorPortal = () => {
+const PartnerPortal = () => {
   const { isDark, toggleTheme } = useTheme();
   const [isLoading, setIsLoading] = useState(true);
-  const [user, setUser] = useState<InvestorUser | null>(null);
+  const [user, setUser] = useState<PartnerUser | null>(null);
   const navigate = useNavigate();
   const { toast } = useToast();
 
@@ -79,10 +79,10 @@ const InvestorPortal = () => {
     
     // Verify authentication with server
     const verifyAuth = async () => {
-      const token = localStorage.getItem('investorToken');
+      const token = localStorage.getItem('partnerToken');
       
       if (!token) {
-        navigate('/investor-login');
+        navigate('/partner-login');
         return;
       }
       
@@ -92,16 +92,16 @@ const InvestorPortal = () => {
         });
         
         if (error || !data?.valid) {
-          localStorage.removeItem('investorToken');
-          navigate('/investor-login');
+          localStorage.removeItem('partnerToken');
+          navigate('/partner-login');
           return;
         }
         
         setUser(data.user);
         setIsLoading(false);
       } catch (error) {
-        localStorage.removeItem('investorToken');
-        navigate('/investor-login');
+        localStorage.removeItem('partnerToken');
+        navigate('/partner-login');
       }
     };
     
@@ -109,7 +109,7 @@ const InvestorPortal = () => {
   }, [navigate]);
 
   const handleLogout = async () => {
-    const token = localStorage.getItem('investorToken');
+    const token = localStorage.getItem('partnerToken');
     
     try {
       await supabase.functions.invoke('investor-auth', {
@@ -119,12 +119,12 @@ const InvestorPortal = () => {
       // Continue with logout even if server call fails
     }
     
-    localStorage.removeItem('investorToken');
+    localStorage.removeItem('partnerToken');
     toast({
       title: 'Signed out',
       description: 'You have been signed out successfully.',
     });
-    navigate('/investor-login');
+    navigate('/partner-login');
   };
 
   if (isLoading) {
@@ -152,7 +152,7 @@ const InvestorPortal = () => {
                 <span className="text-sm uppercase tracking-wider">Back to Site</span>
               </a>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-light">
-                Investor Portal
+                Partner Portal
               </h1>
               {user?.name && (
                 <p className="text-muted-foreground mt-2">Welcome, {user.name}</p>
@@ -285,10 +285,10 @@ const InvestorPortal = () => {
               a presentation with our team, please reach out directly.
             </p>
             <a 
-              href="mailto:investors@filmologylabs.com"
+              href="mailto:partners@filmologylabs.com"
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-md hover:bg-primary/90 transition-colors duration-300"
             >
-              <span className="text-sm uppercase tracking-wider font-medium">Contact Investment Team</span>
+              <span className="text-sm uppercase tracking-wider font-medium">Contact Partner Team</span>
             </a>
           </div>
         </div>
@@ -299,4 +299,4 @@ const InvestorPortal = () => {
   );
 };
 
-export default InvestorPortal;
+export default PartnerPortal;

@@ -9,7 +9,7 @@ import { useToast } from '@/hooks/use-toast';
 import { useTheme } from '@/hooks/use-theme';
 import { supabase } from '@/integrations/supabase/client';
 
-const InvestorLogin = () => {
+const PartnerLogin = () => {
   const { isDark, toggleTheme } = useTheme();
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -22,19 +22,19 @@ const InvestorLogin = () => {
     
     // Check if already authenticated via server
     const checkAuth = async () => {
-      const token = localStorage.getItem('investorToken');
+      const token = localStorage.getItem('partnerToken');
       if (token) {
         try {
           const { data } = await supabase.functions.invoke('investor-auth', {
             body: { action: 'verify', token },
           });
           if (data?.valid) {
-            navigate('/investor-portal');
+            navigate('/partner-portal');
           } else {
-            localStorage.removeItem('investorToken');
+            localStorage.removeItem('partnerToken');
           }
         } catch (error) {
-          localStorage.removeItem('investorToken');
+          localStorage.removeItem('partnerToken');
         }
       }
     };
@@ -74,13 +74,13 @@ const InvestorLogin = () => {
       }
 
       // Store token securely
-      localStorage.setItem('investorToken', data.token);
+      localStorage.setItem('partnerToken', data.token);
       
       toast({
         title: 'Welcome',
-        description: 'Access granted to investor portal.',
+        description: 'Access granted to partner portal.',
       });
-      navigate('/investor-portal');
+      navigate('/partner-portal');
     } catch (error) {
       toast({
         title: 'Error',
@@ -117,7 +117,7 @@ const InvestorLogin = () => {
               </h1>
               
               <p className="text-muted-foreground text-center mb-8">
-                Enter your password to access exclusive investment materials and documentation.
+                Enter your password to access exclusive partner materials and documentation.
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -149,9 +149,9 @@ const InvestorLogin = () => {
               </form>
 
               <p className="text-xs text-muted-foreground text-center mt-8">
-                For investor inquiries, please contact us at{' '}
-                <a href="mailto:investors@filmologylabs.com" className="text-primary hover:underline">
-                  investors@filmologylabs.com
+                For partner inquiries, please contact us at{' '}
+                <a href="mailto:partners@filmologylabs.com" className="text-primary hover:underline">
+                  partners@filmologylabs.com
                 </a>
               </p>
             </div>
@@ -164,4 +164,4 @@ const InvestorLogin = () => {
   );
 };
 
-export default InvestorLogin;
+export default PartnerLogin;
