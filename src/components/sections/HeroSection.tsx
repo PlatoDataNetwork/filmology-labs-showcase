@@ -25,11 +25,6 @@ const HeroSection = ({ isDark }: HeroSectionProps) => {
       {/* Content */}
       <div className="container-wide relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <img 
-            src={isDark ? logoWhite : logoBlack} 
-            alt="Filmology Labs Content Creation Studios" 
-            className="h-14 md:h-20 lg:h-24 mx-auto mb-2 md:mb-3 animate-fade-in-delay-1"
-          />
           
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium leading-[1.15] text-foreground mb-6 md:mb-8 animate-fade-in-delay-2">
             The World's First Vertical<br />
