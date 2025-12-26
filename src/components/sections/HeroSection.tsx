@@ -31,7 +31,7 @@ const HeroSection = ({ isDark }: HeroSectionProps) => {
             className="h-[3.4rem] md:h-[4.5rem] lg:h-[5.65rem] xl:h-[6.8rem] mx-auto mb-2 md:mb-3 animate-fade-in-delay-1"
           />
           
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light leading-[1.1] text-foreground mb-6 md:mb-8 animate-fade-in-delay-2">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light leading-[1.1] text-foreground mb-6 md:mb-8 animate-fade-in-delay-2">
             The World's First Vertical<br />
             Content Creation Studio
           </h1>
