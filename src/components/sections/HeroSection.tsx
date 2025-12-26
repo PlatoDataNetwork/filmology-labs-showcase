@@ -20,13 +20,13 @@ const HeroSection = ({ isDark }: HeroSectionProps) => {
       </div>
 
       {/* Frosted glass strip */}
-      <div className="absolute bottom-0 left-0 right-0 backdrop-blur-[2px] bg-background/10 dark:bg-background/20 z-[5] py-8 md:py-12" />
+      <div className="absolute bottom-0 left-0 right-0 backdrop-blur-[2px] bg-background/10 dark:bg-background/20 z-[5] py-10 md:py-16" />
 
       {/* Content */}
-      <div className="container-wide relative z-10">
+      <div className="container-wide relative z-10 pb-4 md:pb-6">
         <div className="max-w-4xl mx-auto text-center">
           
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium leading-[1.15] text-foreground mb-6 md:mb-8 animate-fade-in-delay-2">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.15] text-foreground mb-6 md:mb-8 animate-fade-in-delay-2">
             The World's First Vertical<br />
             Content Creation Studio
           </h1>
