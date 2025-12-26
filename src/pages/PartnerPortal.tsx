@@ -48,17 +48,16 @@ const documents = [
 ];
 
 const keyMetrics = [
-  { icon: Building2, label: 'Total Square Footage', value: '143,875 SQ FT' },
+  { icon: Building2, label: 'Total Square Footage', value: '250,000 SQ FT' },
   { icon: DollarSign, label: 'Total Investment', value: 'Contact for Details' },
   { icon: MapPin, label: 'Location', value: 'Paterson, NJ' },
   { icon: Users, label: 'Jobs Created', value: '500+' },
 ];
 
 const milestones = [
-  { date: 'Q1 2026', title: 'Groundbreaking Ceremony', status: 'upcoming' },
-  { date: 'Q4 2026', title: 'Phase 1 Construction Complete', status: 'upcoming' },
-  { date: 'Q2 2027', title: 'First Productions Begin', status: 'upcoming' },
-  { date: 'Q4 2027', title: 'Full Campus Operational', status: 'upcoming' },
+  { date: 'Q1 2026', title: 'Phase 1 Construction Complete', status: 'upcoming' },
+  { date: 'Q2 2026', title: 'First Productions Begin', status: 'upcoming' },
+  { date: 'Q3 2026', title: 'Full Campus Operational', status: 'upcoming' },
 ];
 
 interface PartnerUser {
