@@ -28,10 +28,10 @@ const HeroSection = ({ isDark }: HeroSectionProps) => {
           <img 
             src={isDark ? logoWhite : logoBlack} 
             alt="Filmology Labs Content Creation Studios" 
-            className="h-10 md:h-14 mx-auto mb-2 md:mb-3 animate-fade-in-delay-1"
+            className="h-14 md:h-20 lg:h-24 mx-auto mb-2 md:mb-3 animate-fade-in-delay-1"
           />
           
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold leading-[1.1] text-foreground mb-6 md:mb-8 animate-fade-in-delay-2">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium leading-[1.15] text-foreground mb-6 md:mb-8 animate-fade-in-delay-2">
             The World's First Vertical<br />
             Content Creation Studio
           </h1>
