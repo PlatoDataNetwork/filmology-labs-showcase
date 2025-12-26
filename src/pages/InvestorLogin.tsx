@@ -113,7 +113,7 @@ const InvestorLogin = () => {
               </div>
 
               <h1 className="text-2xl md:text-3xl font-light text-center mb-4">
-                Investor Portal
+                Partner Portal
               </h1>
               
               <p className="text-muted-foreground text-center mb-8">
