@@ -33,7 +33,7 @@ const StudiosSection = () => {
         <div className="max-w-2xl mb-16 md:mb-24">
           <p className="label-editorial mb-4">The Studios</p>
           <h2 className="mb-6">
-            Spaces Built for Creators
+            Stages Built for Content Creators
           </h2>
           <p className="text-body-large">
             Filmology Labs Content Creation Studios will provide sound stages, 
