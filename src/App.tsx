@@ -26,12 +26,17 @@ const InitialRedirect = ({ children }: { children: React.ReactNode }) => {
     
     if (isInitialLoad) {
       sessionStorage.setItem('appLoaded', 'true');
-      // Only redirect to home if on partner pages without valid auth
+      
+      // On fresh load, always redirect to clean home page (no hash fragments)
+      // Exception: allow partner portal if authenticated
       if (location.pathname === '/partner-portal') {
         const hasToken = localStorage.getItem('partnerToken');
         if (!hasToken) {
           navigate('/', { replace: true });
         }
+      } else if (location.pathname === '/' && location.hash) {
+        // Clear any hash fragments on fresh load to home
+        navigate('/', { replace: true });
       }
     }
   }, []);
