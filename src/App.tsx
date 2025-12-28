@@ -1,8 +1,9 @@
+import { useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import Index from "./pages/Index";
 import GroundbreakingArticle from "./pages/GroundbreakingArticle";
 import VerzaTVArticle from "./pages/VerzaTVArticle";
@@ -14,23 +15,49 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+// Component to handle initial redirect to home on fresh load
+const InitialRedirect = ({ children }: { children: React.ReactNode }) => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Check if this is a fresh page load (not navigation within app)
+    const isInitialLoad = !sessionStorage.getItem('appLoaded');
+    
+    if (isInitialLoad) {
+      sessionStorage.setItem('appLoaded', 'true');
+      // Only redirect to home if on partner pages without valid auth
+      if (location.pathname === '/partner-portal') {
+        const hasToken = localStorage.getItem('partnerToken');
+        if (!hasToken) {
+          navigate('/', { replace: true });
+        }
+      }
+    }
+  }, []);
+
+  return <>{children}</>;
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/news/groundbreaking-2026" element={<GroundbreakingArticle />} />
-          <Route path="/news/verza-tv-microdramas" element={<VerzaTVArticle />} />
-          <Route path="/news/paterson-film-district" element={<PatersonFilmDistrictArticle />} />
-          <Route path="/news/nj-tax-credit-expansion" element={<TaxCreditArticle />} />
-          <Route path="/partner-login" element={<PartnerLogin />} />
-          <Route path="/partner-portal" element={<PartnerPortal />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <InitialRedirect>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/news/groundbreaking-2026" element={<GroundbreakingArticle />} />
+            <Route path="/news/verza-tv-microdramas" element={<VerzaTVArticle />} />
+            <Route path="/news/paterson-film-district" element={<PatersonFilmDistrictArticle />} />
+            <Route path="/news/nj-tax-credit-expansion" element={<TaxCreditArticle />} />
+            <Route path="/partner-login" element={<PartnerLogin />} />
+            <Route path="/partner-portal" element={<PartnerPortal />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </InitialRedirect>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
