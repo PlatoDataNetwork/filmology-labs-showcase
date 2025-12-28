@@ -32,7 +32,7 @@ const StudiosSection = () => {
         {/* Header */}
         <div className="max-w-2xl mb-12 md:mb-24">
           <p className="label-editorial mb-4">The Studios</p>
-          <h2 className="mb-4 md:mb-6">
+          <h2 className="mb-4 md:mb-6 whitespace-nowrap">
             Stages Built for Content Creators
           </h2>
           <p className="text-body-large">
