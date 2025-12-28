@@ -60,7 +60,7 @@ const NewsSection = () => {
         </div>
 
         {/* News Grid */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-stretch">
           {/* Featured Article */}
           {featuredNews && (
             <article className="group h-full">

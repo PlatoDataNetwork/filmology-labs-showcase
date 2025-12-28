@@ -4,7 +4,7 @@ const LeadershipSection = () => {
   return (
     <section id="leadership" className="section-padding bg-background">
       <div className="container-wide">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-20 items-stretch">
           {/* Image */}
           <div className="overflow-hidden rounded-lg">
             <img
