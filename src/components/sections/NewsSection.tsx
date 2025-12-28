@@ -98,19 +98,19 @@ const NewsSection = () => {
           )}
 
           {/* Other Articles */}
-          <div className="flex flex-col justify-between">
+          <div className="flex flex-col gap-6 md:gap-0 md:justify-between">
             {otherNews.map((item, index) => (
               <article
                 key={index}
-                className="group border-b border-border/50 pb-6 last:border-0 last:pb-0"
+                className="group border-b border-border/50 pb-5 md:pb-6 last:border-0 last:pb-0"
               >
-                <div className="flex items-center gap-4 mb-3">
+                <div className="flex items-center gap-3 md:gap-4 mb-2 md:mb-3">
                   <span className="text-xs uppercase tracking-wider text-primary font-medium">
                     {item.category}
                   </span>
                   <span className="text-xs text-muted-foreground">{item.date}</span>
                 </div>
-                <h4 className="text-lg font-medium mb-2 group-hover:text-primary transition-colors duration-300 cursor-pointer">
+                <h4 className="text-base md:text-lg font-medium mb-2 group-hover:text-primary transition-colors duration-300 cursor-pointer">
                   {item.title}
                 </h4>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-3">

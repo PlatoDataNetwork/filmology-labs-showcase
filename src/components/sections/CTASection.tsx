@@ -4,41 +4,41 @@ import ContactFormModal from '@/components/ContactFormModal';
 
 const CTASection = () => {
   return (
-    <section id="contact" className="relative min-h-[80vh] flex items-center overflow-hidden">
+    <section id="contact" className="relative min-h-[70vh] md:min-h-[80vh] flex items-center overflow-hidden py-12 md:py-0">
       {/* Background */}
       <div className="absolute inset-0">
         <img
           src={entranceDaytime}
           alt="Filmology Labs entrance"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-right md:object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 md:via-background/80 to-background/60 md:to-background/40" />
       </div>
 
       {/* Content */}
       <div className="container-wide relative z-10">
         <div className="max-w-xl">
-          <p className="label-editorial mb-4">Get in Touch</p>
-          <h2 className="mb-6">
+          <p className="label-editorial mb-3 md:mb-4">Get in Touch</p>
+          <h2 className="mb-4 md:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
             Let's Build the Future Together
           </h2>
-          <p className="text-body-large mb-10">
+          <p className="text-body-large mb-8 md:mb-10">
             Filmology Labs is more than an adaptive reuse—it's an opportunity 
             to ignite a new industry in Paterson and build a destination where 
             imagination, history, and future potential converge.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
             <ContactFormModal
               trigger={
-                <Button variant="hero" size="xl">
+                <Button variant="hero" size="lg" className="w-full sm:w-auto">
                   Inquire Now
                 </Button>
               }
             />
             <ContactFormModal
               trigger={
-                <Button variant="hero-outline" size="xl">
+                <Button variant="hero-outline" size="lg" className="w-full sm:w-auto">
                   Schedule a Visit
                 </Button>
               }
@@ -46,8 +46,8 @@ const CTASection = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="mt-16 pt-8 border-t border-border/50">
-            <div className="grid sm:grid-cols-2 gap-6">
+          <div className="mt-10 md:mt-16 pt-6 md:pt-8 border-t border-border/50">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               <div>
                 <p className="label-editorial mb-2">Location</p>
                 <p className="text-muted-foreground text-sm">
