@@ -14,7 +14,7 @@ import Footer from '@/components/Footer';
 const Index = () => {
   const { isDark, toggleTheme } = useTheme();
 
-  // Handle hash navigation on page load
+  // Handle hash navigation on page load - scroll to top if no hash
   useEffect(() => {
     const hash = window.location.hash;
     if (hash) {
@@ -25,6 +25,9 @@ const Index = () => {
           element.scrollIntoView({ behavior: 'smooth' });
         }
       }, 100);
+    } else {
+      // Scroll to top on initial load
+      window.scrollTo(0, 0);
     }
   }, []);
 
