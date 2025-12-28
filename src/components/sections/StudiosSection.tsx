@@ -8,7 +8,8 @@ const StudiosSection = () => {
   const spaces = [
     {
       title: 'Sound Stages',
-      description: 'Professional-grade sound stages with high ceilings, soundproofing, and flexible configurations for film, television, and commercial production. Built to accommodate projects of any scale with precision acoustics.',
+      count: '21',
+      description: '21 Professional-grade sound stages with high ceilings, soundproofing, and flexible configurations for film, television, and commercial production. Built to accommodate projects of any scale with precision acoustics.',
       specs: 'Up to 63\' × 54\' clear span',
       icon: Film,
     },
@@ -81,6 +82,9 @@ const StudiosSection = () => {
               key={index} 
               className="steel-gradient-card rounded-lg px-5 py-5 md:p-6 h-full flex flex-col"
             >
+              {'count' in space && space.count && (
+                <p className="text-4xl md:text-5xl font-semibold text-foreground mb-3">{space.count}</p>
+              )}
               <div className="flex items-center gap-3 mb-3 md:mb-4">
                 <space.icon className="w-5 h-5 text-foreground" />
                 <h3 className="text-lg md:text-xl font-medium">{space.title}</h3>
