@@ -9,15 +9,15 @@ const Footer = ({ isDark }: FooterProps) => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="py-12 md:py-16 bg-background border-t border-border">
+    <footer className="py-10 md:py-16 bg-background border-t border-border">
       <div className="container-wide">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-5 md:gap-6">
           {/* Logo */}
           <div className="flex items-center">
             <img
               src={isDark ? logoWhite : logoBlack}
               alt="Filmology Labs Content Creation Studios"
-              className="h-12 md:h-16 w-auto"
+              className="h-10 md:h-16 w-auto"
             />
           </div>
 
@@ -41,7 +41,7 @@ const Footer = ({ isDark }: FooterProps) => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-8 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="mt-6 md:mt-8 pt-6 md:pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4 text-center md:text-left">
           <p className="text-xs text-muted-foreground">
             © {currentYear} Filmology Labs. All rights reserved.
           </p>

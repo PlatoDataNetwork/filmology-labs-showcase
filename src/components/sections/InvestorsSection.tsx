@@ -51,26 +51,26 @@ const InvestorsSection = () => {
           </div>
 
           {/* Right - CTA Card */}
-          <div className="steel-gradient-card rounded-lg p-8 md:p-10 flex flex-col justify-center">
-            <div className="flex items-center gap-3 mb-6">
+          <div className="steel-gradient-card rounded-lg p-6 sm:p-8 md:p-10 flex flex-col justify-center">
+            <div className="flex items-center gap-3 mb-4 md:mb-6">
               <Lock className="w-5 h-5 text-primary" />
               <span className="text-xs uppercase tracking-wider text-primary font-medium">
                 Accredited Investors
               </span>
             </div>
             
-            <h3 className="text-2xl md:text-3xl font-light leading-tight mb-4">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-light leading-tight mb-3 md:mb-4">
               Access Exclusive Investment Materials
             </h3>
             
-            <p className="text-muted-foreground leading-relaxed mb-8">
+            <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-6 md:mb-8">
               Detailed financial projections, development timelines, and partnership 
               opportunities are available in our secure partner portal.
             </p>
             
             <Link
               to="/partner-login"
-              className="group inline-flex items-center gap-3 bg-primary text-primary-foreground px-6 py-4 rounded-md hover:bg-primary/90 transition-colors duration-300 w-fit"
+              className="group inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-5 md:px-6 py-3 md:py-4 rounded-md hover:bg-primary/90 transition-colors duration-300 w-full sm:w-fit"
             >
               <span className="text-sm uppercase tracking-wider font-medium">Partner Login</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />

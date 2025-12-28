@@ -31,9 +31,9 @@ const StudiosSection = () => {
     <section id="studios" className="section-padding bg-card">
       <div className="container-wide">
         {/* Header */}
-        <div className="max-w-2xl mb-16 md:mb-24">
+        <div className="max-w-2xl mb-12 md:mb-24">
           <p className="label-editorial mb-4">The Studios</p>
-          <h2 className="mb-6">
+          <h2 className="mb-4 md:mb-6">
             Stages Built for Content Creators
           </h2>
           <p className="text-body-large">
@@ -44,7 +44,7 @@ const StudiosSection = () => {
         </div>
 
         {/* Image Grid - 2x2 */}
-        <div className="grid grid-cols-2 gap-4 md:gap-6 mb-16 md:mb-24">
+        <div className="grid grid-cols-2 gap-2 sm:gap-4 md:gap-6 mb-12 md:mb-24">
           <div className="aspect-[4/3] overflow-hidden rounded-lg">
             <img
               src={interiorStudio}
@@ -76,23 +76,23 @@ const StudiosSection = () => {
         </div>
 
         {/* Spaces Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
           {spaces.map((space, index) => (
             <div 
               key={index} 
-              className="steel-gradient-card rounded-lg px-5 py-5 md:p-6 h-full flex flex-col"
+              className="steel-gradient-card rounded-lg p-4 sm:px-5 sm:py-5 md:p-6 h-full flex flex-col"
             >
               {'count' in space && space.count && (
-                <p className="text-4xl md:text-5xl font-semibold text-foreground mb-3">{space.count}</p>
+                <p className="text-3xl sm:text-4xl md:text-5xl font-semibold text-foreground mb-2 sm:mb-3">{space.count}</p>
               )}
-              <div className="flex items-center gap-3 mb-3 md:mb-4">
-                <space.icon className="w-5 h-5 text-foreground" />
-                <h3 className="text-lg md:text-xl font-medium">{space.title}</h3>
+              <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3 md:mb-4">
+                <space.icon className="w-4 h-4 sm:w-5 sm:h-5 text-foreground" />
+                <h3 className="text-base sm:text-lg md:text-xl font-medium">{space.title}</h3>
               </div>
-              <p className="text-sm md:text-base text-muted-foreground mb-3 md:mb-4 leading-relaxed flex-grow">
+              <p className="text-sm text-muted-foreground mb-3 md:mb-4 leading-relaxed flex-grow">
                 {space.description}
               </p>
-              <p className="label-editorial text-foreground text-xs md:text-sm">{space.specs}</p>
+              <p className="label-editorial text-foreground text-xs">{space.specs}</p>
             </div>
           ))}
         </div>

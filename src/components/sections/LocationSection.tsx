@@ -25,18 +25,18 @@ const LocationSection = () => {
     <section id="location" className="section-padding bg-card">
       <div className="container-wide">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12">
+        <div className="text-center max-w-2xl mx-auto mb-8 md:mb-12">
           <p className="label-editorial mb-4">Location</p>
-          <h2 className="mb-6">
-            The Heart of the Paterson<br />Film District
+          <h2 className="mb-4 md:mb-6">
+            The Heart of the Paterson<br className="hidden sm:inline" /> Film District
           </h2>
           <p className="text-body-large">
-            Positioned at the crossroads of history and opportunity, with<br className="hidden lg:inline" /> unmatched access to New York City and the nation's largest media market.
+            Positioned at the crossroads of history and opportunity, with unmatched access to New York City and the nation's largest media market.
           </p>
         </div>
 
         {/* Images */}
-        <div className="space-y-6 mb-16 md:mb-24">
+        <div className="space-y-4 md:space-y-6 mb-12 md:mb-24">
           <div className="aspect-[16/9] overflow-hidden rounded-lg">
             <img
               src={locationAerial}
@@ -54,16 +54,16 @@ const LocationSection = () => {
         </div>
 
         {/* Features */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-8">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-background p-8 rounded-lg text-center"
+              className="bg-background p-5 sm:p-6 md:p-8 rounded-lg text-center"
             >
-              <div className="w-12 h-12 mx-auto mb-6 rounded-full bg-accent flex items-center justify-center">
-                <feature.icon className="w-5 h-5 text-foreground" />
+              <div className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-4 md:mb-6 rounded-full bg-accent flex items-center justify-center">
+                <feature.icon className="w-4 h-4 md:w-5 md:h-5 text-foreground" />
               </div>
-              <h3 className="text-lg font-medium mb-2">{feature.title}</h3>
+              <h3 className="text-base sm:text-lg font-medium mb-2">{feature.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 {feature.description}
               </p>
