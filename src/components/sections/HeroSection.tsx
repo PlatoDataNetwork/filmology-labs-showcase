@@ -20,7 +20,7 @@ const HeroSection = ({ isDark }: HeroSectionProps) => {
       </div>
 
       {/* Frosted glass strip */}
-      <div className="absolute bottom-0 left-0 right-0 backdrop-blur-[2px] bg-background/10 dark:bg-background/20 z-[5] py-10 md:py-16" />
+      <div className="absolute bottom-0 left-0 right-0 backdrop-blur-[1px] bg-background/5 dark:bg-background/10 z-[5] py-10 md:py-16" />
 
       {/* Content */}
       <div className="container-wide relative z-10 pb-4 md:pb-6">
