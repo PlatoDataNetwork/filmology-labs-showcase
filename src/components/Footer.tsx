@@ -17,7 +17,7 @@ const Footer = ({ isDark }: FooterProps) => {
             <img
               src={isDark ? logoWhite : logoBlack}
               alt="Filmology Labs Content Creation Studios"
-              className="h-10 md:h-16 w-auto"
+              className="h-8 sm:h-10 md:h-16 w-auto"
             />
           </div>
 

@@ -14,7 +14,7 @@ const InvestorsSection = () => {
         </div>
 
         {/* Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-stretch">
           {/* Left - Description */}
           <div className="flex flex-col justify-center">
             <p className="text-body-large mb-8">
