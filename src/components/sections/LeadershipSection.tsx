@@ -9,7 +9,7 @@ const LeadershipSection = () => {
           <div className="overflow-hidden rounded-lg">
             <img
               src={alanMruvka}
-              alt="Alan Mruvka, Founder of E! Entertainment Television"
+              alt="Alan Mruvka, Co-Founder of E! Entertainment Television"
               className="w-full h-full object-cover object-top"
             />
           </div>
@@ -21,8 +21,8 @@ const LeadershipSection = () => {
               Alan Mruvka
             </h2>
             <p className="text-body-large mb-6">
-              A visionary who revolutionized entertainment and celebrity-based television 
-              as the Founder of E! Entertainment Television—now an NBC/Comcast company 
+              The visionary who revolutionized entertainment and celebrity-based television 
+              as the Co-Founder of E! Entertainment Television—now an NBC/Comcast company 
               valued at over $15 billion.
             </p>
 
