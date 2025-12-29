@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -12,6 +12,7 @@ import TaxCreditArticle from "./pages/TaxCreditArticle";
 import PartnerLogin from "./pages/PartnerLogin";
 import PartnerPortal from "./pages/PartnerPortal";
 import NotFound from "./pages/NotFound";
+import SplashScreen from "./components/SplashScreen";
 
 const queryClient = new QueryClient();
 
@@ -44,28 +45,40 @@ const InitialRedirect = ({ children }: { children: React.ReactNode }) => {
   return <>{children}</>;
 };
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <InitialRedirect>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/news/groundbreaking-2026" element={<GroundbreakingArticle />} />
-            <Route path="/news/verza-tv-microdramas" element={<VerzaTVArticle />} />
-            <Route path="/news/paterson-film-district" element={<PatersonFilmDistrictArticle />} />
-            <Route path="/news/nj-tax-credit-expansion" element={<TaxCreditArticle />} />
-            <Route path="/partner-login" element={<PartnerLogin />} />
-            <Route path="/partner-portal" element={<PartnerPortal />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </InitialRedirect>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  const [showSplash, setShowSplash] = useState(() => {
+    return !sessionStorage.getItem('splashShown');
+  });
+
+  const handleSplashComplete = () => {
+    sessionStorage.setItem('splashShown', 'true');
+    setShowSplash(false);
+  };
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        {showSplash && <SplashScreen onComplete={handleSplashComplete} />}
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <InitialRedirect>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/news/groundbreaking-2026" element={<GroundbreakingArticle />} />
+              <Route path="/news/verza-tv-microdramas" element={<VerzaTVArticle />} />
+              <Route path="/news/paterson-film-district" element={<PatersonFilmDistrictArticle />} />
+              <Route path="/news/nj-tax-credit-expansion" element={<TaxCreditArticle />} />
+              <Route path="/partner-login" element={<PartnerLogin />} />
+              <Route path="/partner-portal" element={<PartnerPortal />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </InitialRedirect>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;
