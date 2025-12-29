@@ -3,6 +3,8 @@ import interiorStudio from '@/assets/interior-studio.jpg';
 import interior2 from '@/assets/interior-2.jpg';
 import interior3 from '@/assets/interior-3.jpg';
 import interior4 from '@/assets/interior-4.jpg';
+import studioGreenscreen1 from '@/assets/studio-greenscreen-1.jpeg';
+import studioGreenscreen2 from '@/assets/studio-greenscreen-2.jpeg';
 
 const StudiosSection = () => {
   const spaces = [
@@ -45,7 +47,7 @@ const StudiosSection = () => {
           </p>
         </div>
 
-        {/* Image Grid - 2x2 */}
+        {/* Image Grid - 2x3 */}
         <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-6 mb-10 md:mb-24">
           <div className="aspect-[4/3] overflow-hidden rounded-lg">
             <img
@@ -72,6 +74,20 @@ const StudiosSection = () => {
             <img
               src={interior4}
               alt="Filmology Labs studio with equipment"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-apple"
+            />
+          </div>
+          <div className="aspect-[4/3] overflow-hidden rounded-lg">
+            <img
+              src={studioGreenscreen1}
+              alt="Filmology Labs green screen studio with production crew"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-apple"
+            />
+          </div>
+          <div className="aspect-[4/3] overflow-hidden rounded-lg">
+            <img
+              src={studioGreenscreen2}
+              alt="Filmology Labs professional green screen stage"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-apple"
             />
           </div>
