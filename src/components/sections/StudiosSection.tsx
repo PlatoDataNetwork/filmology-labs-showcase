@@ -30,12 +30,12 @@ const StudiosSection = () => {
     <section id="studios" className="section-padding bg-card">
       <div className="container-wide">
         {/* Header */}
-        <div className="max-w-2xl mb-12 md:mb-24">
-          <p className="label-editorial mb-4">The Studios</p>
-          <h2 className="mb-4 md:mb-6 whitespace-nowrap">
+        <div className="max-w-2xl mb-10 md:mb-24">
+          <p className="label-editorial mb-3 md:mb-4">The Studios</p>
+          <h2 className="mb-4 md:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
             Stages Built for Content Creators
           </h2>
-          <p className="text-body-large mb-4">
+          <p className="text-body-large mb-3 md:mb-4">
             Filmology Labs Content Creation Studios will provide sound stages, 
             production suites, and technology-rich amenities that invite filmmakers, 
             digital creators, and storytellers to bring their ideas to life.
@@ -46,7 +46,7 @@ const StudiosSection = () => {
         </div>
 
         {/* Image Grid - 2x2 */}
-        <div className="grid grid-cols-2 gap-2 sm:gap-4 md:gap-6 mb-12 md:mb-24">
+        <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-6 mb-10 md:mb-24">
           <div className="aspect-[4/3] overflow-hidden rounded-lg">
             <img
               src={interiorStudio}

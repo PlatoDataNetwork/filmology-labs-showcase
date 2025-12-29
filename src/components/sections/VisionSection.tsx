@@ -26,14 +26,14 @@ const VisionSection = () => {
     <section id="vision" className="section-padding bg-background">
       <div className="container-wide">
         {/* Label */}
-        <p className="label-editorial mb-12 md:mb-16 text-center">Our Vision</p>
+        <p className="label-editorial mb-8 md:mb-16 text-center">Our Vision</p>
 
         {/* Main Statement */}
-        <h2 className="text-center mb-6 max-w-3xl mx-auto">
-          A Bold New Chapter in<br />American Storytelling
+        <h2 className="text-center mb-4 md:mb-6 max-w-3xl mx-auto text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+          A Bold New Chapter in American Storytelling
         </h2>
         
-        <p className="text-center text-lg md:text-xl text-muted-foreground mb-12 md:mb-16 max-w-2xl mx-auto">
+        <p className="text-center text-base md:text-xl text-muted-foreground mb-10 md:mb-16 max-w-2xl mx-auto">
           A state-of-the-art film and television production campus in Paterson's historic mill district—designed for the creators of tomorrow.
         </p>
 
@@ -55,10 +55,10 @@ const VisionSection = () => {
         </div>
 
         {/* Divider */}
-        <div className="divider my-16 md:my-24" />
+        <div className="divider my-10 md:my-24" />
 
         {/* Three Pillars */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 gap-3 md:grid-cols-3 md:gap-6">
           {pillars.map((pillar, index) => (
             <div 
               key={index} 

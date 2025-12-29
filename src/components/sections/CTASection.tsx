@@ -18,11 +18,11 @@ const CTASection = () => {
       {/* Content */}
       <div className="container-wide relative z-10">
         <div className="max-w-xl">
-          <p className="label-editorial mb-3 md:mb-4">Get in Touch</p>
+          <p className="label-editorial mb-3">Get in Touch</p>
           <h2 className="mb-4 md:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
             Let's Build the Future Together
           </h2>
-          <p className="text-body-large mb-8 md:mb-10">
+          <p className="text-body-large mb-6 md:mb-10">
             Filmology Labs is more than an adaptive reuse—it's an opportunity 
             to ignite a new industry in Paterson and build a destination where 
             imagination, history, and future potential converge.
@@ -46,8 +46,8 @@ const CTASection = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="mt-10 md:mt-16 pt-6 md:pt-8 border-t border-border/50">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+          <div className="mt-8 md:mt-16 pt-5 md:pt-8 border-t border-border/50">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-6">
               <div>
                 <p className="label-editorial mb-2">Location</p>
                 <p className="text-muted-foreground text-sm">

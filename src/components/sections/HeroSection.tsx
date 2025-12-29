@@ -23,10 +23,10 @@ const HeroSection = ({ isDark }: HeroSectionProps) => {
       <div className="absolute bottom-0 left-0 right-0 backdrop-blur-[1px] bg-background/5 dark:bg-background/10 z-[5] py-8 md:py-16" />
 
       {/* Content */}
-      <div className="container-wide relative z-10 pb-4 md:pb-6">
-        <div className="max-w-4xl mx-auto text-center px-2">
+      <div className="container-wide relative z-10 pb-6 md:pb-6">
+        <div className="max-w-4xl mx-auto text-center px-4">
           
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium leading-[1.15] text-foreground mb-6 md:mb-8 animate-fade-in-delay-2">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium leading-[1.15] text-foreground mb-4 md:mb-8 animate-fade-in-delay-2">
             The World's Largest<br />
             Content Creation Studio
           </h1>
