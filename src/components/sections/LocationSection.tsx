@@ -6,7 +6,7 @@ const LocationSection = () => {
   const features = [
     {
       icon: MapPin,
-      title: '13.5 Miles to NYC',
+      title: '13.5 Miles to Central Park',
       description: 'Direct access to Manhattan and the broader tri-state media market via major highways.',
     },
     {
