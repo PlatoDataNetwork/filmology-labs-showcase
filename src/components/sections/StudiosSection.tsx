@@ -35,10 +35,13 @@ const StudiosSection = () => {
           <h2 className="mb-4 md:mb-6 whitespace-nowrap">
             Stages Built for Content Creators
           </h2>
-          <p className="text-body-large">
+          <p className="text-body-large mb-4">
             Filmology Labs Content Creation Studios will provide sound stages, 
             production suites, and technology-rich amenities that invite filmmakers, 
             digital creators, and storytellers to bring their ideas to life.
+          </p>
+          <p className="text-body-large font-medium">
+            Rent by the day, week or month.
           </p>
         </div>
 
