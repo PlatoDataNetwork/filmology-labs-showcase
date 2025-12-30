@@ -20,7 +20,7 @@ const CTASection = () => {
         <div className="max-w-xl">
           <p className="label-editorial mb-3">Get in Touch</p>
           <h2 className="mb-4 md:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
-            Let's Build the Future Together
+            Lets Make Content
           </h2>
           <p className="text-body-large mb-6 md:mb-10">
             Filmology Labs is more than an adaptive reuse—it's an opportunity 
