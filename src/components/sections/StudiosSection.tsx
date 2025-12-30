@@ -58,8 +58,8 @@ const StudiosSection = () => {
           </div>
           <div className="aspect-[4/3] overflow-hidden rounded-lg">
             <img
-              src={interior2}
-              alt="Filmology Labs production facility"
+              src={studioGreenscreen1}
+              alt="Filmology Labs green screen studio with production crew"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-apple"
             />
           </div>
@@ -79,8 +79,8 @@ const StudiosSection = () => {
           </div>
           <div className="aspect-[4/3] overflow-hidden rounded-lg">
             <img
-              src={studioGreenscreen1}
-              alt="Filmology Labs green screen studio with production crew"
+              src={interior2}
+              alt="Filmology Labs production facility"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-apple"
             />
           </div>
