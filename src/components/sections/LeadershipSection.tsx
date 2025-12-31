@@ -26,7 +26,7 @@ const LeadershipSection = () => {
               valued at over $15 billion.
             </p>
 
-            <div className="space-y-6 text-muted-foreground leading-relaxed">
+            <div className="space-y-6 text-muted-foreground leading-relaxed text-body-large">
               <p>
                 Alan Mruvka is an American entertainment and media entrepreneur whose 
                 most distinguished success is in revolutionizing a genre of entertainment 
