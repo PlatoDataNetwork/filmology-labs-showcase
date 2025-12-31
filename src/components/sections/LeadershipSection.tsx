@@ -6,11 +6,11 @@ const LeadershipSection = () => {
       <div className="container-wide">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-20 items-stretch">
           {/* Image */}
-          <div className="overflow-hidden rounded-lg">
+          <div className="overflow-hidden rounded-lg self-start">
             <img
               src={alanMruvka}
               alt="Alan Mruvka, Co-Founder of E! Entertainment Television"
-              className="w-full h-full object-cover object-top"
+              className="w-full object-cover object-top aspect-[3/4]"
             />
           </div>
 
