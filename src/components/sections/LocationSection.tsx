@@ -1,5 +1,5 @@
 import { MapPin, Clock, Building2 } from 'lucide-react';
-import aerialView from '@/assets/aerial-view.jpg';
+import vicinityMap from '@/assets/vicinity-map.png';
 import locationAerial from '@/assets/location-aerial.png';
 
 const LocationSection = () => {
@@ -46,8 +46,8 @@ const LocationSection = () => {
           </div>
           <div className="aspect-[16/9] overflow-hidden rounded-lg">
             <img
-              src={aerialView}
-              alt="Aerial view of Filmology Labs campus in Paterson"
+              src={vicinityMap}
+              alt="Vicinity map showing Filmology Labs location in Paterson"
               className="w-full h-full object-cover"
             />
           </div>
