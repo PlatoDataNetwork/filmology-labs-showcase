@@ -1,9 +1,9 @@
 import { Users, GraduationCap, Heart, Film, Music, Palette } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ContactFormModal from '@/components/ContactFormModal';
-import interiorStudio from '@/assets/interior-studio.jpg';
-import interior2 from '@/assets/interior-2.jpg';
-import interior3 from '@/assets/interior-3.jpg';
+import productionCompanies from '@/assets/production-companies.jpg';
+import independentFilmmakers from '@/assets/independent-filmmakers.jpg';
+import contentCreators from '@/assets/content-creators.jpg';
 import artistsMusicians from '@/assets/artists-musicians.jpg';
 
 const CommunitySection = () => {
@@ -12,19 +12,19 @@ const CommunitySection = () => {
       title: 'Production Companies',
       description: 'From major studios to boutique production houses, our facilities support projects of every scale with world-class infrastructure.',
       icon: Film,
-      image: interiorStudio,
+      image: productionCompanies,
     },
     {
       title: 'Independent Filmmakers',
       description: 'Access to professional-grade stages and equipment that level the playing field for visionary independent storytellers.',
       icon: Users,
-      image: interior2,
+      image: independentFilmmakers,
     },
     {
       title: 'Content Creators',
       description: 'Purpose-built spaces for the next generation of digital creators pushing the boundaries of short-form and streaming content.',
       icon: Palette,
-      image: interior3,
+      image: contentCreators,
     },
     {
       title: 'Artists & Musicians',
