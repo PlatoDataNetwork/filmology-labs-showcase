@@ -53,7 +53,7 @@ const CommunitySection = () => {
         {/* Header */}
         <div className="max-w-2xl mb-10 md:mb-16">
           <p className="label-editorial mb-3 md:mb-4">The Community</p>
-          <h2 className="mb-4 md:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+          <h2 className="mb-4 md:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl whitespace-nowrap">
             Where Creators Come Together
           </h2>
           <p className="text-body-large">
@@ -94,9 +94,9 @@ const CommunitySection = () => {
         <div className="border-t border-border pt-10 md:pt-16">
           <div className="max-w-2xl mb-8 md:mb-12">
             <p className="label-editorial mb-3 md:mb-4">Community Initiatives</p>
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-medium mb-4">
+            <h2 className="mb-4 md:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl whitespace-nowrap">
               Investing in Tomorrow's Storytellers
-            </h3>
+            </h2>
             <p className="text-body-large">
               Our commitment extends beyond providing world-class facilities. Through 
               strategic partnerships and dedicated programs, we're building pathways 
