@@ -1,4 +1,10 @@
 import { Users, GraduationCap, Heart, Film, Music, Palette } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import ContactFormModal from '@/components/ContactFormModal';
+import interiorStudio from '@/assets/interior-studio.jpg';
+import interior2 from '@/assets/interior-2.jpg';
+import interior3 from '@/assets/interior-3.jpg';
+import interior4 from '@/assets/interior-4.jpg';
 
 const CommunitySection = () => {
   const communityMembers = [
@@ -6,21 +12,25 @@ const CommunitySection = () => {
       title: 'Production Companies',
       description: 'From major studios to boutique production houses, our facilities support projects of every scale with world-class infrastructure.',
       icon: Film,
+      image: interiorStudio,
     },
     {
       title: 'Independent Filmmakers',
       description: 'Access to professional-grade stages and equipment that level the playing field for visionary independent storytellers.',
       icon: Users,
+      image: interior2,
     },
     {
       title: 'Content Creators',
       description: 'Purpose-built spaces for the next generation of digital creators pushing the boundaries of short-form and streaming content.',
       icon: Palette,
+      image: interior3,
     },
     {
       title: 'Artists & Musicians',
       description: 'Creative spaces designed for music video production, live performance capture, and immersive visual experiences.',
       icon: Music,
+      image: interior4,
     },
   ];
 
@@ -53,20 +63,29 @@ const CommunitySection = () => {
           </p>
         </div>
 
-        {/* Community Members Grid */}
+        {/* Community Members Grid with Images */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12 md:mb-20">
           {communityMembers.map((member, index) => (
             <div 
               key={index} 
-              className="steel-gradient-card rounded-lg p-5 md:p-6 h-full flex flex-col"
+              className="steel-gradient-card rounded-lg overflow-hidden h-full flex flex-col"
             >
-              <div className="flex items-center gap-3 mb-3 md:mb-4">
-                <member.icon className="w-5 h-5 text-foreground" />
-                <h3 className="text-base md:text-lg font-medium">{member.title}</h3>
+              <div className="aspect-[4/3] overflow-hidden">
+                <img 
+                  src={member.image} 
+                  alt={member.title}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
               </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {member.description}
-              </p>
+              <div className="p-5 md:p-6 flex flex-col flex-grow">
+                <div className="flex items-center gap-3 mb-3 md:mb-4">
+                  <member.icon className="w-5 h-5 text-foreground" />
+                  <h3 className="text-base md:text-lg font-medium">{member.title}</h3>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {member.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
@@ -85,7 +104,7 @@ const CommunitySection = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-12">
             {initiatives.map((initiative, index) => (
               <div 
                 key={index} 
@@ -102,6 +121,20 @@ const CommunitySection = () => {
                 </p>
               </div>
             ))}
+          </div>
+
+          {/* Grant Application CTA */}
+          <div className="text-center">
+            <ContactFormModal
+              trigger={
+                <Button variant="hero" size="lg">
+                  Apply for Grants & Scholarships
+                </Button>
+              }
+            />
+            <p className="text-sm text-muted-foreground mt-4">
+              Applications are reviewed on a rolling basis. Priority given to underrepresented creators.
+            </p>
           </div>
         </div>
       </div>
