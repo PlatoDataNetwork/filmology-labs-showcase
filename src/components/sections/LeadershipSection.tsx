@@ -1,4 +1,4 @@
-import alanMruvka from '@/assets/alan-mruvka.jpg';
+import alanMruvka from '@/assets/alan-mruvka-new.png';
 
 const LeadershipSection = () => {
   return (
