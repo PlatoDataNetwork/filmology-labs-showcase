@@ -4,6 +4,7 @@ import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/sections/HeroSection';
 import VisionSection from '@/components/sections/VisionSection';
 import StudiosSection from '@/components/sections/StudiosSection';
+import CommunitySection from '@/components/sections/CommunitySection';
 import LocationSection from '@/components/sections/LocationSection';
 import LeadershipSection from '@/components/sections/LeadershipSection';
 import NewsSection from '@/components/sections/NewsSection';
@@ -39,6 +40,7 @@ const Index = () => {
         <HeroSection isDark={isDark} />
         <VisionSection />
         <StudiosSection />
+        <CommunitySection />
         <LocationSection />
         <LeadershipSection />
         <NewsSection />
