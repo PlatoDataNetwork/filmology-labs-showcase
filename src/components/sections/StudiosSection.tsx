@@ -42,7 +42,7 @@ const StudiosSection = () => {
             production suites, and technology-rich amenities that invite filmmakers, 
             digital creators, and storytellers to bring their ideas to life.
           </p>
-          <p className="text-body-large font-medium">
+          <p className="text-body-large">
             Rent by the day, week or month.
           </p>
         </div>
