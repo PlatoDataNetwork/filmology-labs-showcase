@@ -4,7 +4,7 @@ import ContactFormModal from '@/components/ContactFormModal';
 import interiorStudio from '@/assets/interior-studio.jpg';
 import interior2 from '@/assets/interior-2.jpg';
 import interior3 from '@/assets/interior-3.jpg';
-import interior4 from '@/assets/interior-4.jpg';
+import artistsMusicians from '@/assets/artists-musicians.jpg';
 
 const CommunitySection = () => {
   const communityMembers = [
@@ -30,7 +30,7 @@ const CommunitySection = () => {
       title: 'Artists & Musicians',
       description: 'Creative spaces designed for music video production, live performance capture, and immersive visual experiences.',
       icon: Music,
-      image: interior4,
+      image: artistsMusicians,
     },
   ];
 
