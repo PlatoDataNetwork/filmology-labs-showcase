@@ -16,7 +16,7 @@ const HeroSection = ({ isDark }: HeroSectionProps) => {
           alt="Filmology Labs Content Creation Studios aerial view"
           className="w-full h-auto md:h-full md:object-cover md:object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-background/10 to-transparent dark:from-background dark:via-background/20" />
       </div>
 
       {/* Frosted glass strip */}
