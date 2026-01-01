@@ -64,7 +64,7 @@ const CommunitySection = () => {
         </div>
 
         {/* Community Members Grid with Images */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12 md:mb-20">
+        <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-6 mb-12 md:mb-20">
           {communityMembers.map((member, index) => (
             <div 
               key={index} 
