@@ -38,9 +38,7 @@ const StudiosSection = () => {
             21 Stages Built for Content Creators
           </h2>
           <p className="text-body-large mb-3 md:mb-4">
-            Filmology Labs Content Creation Studios will provide sound stages, 
-            production suites, and technology-rich amenities that invite filmmakers, 
-            digital creators, and storytellers to bring their ideas to life.
+            Filmology Labs Content Creation Studios will provide 19 pre-lit sound stages with pre-built standing sets ranging from courtrooms and jet interiors to bedrooms, living rooms and working kitchens in addition to two big-box green screen stages. Filmology Labs will also provide production suites and technology rich amenities that invite filmmakers, digital creators, and storytellers to bring their ideas to life.
           </p>
           <p className="text-body-large">
             Rent by the day, week or month.
