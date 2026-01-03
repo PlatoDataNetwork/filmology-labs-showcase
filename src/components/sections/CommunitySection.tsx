@@ -51,17 +51,28 @@ const CommunitySection = () => {
     <section id="community" className="section-padding bg-background">
       <div className="container-wide">
         {/* Header */}
-        <div className="max-w-2xl mb-10 md:mb-16">
-          <p className="label-editorial mb-3 md:mb-4">The Community</p>
-          <h2 className="mb-4 md:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl whitespace-nowrap">
-            Where Creators Come Together
-          </h2>
-          <p className="text-body-large">
-            Filmology Labs is more than a studio—it's a thriving ecosystem where 
-            production companies, independent filmmakers, content creators, and artists 
-            converge to collaborate, innovate, and elevate the art of storytelling in our 
-            20,000 square-foot creative office environment.
-          </p>
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-16">
+          <div className="max-w-2xl">
+            <p className="label-editorial mb-3 md:mb-4">The Community</p>
+            <h2 className="mb-4 md:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl whitespace-nowrap">
+              Where Creators Come Together
+            </h2>
+            <p className="text-body-large">
+              Filmology Labs is more than a studio—it's a thriving ecosystem where 
+              production companies, independent filmmakers, content creators, and artists 
+              converge to collaborate, innovate, and elevate the art of storytelling in our 
+              20,000 square-foot creative office environment.
+            </p>
+          </div>
+          <div className="flex-shrink-0">
+            <ContactFormModal
+              trigger={
+                <Button variant="hero" size="lg">
+                  Inquire Now
+                </Button>
+              }
+            />
+          </div>
         </div>
 
         {/* Community Members Grid with Images */}
