@@ -85,8 +85,8 @@ const InvestorsSection = () => {
         </div>
 
         {/* Partners Section - Full Width Bottom */}
-        <div className="mt-12 md:mt-16 pt-10 border-t border-border/50">
-          <h4 className="font-medium mb-8 text-center">Partners we create with</h4>
+        <div className="mt-12 md:mt-16">
+          <h2 className="mb-8 text-center">Partners we create with</h2>
           <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16">
             <img 
               src={verzaTvLogo} 
@@ -98,11 +98,12 @@ const InvestorsSection = () => {
               alt="Plato AI" 
               className="h-8 md:h-12 object-contain"
             />
-            <img 
-              src={architecturaLogoBlack} 
-              alt="Architectura" 
-              className={`h-8 md:h-12 object-contain ${isDark ? 'invert' : ''}`}
-            />
+            <span 
+              className="text-xl md:text-2xl font-bold text-foreground"
+              style={{ fontFamily: '"Times New Roman", Times, serif' }}
+            >
+              Typset
+            </span>
           </div>
         </div>
       </div>
