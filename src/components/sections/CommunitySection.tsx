@@ -59,7 +59,8 @@ const CommunitySection = () => {
           <p className="text-body-large">
             Filmology Labs is more than a studio—it's a thriving ecosystem where 
             production companies, independent filmmakers, content creators, and artists 
-            converge to collaborate, innovate, and elevate the art of storytelling.
+            converge to collaborate, innovate, and elevate the art of storytelling in our 
+            20,000 square-foot creative office environment.
           </p>
         </div>
 
