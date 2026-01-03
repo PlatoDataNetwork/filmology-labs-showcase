@@ -10,7 +10,7 @@ const StudiosSection = () => {
   const spaces = [
     {
       title: 'Sound Stages',
-      description: '21 pre-lit sound stages with high ceilings, soundproofing, pre-built sets, green screen, cyc walls and flexible configurations for film, television, commercial or content creation.',
+      description: '21 pre-lit sound stages with high ceilings, soundproofing, standing pre-built sets, green screen, cyc walls and flexible configurations for film, television, commercial or content creation.',
       specs: 'Up to 63\' × 54\' clear span',
       icon: Film,
     },
