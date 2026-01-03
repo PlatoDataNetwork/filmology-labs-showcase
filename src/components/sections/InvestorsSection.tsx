@@ -99,10 +99,10 @@ const InvestorsSection = () => {
               className="h-8 md:h-12 object-contain"
             />
             <span 
-              className="text-xl md:text-2xl font-bold text-foreground"
+              className="text-2xl md:text-3xl font-bold text-foreground"
               style={{ fontFamily: '"Times New Roman", Times, serif' }}
             >
-              Typset
+              Architectura
             </span>
           </div>
         </div>
