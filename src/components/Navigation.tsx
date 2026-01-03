@@ -67,13 +67,13 @@ const Navigation = ({ isDark, toggleTheme }: NavigationProps) => {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-6 xl:gap-8">
+          <div className="hidden md:flex items-center gap-3 lg:gap-5 xl:gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={(e) => scrollToSection(e, link.href)}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
+                className="text-xs lg:text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 whitespace-nowrap"
               >
                 {link.label}
               </a>
@@ -92,16 +92,16 @@ const Navigation = ({ isDark, toggleTheme }: NavigationProps) => {
 
             <ContactFormModal
               trigger={
-                <Button variant="hero" size="sm" className="hidden lg:flex">
+                <Button variant="hero" size="sm" className="hidden md:flex">
                   Inquire
                 </Button>
               }
             />
 
-            {/* Mobile/Tablet Menu Toggle */}
+            {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 rounded-full hover:bg-accent transition-colors duration-300"
+              className="md:hidden p-2 rounded-full hover:bg-accent transition-colors duration-300"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -110,9 +110,9 @@ const Navigation = ({ isDark, toggleTheme }: NavigationProps) => {
         </nav>
       </header>
 
-      {/* Mobile/Tablet Menu */}
+      {/* Mobile Menu */}
       <div
-        className={`fixed inset-0 z-40 bg-background transition-all duration-500 ease-apple lg:hidden ${
+        className={`fixed inset-0 z-40 bg-background transition-all duration-500 ease-apple md:hidden ${
           isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
