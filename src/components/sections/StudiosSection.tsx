@@ -1,4 +1,6 @@
 import { Film, MonitorPlay, LayoutGrid } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import ContactFormModal from '@/components/ContactFormModal';
 import interiorStudio from '@/assets/interior-studio.jpg';
 import interior2 from '@/assets/interior-2.jpg';
 import interior3 from '@/assets/interior-3.jpg';
@@ -32,17 +34,28 @@ const StudiosSection = () => {
     <section id="studios" className="section-padding bg-card">
       <div className="container-wide">
         {/* Header */}
-        <div className="max-w-2xl mb-10 md:mb-24">
-          <p className="label-editorial mb-3 md:mb-4">The Studios</p>
-          <h2 className="mb-4 md:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl whitespace-nowrap">
-            21 Stages Built for Content Creators
-          </h2>
-          <p className="text-body-large mb-3 md:mb-4">
-            Filmology Labs Content Creation Studios will provide 19 pre-lit sound stages with pre-built standing sets ranging from courtrooms and jet interiors to bedrooms, living rooms and working kitchens in addition to two big-box green screen stages. Filmology Labs will also provide production suites and technology rich amenities that invite filmmakers, digital creators, and storytellers to bring their ideas to life.
-          </p>
-          <p className="text-body-large">
-            Rent by the day, week or month.
-          </p>
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-24">
+          <div className="max-w-2xl">
+            <p className="label-editorial mb-3 md:mb-4">The Studios</p>
+            <h2 className="mb-4 md:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl whitespace-nowrap">
+              21 Stages Built for Content Creators
+            </h2>
+            <p className="text-body-large mb-3 md:mb-4">
+              Filmology Labs Content Creation Studios will provide 19 pre-lit sound stages with pre-built standing sets ranging from courtrooms and jet interiors to bedrooms, living rooms and working kitchens in addition to two big-box green screen stages. Filmology Labs will also provide production suites and technology rich amenities that invite filmmakers, digital creators, and storytellers to bring their ideas to life.
+            </p>
+            <p className="text-body-large">
+              Rent by the day, week or month.
+            </p>
+          </div>
+          <div className="flex-shrink-0">
+            <ContactFormModal
+              trigger={
+                <Button variant="hero" size="lg">
+                  Reserve Now
+                </Button>
+              }
+            />
+          </div>
         </div>
 
         {/* Image Grid - 2x3 */}
