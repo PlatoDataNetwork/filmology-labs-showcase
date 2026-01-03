@@ -88,22 +88,39 @@ const InvestorsSection = () => {
         <div className="mt-12 md:mt-16">
           <h2 className="mb-8 text-center">Partners we create with</h2>
           <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16">
-            <img 
-              src={verzaTvLogo} 
-              alt="Verza TV" 
-              className="h-10 md:h-14 object-contain"
-            />
-            <img 
-              src={platoAiLogo} 
-              alt="Plato AI" 
-              className="h-8 md:h-12 object-contain"
-            />
-            <span 
-              className="text-3xl md:text-4xl font-bold text-foreground"
+            <a 
+              href="https://VerzaTV.io" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="transition-all duration-300 hover:scale-110 hover:opacity-80"
+            >
+              <img 
+                src={verzaTvLogo} 
+                alt="Verza TV" 
+                className="h-10 md:h-14 object-contain"
+              />
+            </a>
+            <a 
+              href="https://Platodata.io" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="transition-all duration-300 hover:scale-110 hover:opacity-80"
+            >
+              <img 
+                src={platoAiLogo} 
+                alt="Plato AI" 
+                className="h-8 md:h-12 object-contain"
+              />
+            </a>
+            <a 
+              href="https://architectura.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-3xl md:text-4xl font-bold text-foreground transition-all duration-300 hover:scale-110 hover:opacity-80"
               style={{ fontFamily: '"Times New Roman", Times, serif' }}
             >
               Architectura
-            </span>
+            </a>
           </div>
         </div>
       </div>

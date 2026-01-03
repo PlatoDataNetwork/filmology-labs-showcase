@@ -41,7 +41,7 @@ const Footer = ({ isDark }: FooterProps) => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-6 md:mt-8 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4 text-center md:text-left">
+        <div className="mt-6 md:mt-8 pt-6 md:pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4 text-center md:text-left">
           <p className="text-xs text-muted-foreground">
             © {currentYear} Filmology Labs. All rights reserved.
           </p>
