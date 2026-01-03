@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import logoBlack from '@/assets/filmology-logo-black.png';
 import logoWhite from '@/assets/filmology-logo-white.png';
 
@@ -9,31 +8,10 @@ interface FooterProps {
 const Footer = ({ isDark }: FooterProps) => {
   const currentYear = new Date().getFullYear();
 
-  const navLinks = [
-    { href: '#vision', label: 'Vision' },
-    { href: '#studios', label: 'Studios' },
-    { href: '#community', label: 'Community' },
-    { href: '#initiatives', label: 'Initiatives' },
-    { href: '#location', label: 'Location' },
-    { href: '#leadership', label: 'Leadership' },
-    { href: '#news', label: 'News' },
-    { href: '#investors', label: 'Partners' },
-    { href: '/merch', label: 'Merch', isRoute: true },
-  ];
-
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    window.history.pushState(null, '', href);
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <footer className="py-10 md:py-16 bg-background border-t border-border">
       <div className="container-wide">
-        <div className="flex flex-col md:flex-row justify-between items-start gap-8 md:gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           {/* Logo */}
           <div className="flex items-center">
             <img
@@ -43,36 +21,9 @@ const Footer = ({ isDark }: FooterProps) => {
             />
           </div>
 
-          {/* Navigation Links */}
-          <nav className="flex flex-wrap gap-x-6 gap-y-3 md:gap-x-8">
-            {navLinks.map((link) => (
-              link.isRoute ? (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
-                >
-                  {link.label}
-                </Link>
-              ) : (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={(e) => scrollToSection(e, link.href)}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
-                >
-                  {link.label}
-                </a>
-              )
-            ))}
-          </nav>
-
           {/* Credits */}
-          <div className="text-left md:text-right">
+          <div className="text-center md:text-right">
             <p className="text-xs text-muted-foreground">
-              A Brainchild of E! Entertainment Television
-            </p>
-            <p className="text-xs text-muted-foreground mt-1">
               Architecture by{' '}
               <a 
                 href="https://www.architectura.com/" 
@@ -82,6 +33,9 @@ const Footer = ({ isDark }: FooterProps) => {
               >
                 Architectura
               </a>
+            </p>
+            <p className="text-xs text-muted-foreground mt-1">
+              A Brainchild of E! Entertainment Television
             </p>
           </div>
         </div>
