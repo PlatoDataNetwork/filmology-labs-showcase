@@ -140,7 +140,7 @@ const CommunitySection = () => {
             <ContactFormModal
               trigger={
                 <Button variant="hero" size="lg">
-                  Apply for Grants & Scholarships
+                  Apply Now
                 </Button>
               }
             />
