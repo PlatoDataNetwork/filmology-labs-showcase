@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Moon, Sun } from 'lucide-react';
 import ContactFormModal from '@/components/ContactFormModal';
@@ -22,7 +23,7 @@ const Navigation = ({ isDark, toggleTheme }: NavigationProps) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
+  const navLinks: { href: string; label: string; isRoute?: boolean }[] = [
     { href: '#vision', label: 'Vision' },
     { href: '#studios', label: 'Studios' },
     { href: '#community', label: 'Community' },
@@ -31,9 +32,15 @@ const Navigation = ({ isDark, toggleTheme }: NavigationProps) => {
     { href: '#leadership', label: 'Leadership' },
     { href: '#news', label: 'News' },
     { href: '#investors', label: 'Partners' },
+    { href: '/merch', label: 'Merch', isRoute: true },
   ];
 
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string, isRoute?: boolean) => {
+    if (isRoute) {
+      // Let the Link handle navigation
+      setIsMobileMenuOpen(false);
+      return;
+    }
     e.preventDefault();
     // Update URL hash for shareable links
     window.history.pushState(null, '', href);
@@ -69,14 +76,24 @@ const Navigation = ({ isDark, toggleTheme }: NavigationProps) => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-3 lg:gap-5 xl:gap-8">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => scrollToSection(e, link.href)}
-                className="text-xs lg:text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 whitespace-nowrap"
-              >
-                {link.label}
-              </a>
+              link.isRoute ? (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className="text-xs lg:text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 whitespace-nowrap"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={(e) => scrollToSection(e, link.href)}
+                  className="text-xs lg:text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 whitespace-nowrap"
+                >
+                  {link.label}
+                </a>
+              )
             ))}
           </div>
 
@@ -118,17 +135,31 @@ const Navigation = ({ isDark, toggleTheme }: NavigationProps) => {
       >
         <div className="flex flex-col items-center justify-center h-full gap-6 sm:gap-8">
           {navLinks.map((link, index) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={(e) => scrollToSection(e, link.href)}
-              className={`text-xl sm:text-2xl font-medium text-foreground hover:text-muted-foreground transition-all duration-300 ${
-                isMobileMenuOpen ? 'animate-fade-in-up' : ''
-              }`}
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              {link.label}
-            </a>
+            link.isRoute ? (
+              <Link
+                key={link.href}
+                to={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`text-xl sm:text-2xl font-medium text-foreground hover:text-muted-foreground transition-all duration-300 ${
+                  isMobileMenuOpen ? 'animate-fade-in-up' : ''
+                }`}
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={(e) => scrollToSection(e, link.href)}
+                className={`text-xl sm:text-2xl font-medium text-foreground hover:text-muted-foreground transition-all duration-300 ${
+                  isMobileMenuOpen ? 'animate-fade-in-up' : ''
+                }`}
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                {link.label}
+              </a>
+            )
           ))}
           <ContactFormModal
             trigger={
