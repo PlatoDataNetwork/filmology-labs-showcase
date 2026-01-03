@@ -54,28 +54,6 @@ const InvestorsSection = () => {
                 </div>
               </div>
             </div>
-            
-            {/* Partners Section */}
-            <div className="mt-10">
-              <h4 className="font-medium mb-6">Partners we create with</h4>
-              <div className="flex flex-wrap items-center gap-8">
-                <img 
-                  src={verzaTvLogo} 
-                  alt="Verza TV" 
-                  className="h-10 md:h-12 object-contain"
-                />
-                <img 
-                  src={platoAiLogo} 
-                  alt="Plato AI" 
-                  className="h-8 md:h-10 object-contain"
-                />
-                <img 
-                  src={architecturaLogoBlack} 
-                  alt="Architectura" 
-                  className={`h-8 md:h-10 object-contain ${isDark ? 'invert' : ''}`}
-                />
-              </div>
-            </div>
           </div>
 
           {/* Right - CTA Card */}
@@ -103,6 +81,28 @@ const InvestorsSection = () => {
               <span className="text-sm uppercase tracking-wider font-medium">Partner Login</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
+          </div>
+        </div>
+
+        {/* Partners Section - Full Width Bottom */}
+        <div className="mt-12 md:mt-16 pt-10 border-t border-border/50">
+          <h4 className="font-medium mb-8 text-center">Partners we create with</h4>
+          <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16">
+            <img 
+              src={verzaTvLogo} 
+              alt="Verza TV" 
+              className="h-10 md:h-14 object-contain"
+            />
+            <img 
+              src={platoAiLogo} 
+              alt="Plato AI" 
+              className="h-8 md:h-12 object-contain"
+            />
+            <img 
+              src={architecturaLogoBlack} 
+              alt="Architectura" 
+              className={`h-8 md:h-12 object-contain ${isDark ? 'invert' : ''}`}
+            />
           </div>
         </div>
       </div>
