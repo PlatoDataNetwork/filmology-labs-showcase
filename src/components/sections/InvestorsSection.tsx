@@ -99,7 +99,7 @@ const InvestorsSection = () => {
               className="h-8 md:h-12 object-contain"
             />
             <span 
-              className="text-2xl md:text-3xl font-bold text-foreground"
+              className="text-3xl md:text-4xl font-bold text-foreground"
               style={{ fontFamily: '"Times New Roman", Times, serif' }}
             >
               Architectura
