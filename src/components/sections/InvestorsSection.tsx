@@ -116,7 +116,7 @@ const InvestorsSection = () => {
               href="https://architectura.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-3xl md:text-4xl font-bold text-foreground transition-all duration-300 hover:scale-110 hover:opacity-80"
+              className="text-4xl md:text-5xl font-bold text-foreground transition-all duration-300 hover:scale-110 hover:opacity-80"
               style={{ fontFamily: '"Times New Roman", Times, serif' }}
             >
               Architectura
