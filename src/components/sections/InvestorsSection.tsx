@@ -12,10 +12,10 @@ const InvestorsSection = () => {
     <section id="investors" className="section-padding bg-background">
       <div className="container-wide">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 md:mb-16">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-8 md:mb-10">
           <div>
             <p className="label-editorial mb-4">Investment Opportunity</p>
-            <h2>Partner with Filmology Labs</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl">Partner with Filmology Labs</h2>
           </div>
         </div>
 
