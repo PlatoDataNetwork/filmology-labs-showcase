@@ -104,19 +104,30 @@ const CommunitySection = () => {
 
         {/* Initiatives Section */}
         <div className="border-t border-border pt-10 md:pt-16">
-          <div className="max-w-2xl mb-8 md:mb-12">
-            <p className="label-editorial mb-3 md:mb-4">Community Initiatives</p>
-            <h2 className="mb-4 md:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl whitespace-nowrap">
-              Investing in Tomorrow's Storytellers
-            </h2>
-            <p className="text-body-large">
-              Our commitment extends beyond providing world-class facilities. Through 
-              strategic partnerships and dedicated programs, we're building pathways 
-              for diverse voices to access the resources they need to succeed.
-            </p>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8 md:mb-12">
+            <div className="max-w-2xl">
+              <p className="label-editorial mb-3 md:mb-4">Community Initiatives</p>
+              <h2 className="mb-4 md:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl whitespace-nowrap">
+                Investing in Tomorrow's Storytellers
+              </h2>
+              <p className="text-body-large">
+                Our commitment extends beyond providing world-class facilities. Through 
+                strategic partnerships and dedicated programs, we're building pathways 
+                for diverse voices to access the resources they need to succeed.
+              </p>
+            </div>
+            <div className="flex-shrink-0">
+              <ContactFormModal
+                trigger={
+                  <Button variant="hero" size="lg">
+                    Apply Now
+                  </Button>
+                }
+              />
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             {initiatives.map((initiative, index) => (
               <div 
                 key={index} 
@@ -135,19 +146,9 @@ const CommunitySection = () => {
             ))}
           </div>
 
-          {/* Grant Application CTA */}
-          <div className="text-center">
-            <ContactFormModal
-              trigger={
-                <Button variant="hero" size="lg">
-                  Apply Now
-                </Button>
-              }
-            />
-            <p className="text-sm text-muted-foreground mt-4">
-              Applications are reviewed on a rolling basis. Priority given to underrepresented creators.
-            </p>
-          </div>
+          <p className="text-sm text-muted-foreground mt-6">
+            Applications are reviewed on a rolling basis. Priority given to underrepresented creators.
+          </p>
         </div>
       </div>
     </section>
