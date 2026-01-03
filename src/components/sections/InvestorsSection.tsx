@@ -1,7 +1,13 @@
 import { ArrowRight, Lock, TrendingUp, Building2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTheme } from '@/hooks/use-theme';
+import verzaTvLogo from '@/assets/verza-tv-logo.png';
+import platoAiLogo from '@/assets/plato-ai-logo.png';
+import architecturaLogoBlack from '@/assets/architectura-logo-black.png';
 
 const InvestorsSection = () => {
+  const { isDark } = useTheme();
+  
   return (
     <section id="investors" className="section-padding bg-background">
       <div className="container-wide">
@@ -46,6 +52,28 @@ const InvestorsSection = () => {
                     Strategic positioning near NYC with competitive New Jersey tax incentives.
                   </p>
                 </div>
+              </div>
+            </div>
+            
+            {/* Partners Section */}
+            <div className="mt-10">
+              <h4 className="font-medium mb-6">Partners we create with</h4>
+              <div className="flex flex-wrap items-center gap-8">
+                <img 
+                  src={verzaTvLogo} 
+                  alt="Verza TV" 
+                  className="h-10 md:h-12 object-contain"
+                />
+                <img 
+                  src={platoAiLogo} 
+                  alt="Plato AI" 
+                  className="h-8 md:h-10 object-contain"
+                />
+                <img 
+                  src={architecturaLogoBlack} 
+                  alt="Architectura" 
+                  className={`h-8 md:h-10 object-contain ${isDark ? 'invert' : ''}`}
+                />
               </div>
             </div>
           </div>
