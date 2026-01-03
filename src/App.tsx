@@ -11,6 +11,8 @@ import PatersonFilmDistrictArticle from "./pages/PatersonFilmDistrictArticle";
 import TaxCreditArticle from "./pages/TaxCreditArticle";
 import PartnerLogin from "./pages/PartnerLogin";
 import PartnerPortal from "./pages/PartnerPortal";
+import Merch from "./pages/Merch";
+import ProductDetail from "./pages/ProductDetail";
 import NotFound from "./pages/NotFound";
 import SplashScreen from "./components/SplashScreen";
 
@@ -71,6 +73,8 @@ const App = () => {
               <Route path="/news/nj-tax-credit-expansion" element={<TaxCreditArticle />} />
               <Route path="/partner-login" element={<PartnerLogin />} />
               <Route path="/partner-portal" element={<PartnerPortal />} />
+              <Route path="/merch" element={<Merch />} />
+              <Route path="/product/:handle" element={<ProductDetail />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
