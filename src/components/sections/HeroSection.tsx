@@ -14,7 +14,7 @@ const HeroSection = ({ isDark }: HeroSectionProps) => {
         <img
           src={heroAerial}
           alt="Filmology Labs Content Creation Studios aerial view"
-          className="w-full h-full object-cover object-[center_35%] md:object-center"
+          className="w-full h-full object-cover object-[65%_35%] md:object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-background/20 to-transparent md:from-background/40 md:via-background/10 dark:from-background dark:via-background/20" />
       </div>
