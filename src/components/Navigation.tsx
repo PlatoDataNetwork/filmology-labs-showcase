@@ -73,8 +73,8 @@ const Navigation = ({ isDark, toggleTheme }: NavigationProps) => {
             />
           </a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-3 lg:gap-5 xl:gap-8">
+          {/* Desktop Navigation - hidden on mobile and tablet */}
+          <div className="hidden lg:flex items-center gap-3 lg:gap-5 xl:gap-8">
             {navLinks.map((link) => (
               link.isRoute ? (
                 <Link
@@ -109,16 +109,16 @@ const Navigation = ({ isDark, toggleTheme }: NavigationProps) => {
 
             <ContactFormModal
               trigger={
-                <Button variant="hero" size="sm" className="hidden md:flex">
+                <Button variant="hero" size="sm" className="hidden lg:flex">
                   Inquire
                 </Button>
               }
             />
 
-            {/* Mobile Menu Toggle */}
+            {/* Mobile/Tablet Menu Toggle - visible on mobile and tablet */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 rounded-full hover:bg-accent transition-colors duration-300"
+              className="lg:hidden p-2 rounded-full hover:bg-accent transition-colors duration-300"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -127,9 +127,9 @@ const Navigation = ({ isDark, toggleTheme }: NavigationProps) => {
         </nav>
       </header>
 
-      {/* Mobile Menu */}
+      {/* Mobile/Tablet Menu */}
       <div
-        className={`fixed inset-0 z-40 bg-background transition-all duration-500 ease-apple md:hidden ${
+        className={`fixed inset-0 z-40 bg-background transition-all duration-500 ease-apple lg:hidden ${
           isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
