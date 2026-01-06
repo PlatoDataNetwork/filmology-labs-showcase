@@ -6,9 +6,9 @@ import { CartDrawer } from '@/components/CartDrawer';
 import { useCartStore, CartItem } from '@/stores/cartStore';
 import { fetchProductByHandle, ShopifyProduct } from '@/lib/shopify';
 import { toast } from 'sonner';
-import logoBlack from '@/assets/filmology-logo-black.png';
-import logoWhite from '@/assets/filmology-logo-white.png';
 import { useTheme } from '@/hooks/use-theme';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 
 const ProductDetail = () => {
   const { handle } = useParams<{ handle: string }>();
@@ -17,7 +17,7 @@ const ProductDetail = () => {
   const [selectedVariantIndex, setSelectedVariantIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(0);
-  const { isDark } = useTheme();
+  const { isDark, toggleTheme } = useTheme();
   const addItem = useCartStore(state => state.addItem);
 
   useEffect(() => {
@@ -67,59 +67,58 @@ const ProductDetail = () => {
 
   if (!product) {
     return (
-      <div className="min-h-screen bg-background flex flex-col items-center justify-center">
-        <ShoppingCart className="w-16 h-16 text-muted-foreground mb-4" />
-        <h2 className="text-xl font-medium mb-2">Product not found</h2>
-        <Link to="/merch" className="text-primary hover:underline">
-          Back to Merch Store
-        </Link>
+      <div className="min-h-screen bg-background">
+        <Navigation isDark={isDark} toggleTheme={toggleTheme} />
+        <div className="flex flex-col items-center justify-center min-h-[60vh]">
+          <ShoppingCart className="w-16 h-16 text-muted-foreground mb-4" />
+          <h2 className="text-xl font-medium mb-2">Product not found</h2>
+          <Link to="/merch" className="text-primary hover:underline">
+            Back to Merch Store
+          </Link>
+        </div>
+        <Footer isDark={isDark} />
       </div>
     );
   }
 
   const selectedVariant = product.variants.edges[selectedVariantIndex]?.node;
   const images = product.images.edges;
+  const hasVariants = product.options.length > 0 && product.options[0].name !== 'Title';
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-xl border-b border-border">
-        <nav className="container-wide flex items-center justify-between h-16 md:h-20">
-          <div className="flex items-center gap-4">
-            <Link to="/merch" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
-              <ArrowLeft className="w-4 h-4" />
-              <span className="hidden sm:inline">Back to Store</span>
-            </Link>
-            <Link to="/" className="flex items-center">
-              <img
-                src={isDark ? logoWhite : logoBlack}
-                alt="Filmology Labs"
-                className="h-8 md:h-10 w-auto"
-              />
-            </Link>
-          </div>
-          
-          <CartDrawer />
-        </nav>
-      </header>
+    <div className="min-h-screen bg-background flex flex-col">
+      {/* Navigation */}
+      <Navigation isDark={isDark} toggleTheme={toggleTheme} />
+      
+      {/* Cart Drawer - floating */}
+      <div className="fixed top-3 right-20 sm:top-4 sm:right-24 z-50">
+        <CartDrawer />
+      </div>
 
       {/* Main Content */}
-      <main className="pt-24 md:pt-28 pb-16">
+      <main className="flex-1 pt-24 md:pt-28 pb-16">
         <div className="container-wide">
+          {/* Back Link */}
+          <Link 
+            to="/merch" 
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back to Merch Store
+          </Link>
+
           <div className="grid md:grid-cols-2 gap-8 lg:gap-16">
             {/* Images */}
             <div className="space-y-4">
-              <div className="aspect-square bg-muted rounded-lg overflow-hidden">
+              <div className="aspect-square bg-muted rounded-lg overflow-hidden flex items-center justify-center">
                 {images[selectedImage]?.node ? (
                   <img
                     src={images[selectedImage].node.url}
                     alt={images[selectedImage].node.altText || product.title}
-                    className="w-full h-full object-cover"
+                    className="max-w-full max-h-full object-contain"
                   />
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-                    <ShoppingCart className="w-16 h-16" />
-                  </div>
+                  <ShoppingCart className="w-16 h-16 text-muted-foreground" />
                 )}
               </div>
               {images.length > 1 && (
@@ -135,7 +134,7 @@ const ProductDetail = () => {
                       <img
                         src={image.node.url}
                         alt={image.node.altText || `${product.title} ${index + 1}`}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain"
                       />
                     </button>
                   ))}
@@ -155,14 +154,14 @@ const ProductDetail = () => {
 
               <p className="text-muted-foreground">{product.description}</p>
 
-              {/* Variant Selection */}
-              {product.options.length > 0 && product.options[0].name !== 'Title' && (
-                <div className="space-y-3">
-                  {product.options.map((option, optionIndex) => (
+              {/* Size/Variant Selection */}
+              {hasVariants && (
+                <div className="space-y-4">
+                  {product.options.map((option) => (
                     <div key={option.name}>
-                      <label className="block text-sm font-medium mb-2">{option.name}</label>
+                      <label className="block text-sm font-medium mb-3">{option.name}</label>
                       <div className="flex flex-wrap gap-2">
-                        {option.values.map((value, valueIndex) => {
+                        {option.values.map((value) => {
                           const isSelected = product.variants.edges[selectedVariantIndex]?.node.selectedOptions.some(
                             opt => opt.name === option.name && opt.value === value
                           );
@@ -170,7 +169,6 @@ const ProductDetail = () => {
                             <button
                               key={value}
                               onClick={() => {
-                                // Find variant with this option value
                                 const variantIndex = product.variants.edges.findIndex(v =>
                                   v.node.selectedOptions.some(opt => opt.name === option.name && opt.value === value)
                                 );
@@ -196,7 +194,7 @@ const ProductDetail = () => {
 
               {/* Quantity */}
               <div>
-                <label className="block text-sm font-medium mb-2">Quantity</label>
+                <label className="block text-sm font-medium mb-3">Quantity</label>
                 <div className="flex items-center gap-4">
                   <div className="flex items-center border border-border rounded-md">
                     <Button
@@ -231,6 +229,9 @@ const ProductDetail = () => {
           </div>
         </div>
       </main>
+
+      {/* Footer */}
+      <Footer isDark={isDark} />
     </div>
   );
 };
