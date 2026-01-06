@@ -1,5 +1,6 @@
 import { RefreshCw, Sparkles, Globe } from 'lucide-react';
 import entranceNight from '@/assets/entrance-night-2.png';
+import industrialChimneys from '@/assets/industrial-chimneys.jpg';
 
 const VisionSection = () => {
   const pillars = [
@@ -38,11 +39,20 @@ const VisionSection = () => {
           A state-of-the-art film and television production campus in Paterson's historic mill district—designed for the creators of tomorrow.
         </p>
 
-        {/* Body Copy */}
-        <div className="max-w-3xl mb-10 md:mb-16">
-          <p className="text-body-large">
-            Filmology Labs represents a bold new chapter in the ongoing reinvention of Paterson's historic mill district. Once a powerhouse of American industry, this remarkable complex is now being transformed into a state-of-the-art film and television production studio. Our vision pairs the authenticity and architectural character of Paterson's industrial heritage with the cutting-edge tools and flexible environments demanded by today's content producers—sparking the establishment of the Paterson Film District.
-          </p>
+        {/* Body Copy with Image */}
+        <div className="flex flex-col md:flex-row gap-6 md:gap-10 mb-10 md:mb-16">
+          <div className="max-w-3xl flex-1">
+            <p className="text-body-large">
+              Filmology Labs represents a bold new chapter in the ongoing reinvention of Paterson's historic mill district. Once a powerhouse of American industry, this remarkable complex is now being transformed into a state-of-the-art film and television production studio. Our vision pairs the authenticity and architectural character of Paterson's industrial heritage with the cutting-edge tools and flexible environments demanded by today's content producers—sparking the establishment of the Paterson Film District.
+            </p>
+          </div>
+          <div className="w-full md:w-64 lg:w-80 flex-shrink-0">
+            <img 
+              src={industrialChimneys} 
+              alt="Historic industrial chimneys of Paterson's mill district" 
+              className="w-full h-auto rounded-lg object-cover"
+            />
+          </div>
         </div>
 
         {/* Image */}
