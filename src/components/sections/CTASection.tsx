@@ -44,25 +44,6 @@ const CTASection = () => {
               }
             />
           </div>
-
-          {/* Contact Info */}
-          <div className="mt-8 md:mt-16 pt-5 md:pt-8 border-t border-border/50">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-6">
-              <div>
-                <p className="label-editorial mb-2">Location</p>
-                <p className="text-muted-foreground text-sm">
-                  61 State Street<br />
-                  Paterson, New Jersey 07514
-                </p>
-              </div>
-              <div>
-                <p className="label-editorial mb-2">Inquiries</p>
-                <p className="text-muted-foreground text-sm">
-                  info@filmologylabs.com
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
