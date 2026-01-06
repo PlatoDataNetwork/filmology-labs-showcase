@@ -1,5 +1,5 @@
-import logoBlack from '@/assets/filmology-logo-black.png';
-import logoWhite from '@/assets/filmology-logo-white.png';
+import logoBlack from '@/assets/thin-logo-black.png';
+import logoWhite from '@/assets/thin-logo-white.png';
 
 interface FooterProps {
   isDark: boolean;
