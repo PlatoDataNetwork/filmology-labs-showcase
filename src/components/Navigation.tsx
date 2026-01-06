@@ -3,8 +3,8 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Moon, Sun } from 'lucide-react';
 import ContactFormModal from '@/components/ContactFormModal';
-import logoBlack from '@/assets/filmology-logo-black.png';
-import logoWhite from '@/assets/filmology-logo-white.png';
+import logoBlack from '@/assets/thin-logo-black.png';
+import logoWhite from '@/assets/thin-logo-white.png';
 
 interface NavigationProps {
   isDark: boolean;
