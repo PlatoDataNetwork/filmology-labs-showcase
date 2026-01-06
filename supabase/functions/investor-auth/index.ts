@@ -65,7 +65,7 @@ const handler = async (req: Request): Promise<Response> => {
       
       // Hash the provided password and compare with expected
       const providedHash = await hashPassword(password);
-      const expectedHash = await hashPassword("FILMOLOGY123@");
+      const expectedHash = await hashPassword("Filmology123@");
       
       if (providedHash !== expectedHash) {
         console.log(`[investor-auth] Login failed - invalid password`);
