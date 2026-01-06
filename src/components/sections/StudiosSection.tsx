@@ -4,7 +4,7 @@ import ContactFormModal from '@/components/ContactFormModal';
 import interiorStudio from '@/assets/interior-studio.jpg';
 import interior2 from '@/assets/interior-2.jpg';
 import studioGreenscreen1 from '@/assets/studio-greenscreen-1.jpeg';
-import studioGreenscreen2 from '@/assets/studio-greenscreen-2.jpeg';
+import studioGreenscreen2 from '@/assets/studio-greenscreen-3.png';
 
 const StudiosSection = () => {
   const spaces = [
