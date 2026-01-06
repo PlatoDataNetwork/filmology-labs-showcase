@@ -30,14 +30,12 @@ const VisionSection = () => {
         {/* Label */}
         <p className="label-editorial mb-3 md:mb-4">Our Vision</p>
 
-        {/* Main Statement */}
-        <h2 className="mb-4 md:mb-6 max-w-3xl text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
-          A Bold New Chapter in<br />American Storytelling
-        </h2>
-        
-        {/* Subtext and Body Copy with Image */}
+        {/* Main Content with Image */}
         <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-10 mb-10 md:mb-16">
           <div className="flex-1">
+            <h2 className="mb-4 md:mb-6 max-w-3xl text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+              A Bold New Chapter in<br />American Storytelling
+            </h2>
             <p className="text-base md:text-xl text-muted-foreground mb-8 md:mb-12 max-w-2xl">
               A state-of-the-art film and television production campus in Paterson's historic mill district—designed for the creators of tomorrow.
             </p>
