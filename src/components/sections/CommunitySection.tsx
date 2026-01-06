@@ -57,11 +57,14 @@ const CommunitySection = () => {
             <h2 className="mb-4 md:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl whitespace-nowrap">
               Where Creators Come Together
             </h2>
-            <p className="text-body-large">
+            <p className="text-body-large mb-4">
               Filmology Labs is more than a studio—it's a thriving ecosystem where 
               production companies, independent filmmakers, content creators, and artists 
               converge to collaborate, innovate, and elevate the art of storytelling in our 
               20,000 square-foot creative office environment.
+            </p>
+            <p className="text-muted-foreground font-medium">
+              Rent by the day, week or month.
             </p>
           </div>
           <div className="flex-shrink-0">
