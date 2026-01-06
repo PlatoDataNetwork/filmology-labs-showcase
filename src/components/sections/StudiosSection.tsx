@@ -3,8 +3,6 @@ import { Button } from '@/components/ui/button';
 import ContactFormModal from '@/components/ContactFormModal';
 import interiorStudio from '@/assets/interior-studio.jpg';
 import interior2 from '@/assets/interior-2.jpg';
-import interior3 from '@/assets/interior-3.jpg';
-import interior4 from '@/assets/interior-4.jpg';
 import studioGreenscreen1 from '@/assets/studio-greenscreen-1.jpeg';
 import studioGreenscreen2 from '@/assets/studio-greenscreen-2.jpeg';
 
@@ -71,20 +69,6 @@ const StudiosSection = () => {
             <img
               src={studioGreenscreen1}
               alt="Filmology Labs green screen studio with production crew"
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-apple"
-            />
-          </div>
-          <div className="aspect-[4/3] overflow-hidden rounded-lg">
-            <img
-              src={interior3}
-              alt="Filmology Labs film production set"
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-apple"
-            />
-          </div>
-          <div className="aspect-[4/3] overflow-hidden rounded-lg">
-            <img
-              src={interior4}
-              alt="Filmology Labs studio with equipment"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-apple"
             />
           </div>
