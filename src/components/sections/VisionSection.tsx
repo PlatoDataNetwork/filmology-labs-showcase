@@ -35,14 +35,13 @@ const VisionSection = () => {
           A Bold New Chapter in American Storytelling
         </h2>
         
-        <p className="text-base md:text-xl text-muted-foreground mb-8 md:mb-12 max-w-2xl">
-          A state-of-the-art film and television production campus in Paterson's historic mill district—designed for the creators of tomorrow.
-        </p>
-
-        {/* Body Copy with Image */}
+        {/* Subtext and Body Copy with Image */}
         <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-10 mb-10 md:mb-16">
-          <div className="max-w-3xl flex-1">
-            <p className="text-body-large">
+          <div className="flex-1">
+            <p className="text-base md:text-xl text-muted-foreground mb-8 md:mb-12 max-w-2xl">
+              A state-of-the-art film and television production campus in Paterson's historic mill district—designed for the creators of tomorrow.
+            </p>
+            <p className="text-body-large max-w-3xl">
               Filmology Labs represents a bold new chapter in the ongoing reinvention of Paterson's historic mill district. Once a powerhouse of American industry, this remarkable complex is now being transformed into a state-of-the-art film and television production studio. Our vision pairs the authenticity and architectural character of Paterson's industrial heritage with the cutting-edge tools and flexible environments demanded by today's content producers—sparking the establishment of the Paterson Film District.
             </p>
           </div>
