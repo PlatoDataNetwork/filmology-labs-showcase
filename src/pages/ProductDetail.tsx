@@ -9,6 +9,7 @@ import { toast } from 'sonner';
 import { useTheme } from '@/hooks/use-theme';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { BrandedMerchImage } from '@/components/BrandedMerchImage';
 
 const ProductDetail = () => {
   const { handle } = useParams<{ handle: string }>();
@@ -84,6 +85,8 @@ const ProductDetail = () => {
   const selectedVariant = product.variants.edges[selectedVariantIndex]?.node;
   const images = product.images.edges;
   const hasVariants = product.options.length > 0 && product.options[0].name !== 'Title';
+  const hasBrandedOverride =
+    product.handle === 'filmology-labs-hoodie' || product.handle === 'filmology-labs-baseball-cap';
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -111,17 +114,26 @@ const ProductDetail = () => {
             {/* Images */}
             <div className="space-y-4">
               <div className="aspect-square bg-muted rounded-lg overflow-hidden flex items-center justify-center">
-                {images[selectedImage]?.node ? (
+                {hasBrandedOverride ? (
+                  <BrandedMerchImage
+                    handle={product.handle}
+                    alt={product.title}
+                    size="detail"
+                    className="w-full h-full"
+                    imageClassName="w-full h-full object-contain"
+                  />
+                ) : images[selectedImage]?.node ? (
                   <img
                     src={images[selectedImage].node.url}
                     alt={images[selectedImage].node.altText || product.title}
                     className="max-w-full max-h-full object-contain"
+                    loading="lazy"
                   />
                 ) : (
                   <ShoppingCart className="w-16 h-16 text-muted-foreground" />
                 )}
               </div>
-              {images.length > 1 && (
+              {!hasBrandedOverride && images.length > 1 && (
                 <div className="flex gap-2 overflow-x-auto">
                   {images.map((image, index) => (
                     <button
@@ -135,6 +147,7 @@ const ProductDetail = () => {
                         src={image.node.url}
                         alt={image.node.altText || `${product.title} ${index + 1}`}
                         className="w-full h-full object-contain"
+                        loading="lazy"
                       />
                     </button>
                   ))}
