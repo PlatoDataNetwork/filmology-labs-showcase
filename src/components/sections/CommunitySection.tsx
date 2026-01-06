@@ -63,7 +63,7 @@ const CommunitySection = () => {
               converge to collaborate, innovate, and elevate the art of storytelling in our 
               20,000 square-foot creative office environment.
             </p>
-            <p className="text-muted-foreground font-medium">
+            <p className="text-body-large text-muted-foreground">
               Rent by the day, week or month.
             </p>
           </div>
