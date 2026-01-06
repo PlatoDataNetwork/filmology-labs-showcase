@@ -38,6 +38,23 @@ const VisionSection = () => {
           A state-of-the-art film and television production campus in Paterson's historic mill district—designed for the creators of tomorrow.
         </p>
 
+        {/* Body Copy */}
+        <div className="max-w-3xl space-y-6 mb-10 md:mb-16">
+          <p className="text-body-large">
+            Filmology Labs represents a bold new chapter in the ongoing reinvention 
+            of Paterson's historic mill district. Once a powerhouse of American industry, 
+            this remarkable complex is now being transformed into a state-of-the-art 
+            film and television production studio.
+          </p>
+          
+          <p className="text-body-large">
+            Our vision pairs the authenticity and architectural character of Paterson's 
+            industrial heritage with the cutting-edge tools and flexible environments 
+            demanded by today's content producers—sparking the establishment of the 
+            Paterson Film District.
+          </p>
+        </div>
+
         {/* Image */}
         <div className="mb-10 md:mb-16">
           <img 
@@ -45,23 +62,6 @@ const VisionSection = () => {
             alt="Filmology Labs entrance at night with production crew and equipment" 
             className="w-full h-auto rounded-lg"
           />
-        </div>
-
-        {/* Body Copy */}
-        <div className="max-w-3xl mx-auto space-y-6">
-          <p className="text-body-large text-left">
-            Filmology Labs represents a bold new chapter in the ongoing reinvention 
-            of Paterson's historic mill district. Once a powerhouse of American industry, 
-            this remarkable complex is now being transformed into a state-of-the-art 
-            film and television production studio.
-          </p>
-          
-          <p className="text-body-large text-left">
-            Our vision pairs the authenticity and architectural character of Paterson's 
-            industrial heritage with the cutting-edge tools and flexible environments 
-            demanded by today's content producers—sparking the establishment of the 
-            Paterson Film District.
-          </p>
         </div>
 
         {/* Divider */}
