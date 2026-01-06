@@ -102,7 +102,7 @@ const Merch = () => {
                 return (
                   <Card key={product.node.id} className="overflow-hidden group hover:shadow-lg transition-shadow">
                     <Link to={`/product/${product.node.handle}`}>
-                      <div className="aspect-square bg-muted relative overflow-hidden flex items-center justify-center">
+                      <div className="aspect-square bg-muted relative overflow-hidden flex items-center justify-center p-4">
                         {image ? (
                           <img
                             src={image.url}
