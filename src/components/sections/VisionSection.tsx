@@ -28,7 +28,7 @@ const VisionSection = () => {
     <section id="vision" className="section-padding bg-background">
       <div className="container-wide">
         {/* Label */}
-        <p className="label-editorial mb-8 md:mb-16">Our Vision</p>
+        <p className="label-editorial mb-3 md:mb-4">Our Vision</p>
 
         {/* Main Statement */}
         <h2 className="mb-4 md:mb-6 max-w-3xl text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
