@@ -3,16 +3,19 @@ import { Link } from 'react-router-dom';
 import { ShoppingCart, Plus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { CartDrawer } from '@/components/CartDrawer';
 import { useCartStore, CartItem } from '@/stores/cartStore';
 import { fetchProducts, ShopifyProduct } from '@/lib/shopify';
 import { toast } from 'sonner';
 import { useTheme } from '@/hooks/use-theme';
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 
 const Merch = () => {
   const [products, setProducts] = useState<ShopifyProduct[]>([]);
   const [loading, setLoading] = useState(true);
+  const [selectedVariants, setSelectedVariants] = useState<Record<string, string>>({});
   const { isDark, toggleTheme } = useTheme();
   const addItem = useCartStore(state => state.addItem);
 
@@ -31,8 +34,11 @@ const Merch = () => {
     loadProducts();
   }, []);
 
-  const handleAddToCart = (product: ShopifyProduct) => {
-    const variant = product.node.variants.edges[0]?.node;
+  const handleAddToCart = (product: ShopifyProduct, variantId?: string) => {
+    const variants = product.node.variants.edges;
+    const selectedId = variantId || selectedVariants[product.node.id] || variants[0]?.node.id;
+    const variant = variants.find(v => v.node.id === selectedId)?.node || variants[0]?.node;
+    
     if (!variant) return;
 
     const cartItem: CartItem = {
@@ -46,9 +52,13 @@ const Merch = () => {
     
     addItem(cartItem);
     toast.success('Added to cart', {
-      description: product.node.title,
+      description: `${product.node.title}${variant.title !== 'Default Title' ? ` - ${variant.title}` : ''}`,
       position: 'top-center'
     });
+  };
+
+  const handleVariantChange = (productId: string, variantId: string) => {
+    setSelectedVariants(prev => ({ ...prev, [productId]: variantId }));
   };
 
   return (
@@ -94,9 +104,12 @@ const Merch = () => {
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {products.map((product) => {
-                const variant = product.node.variants.edges[0]?.node;
+                const variants = product.node.variants.edges;
+                const selectedVariantId = selectedVariants[product.node.id] || variants[0]?.node.id;
+                const selectedVariant = variants.find(v => v.node.id === selectedVariantId)?.node || variants[0]?.node;
                 const image = product.node.images.edges[0]?.node;
-                const price = variant?.price.amount;
+                const price = selectedVariant?.price.amount;
+                const hasMultipleVariants = variants.length > 1;
                 
                 return (
                   <Card key={product.node.id} className="overflow-hidden group hover:shadow-lg transition-shadow">
@@ -121,9 +134,31 @@ const Merch = () => {
                           {product.node.title}
                         </h3>
                       </Link>
-                      <p className="text-sm text-muted-foreground mb-3 line-clamp-2">
+                      <p className="text-sm text-muted-foreground mb-2 line-clamp-2">
                         {product.node.description}
                       </p>
+                      
+                      {/* Variant Selector */}
+                      {hasMultipleVariants && (
+                        <div className="mb-3">
+                          <Select
+                            value={selectedVariantId}
+                            onValueChange={(value) => handleVariantChange(product.node.id, value)}
+                          >
+                            <SelectTrigger className="w-full h-9 text-sm">
+                              <SelectValue placeholder="Select size" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              {variants.map((v) => (
+                                <SelectItem key={v.node.id} value={v.node.id}>
+                                  {v.node.title}
+                                </SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
+                        </div>
+                      )}
+                      
                       <div className="flex items-center justify-between">
                         <span className="text-lg font-bold">
                           ${parseFloat(price || '0').toFixed(2)}
@@ -147,11 +182,7 @@ const Merch = () => {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-border py-8">
-        <div className="container-wide text-center text-sm text-muted-foreground">
-          <p>© 2026 Filmology Labs. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer isDark={isDark} />
     </div>
   );
 };
