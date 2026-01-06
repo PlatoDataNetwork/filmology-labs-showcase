@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/sheet";
 import { ShoppingCart, Minus, Plus, Trash2, ExternalLink, Loader2 } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
+import { BrandedMerchImage } from "@/components/BrandedMerchImage";
 
 export const CartDrawer = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -74,13 +75,14 @@ export const CartDrawer = () => {
                   {items.map((item) => (
                     <div key={item.variantId} className="flex gap-4 p-2 border-b border-border">
                       <div className="w-16 h-16 bg-secondary/20 rounded-md overflow-hidden flex-shrink-0">
-                        {item.product.node.images?.edges?.[0]?.node && (
-                          <img
-                            src={item.product.node.images.edges[0].node.url}
-                            alt={item.product.node.title}
-                            className="w-full h-full object-cover"
-                          />
-                        )}
+                        <BrandedMerchImage
+                          handle={item.product.node.handle}
+                          alt={item.product.node.title}
+                          fallbackSrc={item.product.node.images?.edges?.[0]?.node?.url}
+                          size="cart"
+                          className="w-full h-full"
+                          imageClassName="w-full h-full object-cover"
+                        />
                       </div>
                       
                       <div className="flex-1 min-w-0">
