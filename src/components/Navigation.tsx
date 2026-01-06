@@ -14,6 +14,8 @@ interface NavigationProps {
 const Navigation = ({ isDark, toggleTheme }: NavigationProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,11 +39,18 @@ const Navigation = ({ isDark, toggleTheme }: NavigationProps) => {
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string, isRoute?: boolean) => {
     if (isRoute) {
-      // Let the Link handle navigation
       setIsMobileMenuOpen(false);
       return;
     }
     e.preventDefault();
+    
+    // If not on homepage, navigate there first with the hash
+    if (location.pathname !== '/') {
+      navigate('/' + href);
+      setIsMobileMenuOpen(false);
+      return;
+    }
+    
     // Update URL hash for shareable links
     window.history.pushState(null, '', href);
     const element = document.querySelector(href);
@@ -59,11 +68,15 @@ const Navigation = ({ isDark, toggleTheme }: NavigationProps) => {
         <nav className="container-wide flex items-center justify-between h-14 sm:h-16 md:h-20">
           {/* Logo */}
           <a
-            href="#"
+            href="/"
             className="flex items-center"
             onClick={(e) => {
               e.preventDefault();
-              window.scrollTo({ top: 0, behavior: 'smooth' });
+              if (location.pathname !== '/') {
+                navigate('/');
+              } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
             }}
           >
             <img
