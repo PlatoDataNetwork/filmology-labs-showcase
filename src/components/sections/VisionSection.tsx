@@ -1,7 +1,6 @@
 import { RefreshCw, Sparkles, Globe } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import ContactFormModal from '@/components/ContactFormModal';
 import entranceNight from '@/assets/entrance-night-2.png';
+
 const VisionSection = () => {
   const pillars = [
     {
@@ -27,27 +26,17 @@ const VisionSection = () => {
   return (
     <section id="vision" className="section-padding bg-background">
       <div className="container-wide">
-        {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-16">
-          <div className="max-w-2xl">
-            <p className="label-editorial mb-3 md:mb-4">Our Vision</p>
-            <h2 className="mb-4 md:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl whitespace-nowrap">
-              A Bold New Chapter in American Storytelling
-            </h2>
-            <p className="text-base md:text-xl text-muted-foreground">
-              A state-of-the-art film and television production campus in Paterson's historic mill district—designed for the creators of tomorrow.
-            </p>
-          </div>
-          <div className="flex-shrink-0">
-            <ContactFormModal
-              trigger={
-                <Button variant="hero" size="lg">
-                  Inquire Now
-                </Button>
-              }
-            />
-          </div>
-        </div>
+        {/* Label */}
+        <p className="label-editorial mb-8 md:mb-16">Our Vision</p>
+
+        {/* Main Statement */}
+        <h2 className="mb-4 md:mb-6 max-w-3xl text-2xl sm:text-3xl md:text-4xl lg:text-5xl whitespace-nowrap">
+          A Bold New Chapter in American Storytelling
+        </h2>
+        
+        <p className="text-base md:text-xl text-muted-foreground mb-8 md:mb-12 max-w-2xl">
+          A state-of-the-art film and television production campus in Paterson's historic mill district—designed for the creators of tomorrow.
+        </p>
 
         {/* Body Copy */}
         <div className="max-w-3xl mb-10 md:mb-16">
