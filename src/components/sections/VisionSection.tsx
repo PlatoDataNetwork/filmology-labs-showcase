@@ -30,8 +30,8 @@ const VisionSection = () => {
         <p className="label-editorial mb-8 md:mb-16">Our Vision</p>
 
         {/* Main Statement */}
-        <h2 className="mb-4 md:mb-6 max-w-3xl text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
-          A Bold New Chapter in <span className="whitespace-nowrap">American Storytelling</span>
+        <h2 className="mb-4 md:mb-6 max-w-3xl text-2xl sm:text-3xl md:text-4xl lg:text-5xl whitespace-nowrap">
+          A Bold New Chapter in American Storytelling
         </h2>
         
         <p className="text-base md:text-xl text-muted-foreground mb-8 md:mb-12 max-w-2xl">
@@ -39,19 +39,9 @@ const VisionSection = () => {
         </p>
 
         {/* Body Copy */}
-        <div className="max-w-3xl space-y-6 mb-10 md:mb-16">
+        <div className="max-w-3xl mb-10 md:mb-16">
           <p className="text-body-large">
-            Filmology Labs represents a bold new chapter in the ongoing reinvention 
-            of Paterson's historic mill district. Once a powerhouse of American industry, 
-            this remarkable complex is now being transformed into a state-of-the-art 
-            film and television production studio.
-          </p>
-          
-          <p className="text-body-large">
-            Our vision pairs the authenticity and architectural character of Paterson's 
-            industrial heritage with the cutting-edge tools and flexible environments 
-            demanded by today's content producers—sparking the establishment of the 
-            Paterson Film District.
+            Filmology Labs represents a bold new chapter in the ongoing reinvention of Paterson's historic mill district. Once a powerhouse of American industry, this remarkable complex is now being transformed into a state-of-the-art film and television production studio. Our vision pairs the authenticity and architectural character of Paterson's industrial heritage with the cutting-edge tools and flexible environments demanded by today's content producers—sparking the establishment of the Paterson Film District.
           </p>
         </div>
 
