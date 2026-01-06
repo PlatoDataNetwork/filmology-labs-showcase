@@ -4,7 +4,7 @@ import ContactFormModal from '@/components/ContactFormModal';
 import interiorStudio from '@/assets/interior-studio.jpg';
 import interior2 from '@/assets/interior-2.jpg';
 import studioGreenscreen1 from '@/assets/studio-greenscreen-1.jpeg';
-import studioGreenscreen2 from '@/assets/studio-greenscreen-2.jpeg';
+import studioProductionSet from '@/assets/studio-production-set.png';
 
 const StudiosSection = () => {
   const spaces = [
@@ -81,8 +81,8 @@ const StudiosSection = () => {
           </div>
           <div className="aspect-[4/3] overflow-hidden rounded-lg">
             <img
-              src={studioGreenscreen2}
-              alt="Filmology Labs professional green screen stage"
+              src={studioProductionSet}
+              alt="Filmology Labs production set with film crew"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-apple"
             />
           </div>
