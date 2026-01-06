@@ -31,8 +31,8 @@ const VisionSection = () => {
         <p className="label-editorial mb-8 md:mb-16">Our Vision</p>
 
         {/* Main Statement */}
-        <h2 className="mb-4 md:mb-6 max-w-3xl text-2xl sm:text-3xl md:text-4xl lg:text-5xl whitespace-nowrap">
-          A Bold New Chapter in American Storytelling
+        <h2 className="mb-4 md:mb-6 max-w-3xl text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+          A Bold New Chapter in<br />American Storytelling
         </h2>
         
         {/* Subtext and Body Copy with Image */}
