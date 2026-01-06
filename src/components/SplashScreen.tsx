@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import logoWhite from '@/assets/filmology-logo-white.png';
+import logoWhite from '@/assets/thin-logo-white.png';
 
 interface SplashScreenProps {
   onComplete: () => void;
