@@ -1,20 +1,19 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ShoppingCart, Plus } from 'lucide-react';
+import { ShoppingCart, Plus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { CartDrawer } from '@/components/CartDrawer';
 import { useCartStore, CartItem } from '@/stores/cartStore';
 import { fetchProducts, ShopifyProduct } from '@/lib/shopify';
 import { toast } from 'sonner';
-import logoBlack from '@/assets/filmology-logo-black.png';
-import logoWhite from '@/assets/filmology-logo-white.png';
 import { useTheme } from '@/hooks/use-theme';
+import Navigation from '@/components/Navigation';
 
 const Merch = () => {
   const [products, setProducts] = useState<ShopifyProduct[]>([]);
   const [loading, setLoading] = useState(true);
-  const { isDark } = useTheme();
+  const { isDark, toggleTheme } = useTheme();
   const addItem = useCartStore(state => state.addItem);
 
   useEffect(() => {
@@ -54,29 +53,12 @@ const Merch = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-xl border-b border-border">
-        <nav className="container-wide flex items-center justify-between h-16 md:h-20">
-          <div className="flex items-center gap-4">
-            <Link to="/" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
-              <ArrowLeft className="w-4 h-4" />
-              <span className="hidden sm:inline">Back</span>
-            </Link>
-            <Link to="/" className="flex items-center">
-              <img
-                src={isDark ? logoWhite : logoBlack}
-                alt="Filmology Labs"
-                className="h-8 md:h-10 w-auto"
-              />
-            </Link>
-          </div>
-          
-          <div className="flex items-center gap-4">
-            <h1 className="text-lg md:text-xl font-medium">Merch Store</h1>
-            <CartDrawer />
-          </div>
-        </nav>
-      </header>
+      <Navigation isDark={isDark} toggleTheme={toggleTheme} />
+      
+      {/* Cart Drawer - floating */}
+      <div className="fixed top-3 right-20 sm:top-4 sm:right-24 z-50">
+        <CartDrawer />
+      </div>
 
       {/* Main Content */}
       <main className="pt-24 md:pt-28 pb-16">
