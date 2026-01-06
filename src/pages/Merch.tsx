@@ -102,12 +102,12 @@ const Merch = () => {
                 return (
                   <Card key={product.node.id} className="overflow-hidden group hover:shadow-lg transition-shadow">
                     <Link to={`/product/${product.node.handle}`}>
-                      <div className="aspect-square bg-muted relative overflow-hidden flex items-center justify-center p-4">
+                      <div className="aspect-square bg-muted relative overflow-hidden flex items-center justify-center">
                         {image ? (
                           <img
                             src={image.url}
                             alt={image.altText || product.node.title}
-                            className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                            className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                           />
                         ) : (
                           <ShoppingCart className="w-12 h-12 text-muted-foreground" />
