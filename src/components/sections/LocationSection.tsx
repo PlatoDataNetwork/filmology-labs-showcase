@@ -16,8 +16,8 @@ const LocationSection = () => {
     },
     {
       icon: Building2,
-      title: '250,000 SQ FT Campus',
-      description: 'Multi-story interconnected mill structures on approximately 3 acres.',
+      title: '250,000 SQ FT Studio',
+      description: 'Multi story interconnected mill structures on a 3 acre campus.',
     },
   ];
 
