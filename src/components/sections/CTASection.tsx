@@ -25,7 +25,7 @@ const CTASection = () => {
           <p className="text-body-large mb-6 md:mb-10 text-foreground/90 drop-shadow-sm">
             Filmology Labs is more than an adaptive reuse—it's an opportunity 
             to ignite a new industry in Paterson and build a destination where 
-            imagination, history, and future potential converge.
+            imagination, history,<br className="hidden sm:inline" /> and future potential converge.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
