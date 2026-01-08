@@ -12,7 +12,7 @@ const CTASection = () => {
           alt="Filmology Labs entrance"
           className="w-full h-full object-cover object-right md:object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/70 md:via-background/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 md:via-background/65 to-background/30" />
       </div>
 
       {/* Content */}
