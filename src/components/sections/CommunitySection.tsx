@@ -64,7 +64,7 @@ const CommunitySection = () => {
               20,000 square-foot creative office environment.
             </p>
             <p className="text-body-large text-muted-foreground">
-              Rent by the day, week or month.
+              Rent offices, work stations or conference rooms by the day, week, month or year.
             </p>
           </div>
           <div className="flex-shrink-0">
