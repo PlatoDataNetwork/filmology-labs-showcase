@@ -16,8 +16,8 @@ const LocationSection = () => {
     },
     {
       icon: Building2,
-      title: '250,000 SQ FT of Studio\n3 Acre Campus',
-      description: 'Multi story interconnected mill structures.',
+      title: '250,000 SQ FT of Studio.',
+      description: 'Multi story interconnected mill structure on\n3 Acre Campus.',
     },
   ];
 
@@ -63,8 +63,8 @@ const LocationSection = () => {
               <div className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-3 md:mb-6 rounded-full bg-accent flex items-center justify-center">
                 <feature.icon className="w-4 h-4 md:w-5 md:h-5 text-foreground" />
               </div>
-              <h3 className="text-base sm:text-lg font-medium mb-1.5 sm:mb-2 whitespace-pre-line">{feature.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
+              <h3 className="text-base sm:text-lg font-medium mb-1.5 sm:mb-2">{feature.title}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed whitespace-pre-line">
                 {feature.description}
               </p>
             </div>
