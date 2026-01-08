@@ -25,7 +25,7 @@ const LeadershipSection = () => {
                 Alan Mruvka is an American entertainment and media entrepreneur whose 
                 most distinguished success is in revolutionizing a genre of entertainment 
                 and celebrity-based television as the creator and Co-Founder of the pop culture icon 
-                E! Entertainment Television now an NBC/Comcast company valued at over $15 billion.
+                E! Entertainment Television now a NBC/Comcast company valued at over $15 billion.
               </p>
               <p>
                 He recently announced VERZA TV, the first U.S.-based mobile app dedicated 
