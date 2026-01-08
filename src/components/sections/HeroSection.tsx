@@ -8,13 +8,13 @@ interface HeroSectionProps {
 
 const HeroSection = ({ isDark }: HeroSectionProps) => {
   return (
-    <section className="relative flex flex-col min-h-screen md:flex-row md:items-end overflow-hidden">
+    <section className="relative flex flex-col min-h-[85vh] md:min-h-screen md:flex-row md:items-end overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
           src={heroAerial}
           alt="Filmology Labs Content Creation Studios aerial view"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-[25%_55%] md:object-center scale-[1.6] md:scale-100"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-background/20 to-transparent md:from-background/40 md:via-background/10 dark:from-background dark:via-background/20" />
       </div>
