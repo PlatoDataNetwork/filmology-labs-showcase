@@ -37,18 +37,22 @@ const LocationSection = () => {
 
         {/* Images */}
         <div className="space-y-3 md:space-y-6 mb-10 md:mb-24">
-          <div className="aspect-[16/9] overflow-hidden rounded-lg">
+          <div className="aspect-[16/9] overflow-hidden rounded-lg bg-muted">
             <img
               src={locationAerial}
               alt="Map showing 13.5 miles distance from Paterson to NYC"
               className="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
             />
           </div>
-          <div className="aspect-[16/9] overflow-hidden rounded-lg">
+          <div className="aspect-[16/9] overflow-hidden rounded-lg bg-muted">
             <img
               src={vicinityMap}
               alt="Vicinity map showing Filmology Labs location in Paterson"
               className="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
