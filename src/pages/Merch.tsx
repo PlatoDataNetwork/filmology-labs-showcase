@@ -125,7 +125,7 @@ const Merch = () => {
                       </Link>
                       <CardContent className="p-4">
                         <Link to={`/product/${product.node.handle}`}>
-                          <h3 className="text-sm font-medium mb-1 hover:text-primary transition-colors truncate">
+                          <h3 className="text-lg font-bold mb-1 hover:text-primary transition-colors truncate">
                             {product.node.title}
                           </h3>
                         </Link>
