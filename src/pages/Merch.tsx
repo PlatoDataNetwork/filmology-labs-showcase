@@ -73,7 +73,7 @@ const Merch = () => {
           <header className="text-center mb-12 md:mb-16">
             <p className="label-editorial mb-4">Official Merchandise</p>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Filmology Labs Collection</h1>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl mx-auto whitespace-nowrap">
               Wear your passion for content creation. Premium apparel and accessories featuring the Filmology Labs brand.
             </p>
           </header>
