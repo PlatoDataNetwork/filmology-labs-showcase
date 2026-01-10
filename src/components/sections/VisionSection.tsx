@@ -1,6 +1,8 @@
 import { RefreshCw, Sparkles, Globe } from 'lucide-react';
-import entranceNight from '@/assets/entrance-night-2.png';
-import industrialChimneys from '@/assets/industrial-chimneys.jpg';
+// @ts-ignore - vite-imagetools transform
+import entranceNight from '@/assets/entrance-night-2.png?format=webp&quality=80';
+// @ts-ignore - vite-imagetools transform
+import industrialChimneys from '@/assets/industrial-chimneys.jpg?format=webp&quality=80';
 
 const VisionSection = () => {
   const pillars = [

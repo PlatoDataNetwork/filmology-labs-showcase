@@ -1,4 +1,5 @@
-import alanMruvka from '@/assets/alan-mruvka-new.png';
+// @ts-ignore - vite-imagetools transform
+import alanMruvka from '@/assets/alan-mruvka-new.png?format=webp&quality=80';
 
 const LeadershipSection = () => {
   return (
