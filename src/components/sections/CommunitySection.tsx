@@ -85,11 +85,13 @@ const CommunitySection = () => {
               key={index} 
               className="steel-gradient-card rounded-lg overflow-hidden h-full flex flex-col"
             >
-              <div className="aspect-[4/3] overflow-hidden">
+              <div className="aspect-[4/3] overflow-hidden bg-muted">
                 <img 
                   src={member.image} 
                   alt={member.title}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="p-5 md:p-6 flex flex-col flex-grow">

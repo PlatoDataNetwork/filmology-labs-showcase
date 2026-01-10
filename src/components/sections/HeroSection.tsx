@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import heroAerial from '@/assets/hero-aerial-new.png';
 import logoWhite from '@/assets/filmology-logo-white.png';
 import logoBlack from '@/assets/filmology-logo-black.png';
@@ -7,6 +8,19 @@ interface HeroSectionProps {
 }
 
 const HeroSection = ({ isDark }: HeroSectionProps) => {
+  // Preload hero image for faster LCP
+  useEffect(() => {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.href = heroAerial;
+    link.fetchPriority = 'high';
+    document.head.appendChild(link);
+    return () => {
+      document.head.removeChild(link);
+    };
+  }, []);
+
   return (
     <section className="relative flex flex-col min-h-[85vh] md:min-h-screen md:flex-row md:items-end overflow-hidden">
       {/* Background Image */}
@@ -15,6 +29,9 @@ const HeroSection = ({ isDark }: HeroSectionProps) => {
           src={heroAerial}
           alt="Filmology Labs Content Creation Studios aerial view"
           className="w-full h-full object-cover object-[25%_55%] md:object-center scale-[1.6] md:scale-100"
+          loading="eager"
+          decoding="sync"
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-background/20 to-transparent md:from-background/40 md:via-background/10 dark:from-background dark:via-background/20" />
       </div>

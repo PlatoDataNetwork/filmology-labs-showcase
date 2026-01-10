@@ -58,32 +58,40 @@ const StudiosSection = () => {
 
         {/* Image Grid - 2x3 */}
         <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-6 mb-10 md:mb-24">
-          <div className="aspect-[4/3] overflow-hidden rounded-lg">
+          <div className="aspect-[4/3] overflow-hidden rounded-lg bg-muted">
             <img
               src={interiorStudio}
               alt="Filmology Labs interior studio space"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-apple"
+              loading="lazy"
+              decoding="async"
             />
           </div>
-          <div className="aspect-[4/3] overflow-hidden rounded-lg">
+          <div className="aspect-[4/3] overflow-hidden rounded-lg bg-muted">
             <img
               src={studioGreenscreen1}
               alt="Filmology Labs green screen studio with production crew"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-apple"
+              loading="lazy"
+              decoding="async"
             />
           </div>
-          <div className="aspect-[4/3] overflow-hidden rounded-lg">
+          <div className="aspect-[4/3] overflow-hidden rounded-lg bg-muted">
             <img
               src={interior2}
               alt="Filmology Labs production facility"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-apple"
+              loading="lazy"
+              decoding="async"
             />
           </div>
-          <div className="aspect-[4/3] overflow-hidden rounded-lg">
+          <div className="aspect-[4/3] overflow-hidden rounded-lg bg-muted">
             <img
               src={studioProductionSet}
               alt="Filmology Labs production set with film crew"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-apple"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>

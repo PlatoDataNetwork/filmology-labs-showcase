@@ -48,6 +48,8 @@ const VisionSection = () => {
               src={industrialChimneys} 
               alt="Historic industrial chimneys of Paterson's mill district" 
               className="w-full h-auto rounded-lg object-cover"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
@@ -58,6 +60,8 @@ const VisionSection = () => {
             src={entranceNight} 
             alt="Filmology Labs entrance at night with production crew and equipment" 
             className="w-full h-auto rounded-lg"
+            loading="lazy"
+            decoding="async"
           />
         </div>
 
