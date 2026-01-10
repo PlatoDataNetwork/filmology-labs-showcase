@@ -1,10 +1,14 @@
 import { Film, MonitorPlay, LayoutGrid } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ContactFormModal from '@/components/ContactFormModal';
-import interiorStudio from '@/assets/interior-studio.jpg';
-import interior2 from '@/assets/interior-2.jpg';
-import studioGreenscreen1 from '@/assets/studio-greenscreen-1.jpeg';
-import studioProductionSet from '@/assets/studio-production-set.png';
+// @ts-ignore - vite-imagetools transform
+import interiorStudio from '@/assets/interior-studio.jpg?format=webp&quality=80';
+// @ts-ignore - vite-imagetools transform
+import interior2 from '@/assets/interior-2.jpg?format=webp&quality=80';
+// @ts-ignore - vite-imagetools transform
+import studioGreenscreen1 from '@/assets/studio-greenscreen-1.jpeg?format=webp&quality=80';
+// @ts-ignore - vite-imagetools transform
+import studioProductionSet from '@/assets/studio-production-set.png?format=webp&quality=80';
 
 const StudiosSection = () => {
   const spaces = [

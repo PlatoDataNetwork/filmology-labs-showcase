@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
-import heroAerial from '@/assets/hero-aerial-new.png';
+// @ts-ignore - vite-imagetools transform
+import heroAerial from '@/assets/hero-aerial-new.png?format=webp&quality=80';
 import logoWhite from '@/assets/filmology-logo-white.png';
 import logoBlack from '@/assets/filmology-logo-black.png';
 

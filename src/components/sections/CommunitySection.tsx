@@ -1,10 +1,14 @@
 import { Users, GraduationCap, Heart, Film, Music, Palette } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ContactFormModal from '@/components/ContactFormModal';
-import productionCompanies from '@/assets/production-companies.jpg';
-import independentFilmmakers from '@/assets/independent-filmmakers.jpg';
-import contentCreators from '@/assets/content-creators.jpg';
-import artistsMusicians from '@/assets/artists-musicians.jpg';
+// @ts-ignore - vite-imagetools transform
+import productionCompanies from '@/assets/production-companies.jpg?format=webp&quality=80';
+// @ts-ignore - vite-imagetools transform
+import independentFilmmakers from '@/assets/independent-filmmakers.jpg?format=webp&quality=80';
+// @ts-ignore - vite-imagetools transform
+import contentCreators from '@/assets/content-creators.jpg?format=webp&quality=80';
+// @ts-ignore - vite-imagetools transform
+import artistsMusicians from '@/assets/artists-musicians.jpg?format=webp&quality=80';
 
 const CommunitySection = () => {
   const communityMembers = [
