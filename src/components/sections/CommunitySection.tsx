@@ -1,4 +1,4 @@
-import { Users, GraduationCap, Heart, Film, Music, Palette } from 'lucide-react';
+import { Users, GraduationCap, Heart, Film, Music, Palette, Building2, Briefcase } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ContactFormModal from '@/components/ContactFormModal';
 // @ts-ignore - vite-imagetools transform
@@ -9,6 +9,10 @@ import independentFilmmakers from '@/assets/independent-filmmakers.jpg?format=we
 import contentCreators from '@/assets/content-creators.jpg?format=webp&quality=80';
 // @ts-ignore - vite-imagetools transform
 import artistsMusicians from '@/assets/artists-musicians.jpg?format=webp&quality=80';
+// @ts-ignore - vite-imagetools transform
+import officeConference from '@/assets/office-conference.jpg?format=webp&quality=80';
+// @ts-ignore - vite-imagetools transform
+import officeHallway from '@/assets/office-hallway.jpg?format=webp&quality=80';
 
 const CommunitySection = () => {
   const communityMembers = [
@@ -35,6 +39,18 @@ const CommunitySection = () => {
       description: 'Creative spaces designed for music video production, live performance capture, and immersive visual experiences.',
       icon: Music,
       image: artistsMusicians,
+    },
+    {
+      title: 'Private Office Suites',
+      description: 'Glass-walled private suites with modern wood beam architecture, providing quiet focus space for writers, producers, and creative executives.',
+      icon: Building2,
+      image: officeConference,
+    },
+    {
+      title: 'Collaborative Workspaces',
+      description: 'Open-concept corridors and flex spaces designed for team collaboration, with easy access to all studio amenities.',
+      icon: Briefcase,
+      image: officeHallway,
     },
   ];
 
