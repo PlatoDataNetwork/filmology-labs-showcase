@@ -25,7 +25,7 @@ const HeroSection = ({ isDark }: HeroSectionProps) => {
   }, []);
 
   return (
-    <section className="relative flex flex-col min-h-[85vh] md:min-h-screen md:flex-row md:items-end overflow-hidden">
+    <section className="relative flex flex-col items-center justify-center min-h-[85vh] md:min-h-screen md:flex-row md:items-end overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         {/* Mobile Image */}
@@ -53,7 +53,7 @@ const HeroSection = ({ isDark }: HeroSectionProps) => {
       <div className="absolute bottom-0 left-0 right-0 backdrop-blur-[1px] bg-background/5 dark:bg-background/10 z-[5] py-8 md:py-16" />
 
       {/* Content */}
-      <div className="container-wide relative z-10 pb-6 md:pb-6">
+      <div className="container-wide relative z-10 md:pb-6 md:absolute md:bottom-0 md:left-0 md:right-0">
         <div className="max-w-4xl mx-auto text-center px-4">
           
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium leading-[1.15] text-foreground mb-4 md:mb-8 animate-fade-in-delay-2">
