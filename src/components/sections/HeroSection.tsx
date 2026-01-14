@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 // @ts-ignore - vite-imagetools transform
 import heroAerial from '@/assets/hero-aerial-new.png?format=webp&quality=80';
+// @ts-ignore - vite-imagetools transform
+import heroMobile from '@/assets/hero-mobile.jpg?format=webp&quality=80';
 import logoWhite from '@/assets/filmology-logo-white.png';
 import logoBlack from '@/assets/filmology-logo-black.png';
 
@@ -26,10 +28,20 @@ const HeroSection = ({ isDark }: HeroSectionProps) => {
     <section className="relative flex flex-col min-h-[85vh] md:min-h-screen md:flex-row md:items-end overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
+        {/* Mobile Image */}
+        <img
+          src={heroMobile}
+          alt="Filmology Labs Content Creation Studios interior"
+          className="md:hidden w-full h-full object-cover object-center"
+          loading="eager"
+          decoding="sync"
+          fetchPriority="high"
+        />
+        {/* Desktop Image */}
         <img
           src={heroAerial}
           alt="Filmology Labs Content Creation Studios aerial view"
-          className="w-full h-full object-cover object-[25%_55%] md:object-center scale-[1.6] md:scale-100"
+          className="hidden md:block w-full h-full object-cover object-center"
           loading="eager"
           decoding="sync"
           fetchPriority="high"
