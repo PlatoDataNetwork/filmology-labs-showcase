@@ -30,9 +30,9 @@ const HeroSection = ({ isDark }: HeroSectionProps) => {
       <div className="absolute inset-0">
         {/* Mobile Image */}
         <img
-          src={heroMobile}
-          alt="Filmology Labs Content Creation Studios interior"
-          className="md:hidden w-full h-full object-cover object-center"
+          src={heroAerial}
+          alt="Filmology Labs Content Creation Studios aerial view"
+          className="md:hidden w-full h-full object-contain object-center bg-background"
           loading="eager"
           decoding="sync"
           fetchPriority="high"
