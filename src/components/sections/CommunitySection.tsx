@@ -171,9 +171,6 @@ const CommunitySection = () => {
             ))}
           </div>
 
-          <p className="text-body-large text-muted-foreground mt-6">
-            Applications are reviewed on a rolling basis. Priority given to underrepresented creators.
-          </p>
         </div>
       </div>
     </section>
