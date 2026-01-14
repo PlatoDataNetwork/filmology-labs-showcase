@@ -29,11 +29,11 @@ const HeroSection = ({ isDark }: HeroSectionProps) => {
       {/* Mobile Layout - Stacked */}
       <section className="md:hidden flex flex-col">
         {/* Mobile Image - Top */}
-        <div className="w-full">
+        <div className="w-full h-[50vh]">
           <img
             src={heroAerial}
             alt="Filmology Labs Content Creation Studios aerial view"
-            className="w-full h-auto object-contain"
+            className="w-full h-full object-cover object-center"
             loading="eager"
             decoding="sync"
             fetchPriority="high"
