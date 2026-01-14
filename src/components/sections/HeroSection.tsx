@@ -25,45 +25,61 @@ const HeroSection = ({ isDark }: HeroSectionProps) => {
   }, []);
 
   return (
-    <section className="relative flex flex-col items-center justify-end pb-24 min-h-[85vh] md:min-h-screen md:flex-row md:items-end md:pb-0 overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        {/* Mobile Image */}
-        <img
-          src={heroAerial}
-          alt="Filmology Labs Content Creation Studios aerial view"
-          className="md:hidden w-full h-full object-contain object-center bg-background"
-          loading="eager"
-          decoding="sync"
-          fetchPriority="high"
-        />
-        {/* Desktop Image */}
-        <img
-          src={heroAerial}
-          alt="Filmology Labs Content Creation Studios aerial view"
-          className="hidden md:block w-full h-full object-cover object-center"
-          loading="eager"
-          decoding="sync"
-          fetchPriority="high"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-background/20 to-transparent md:from-background/40 md:via-background/10 dark:from-background dark:via-background/20" />
-      </div>
-
-      {/* Frosted glass strip */}
-      <div className="absolute bottom-0 left-0 right-0 backdrop-blur-[1px] bg-background/5 dark:bg-background/10 z-[5] py-8 md:py-16" />
-
-      {/* Content */}
-      <div className="container-wide relative z-10 md:pb-6 md:absolute md:bottom-0 md:left-0 md:right-0">
-        <div className="max-w-4xl mx-auto text-center px-4">
-          
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium leading-[1.15] text-foreground mb-4 md:mb-8 animate-fade-in-delay-2">
-            The World's Largest<br />
-            Content Creation Studio
-          </h1>
-          
+    <>
+      {/* Mobile Layout - Stacked */}
+      <section className="md:hidden flex flex-col">
+        {/* Mobile Image - Top */}
+        <div className="w-full">
+          <img
+            src={heroAerial}
+            alt="Filmology Labs Content Creation Studios aerial view"
+            className="w-full h-auto object-contain"
+            loading="eager"
+            decoding="sync"
+            fetchPriority="high"
+          />
         </div>
-      </div>
-    </section>
+        
+        {/* Mobile Content - Below */}
+        <div className="bg-background py-8 px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-2xl sm:text-3xl font-medium leading-[1.15] text-foreground animate-fade-in-delay-2">
+              The World's Largest<br />
+              Content Creation Studio
+            </h1>
+          </div>
+        </div>
+      </section>
+
+      {/* Desktop Layout - Original overlay style */}
+      <section className="hidden md:flex relative flex-row items-end min-h-screen overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src={heroAerial}
+            alt="Filmology Labs Content Creation Studios aerial view"
+            className="w-full h-full object-cover object-center"
+            loading="eager"
+            decoding="sync"
+            fetchPriority="high"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-background/10 to-transparent dark:from-background dark:via-background/20" />
+        </div>
+
+        {/* Frosted glass strip */}
+        <div className="absolute bottom-0 left-0 right-0 backdrop-blur-[1px] bg-background/5 dark:bg-background/10 z-[5] py-16" />
+
+        {/* Content */}
+        <div className="container-wide relative z-10 pb-6 absolute bottom-0 left-0 right-0">
+          <div className="max-w-4xl mx-auto text-center px-4">
+            <h1 className="text-4xl lg:text-5xl font-medium leading-[1.15] text-foreground mb-8 animate-fade-in-delay-2">
+              The World's Largest<br />
+              Content Creation Studio
+            </h1>
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 
