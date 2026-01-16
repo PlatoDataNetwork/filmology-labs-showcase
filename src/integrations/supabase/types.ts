@@ -103,12 +103,33 @@ export type Database = {
         }
         Relationships: []
       }
+      login_attempts: {
+        Row: {
+          attempted_at: string
+          id: string
+          ip_address: string
+          was_successful: boolean
+        }
+        Insert: {
+          attempted_at?: string
+          id?: string
+          ip_address: string
+          was_successful?: boolean
+        }
+        Update: {
+          attempted_at?: string
+          id?: string
+          ip_address?: string
+          was_successful?: boolean
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      cleanup_old_login_attempts: { Args: never; Returns: undefined }
     }
     Enums: {
       [_ in never]: never

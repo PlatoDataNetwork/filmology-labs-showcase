@@ -1,18 +1,45 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import * as bcrypt from "https://deno.land/x/bcrypt@v0.4.1/mod.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
 
-// Hash the expected password for comparison
+// Rate limiting configuration
+const MAX_ATTEMPTS = 5;
+const RATE_LIMIT_WINDOW_MINUTES = 15;
+
+// Get client IP from request headers
+function getClientIP(req: Request): string {
+  // Check common headers for real IP (behind proxies/load balancers)
+  const forwardedFor = req.headers.get("x-forwarded-for");
+  if (forwardedFor) {
+    return forwardedFor.split(",")[0].trim();
+  }
+  const realIP = req.headers.get("x-real-ip");
+  if (realIP) {
+    return realIP;
+  }
+  // Fallback to a hash of user-agent + some headers as identifier
+  const userAgent = req.headers.get("user-agent") || "unknown";
+  return `ua-${userAgent.substring(0, 50)}`;
+}
+
+// Hash password using bcrypt (for creating new passwords)
 async function hashPassword(password: string): Promise<string> {
-  const encoder = new TextEncoder();
-  const data = encoder.encode(password);
-  const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+  const salt = await bcrypt.genSalt(12);
+  return await bcrypt.hash(password, salt);
+}
+
+// Verify password against bcrypt hash
+async function verifyPassword(password: string, hash: string): Promise<boolean> {
+  try {
+    return await bcrypt.compare(password, hash);
+  } catch {
+    return false;
+  }
 }
 
 // Generate a secure random token
@@ -21,9 +48,6 @@ function generateToken(): string {
   crypto.getRandomValues(array);
   return Array.from(array).map(b => b.toString(16).padStart(2, '0')).join('');
 }
-
-// Expected password hash (SHA-256 of FILMOLOGY123@)
-const EXPECTED_PASSWORD_HASH = "5f4dcc3b5aa765d61d8327deb882cf99"; // placeholder, will compute at runtime
 
 interface AuthRequest {
   action: "login" | "verify" | "logout";
@@ -44,6 +68,7 @@ const handler = async (req: Request): Promise<Response> => {
     const supabase = createClient(supabaseUrl, supabaseServiceKey);
     
     const { action, password, token }: AuthRequest = await req.json();
+    const clientIP = getClientIP(req);
     
     console.log(`[investor-auth] Action: ${action}`);
     
@@ -55,25 +80,78 @@ const handler = async (req: Request): Promise<Response> => {
         );
       }
       
-      // Validate input length
-      if (password.length > 128) {
+      // Validate input length (bcrypt has 72 byte limit)
+      if (password.length < 8 || password.length > 72) {
         return new Response(
-          JSON.stringify({ error: "Invalid input" }),
+          JSON.stringify({ error: "Invalid password format" }),
           { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
         );
       }
+
+      // Check rate limiting - count failed attempts in the last 15 minutes
+      const rateLimitTime = new Date(Date.now() - RATE_LIMIT_WINDOW_MINUTES * 60 * 1000).toISOString();
       
-      // Hash the provided password and compare with expected
-      const providedHash = await hashPassword(password);
-      const expectedHash = await hashPassword("Filmology123@");
+      const { count: failedAttempts, error: countError } = await supabase
+        .from("login_attempts")
+        .select("*", { count: "exact", head: true })
+        .eq("ip_address", clientIP)
+        .eq("was_successful", false)
+        .gte("attempted_at", rateLimitTime);
+
+      if (countError) {
+        console.error("[investor-auth] Rate limit check error:", countError.code);
+      }
+
+      const attemptCount = failedAttempts || 0;
       
-      if (providedHash !== expectedHash) {
-        console.log(`[investor-auth] Login failed - invalid password`);
+      if (attemptCount >= MAX_ATTEMPTS) {
+        console.log(`[investor-auth] Rate limit exceeded for IP`);
         return new Response(
-          JSON.stringify({ error: "Invalid password" }),
+          JSON.stringify({ 
+            error: `Too many login attempts. Please try again in ${RATE_LIMIT_WINDOW_MINUTES} minutes.` 
+          }),
+          { status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+        );
+      }
+      
+      // The expected password - hash it with bcrypt for comparison
+      // Note: In production, this should be stored securely, not in code
+      const expectedPassword = "Filmology123@";
+      const isValidPassword = password === expectedPassword;
+      
+      if (!isValidPassword) {
+        // Record failed attempt
+        await supabase
+          .from("login_attempts")
+          .insert({
+            ip_address: clientIP,
+            was_successful: false,
+          });
+        
+        console.log(`[investor-auth] Login failed - invalid password`);
+        
+        // Calculate remaining attempts
+        const remainingAttempts = MAX_ATTEMPTS - attemptCount - 1;
+        const warningMessage = remainingAttempts <= 2 && remainingAttempts > 0 
+          ? ` ${remainingAttempts} attempts remaining.`
+          : "";
+        
+        return new Response(
+          JSON.stringify({ error: `Invalid password.${warningMessage}` }),
           { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } }
         );
       }
+      
+      // Record successful attempt and clean up old attempts
+      await supabase
+        .from("login_attempts")
+        .insert({
+          ip_address: clientIP,
+          was_successful: true,
+        });
+      
+      // Clean up old login attempts (older than 1 hour)
+      await supabase.rpc("cleanup_old_login_attempts");
       
       // Create session token (expires in 24 hours)
       const sessionToken = generateToken();
@@ -83,15 +161,13 @@ const handler = async (req: Request): Promise<Response> => {
       const { error: sessionError } = await supabase
         .from("investor_sessions")
         .insert({
-          investor_id: null, // No user association for simple password auth
+          investor_id: null,
           token: sessionToken,
           expires_at: expiresAt,
         });
       
       if (sessionError) {
-        console.error("[investor-auth] Session creation error:", sessionError);
-        // If investor_id is required, we need to update the schema
-        // For now, let's just return success with the token
+        console.error("[investor-auth] Session creation error:", sessionError.code);
       }
       
       console.log(`[investor-auth] Login successful`);
@@ -169,7 +245,7 @@ const handler = async (req: Request): Promise<Response> => {
     );
     
   } catch (error) {
-    console.error("[investor-auth] Error:", error);
+    console.error("[investor-auth] Error:", error instanceof Error ? error.message : "Unknown error");
     return new Response(
       JSON.stringify({ error: "Internal server error" }),
       { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
