@@ -42,7 +42,7 @@ const VisionSection = () => {
               A state-of-the-art film and television production campus in Paterson's historic mill district—designed for the creators of tomorrow.
             </p>
             <p className="text-body-large max-w-3xl">
-              Filmology Labs represents a bold new chapter in the ongoing reinvention of Paterson's historic mill District. Once a powerhouse of American industry, this remarkable complex is now being transformed into a state-of-the-art film, television and content production studio. Our vision pairs, the authenticity and architectural character of this historic structure with the cutting-edge, tools and flexible, environments demanded by today's content producers—creating the largest content creation studio campus in the world.
+              Filmology Labs represents a bold new chapter in the ongoing reinvention of Paterson's historic mill District. Once a powerhouse of American industry, this remarkable complex is now being transformed into a state-of-the-art film, television and content production studio. Our vision pairs the authenticity and architectural character of this historic structure with the cutting-edge, tools and flexible, environments demanded by today's content producers—creating the largest content creation studio campus in the world.
             </p>
           </div>
           <div className="w-full md:w-64 lg:w-80 flex-shrink-0">
