@@ -29,6 +29,7 @@ const Navigation = ({ isDark, toggleTheme }: NavigationProps) => {
     { href: '#vision', label: 'Vision' },
     { href: '#studios', label: 'Studios' },
     { href: '#community', label: 'Community' },
+    { href: '#amenities', label: 'Amenities' },
     { href: '#initiatives', label: 'Initiatives' },
     { href: '#location', label: 'Location' },
     { href: '#leadership', label: 'Leadership' },

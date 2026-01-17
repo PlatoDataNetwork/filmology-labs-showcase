@@ -5,6 +5,7 @@ import HeroSection from '@/components/sections/HeroSection';
 import VisionSection from '@/components/sections/VisionSection';
 import StudiosSection from '@/components/sections/StudiosSection';
 import CommunitySection from '@/components/sections/CommunitySection';
+import AmenitiesSection from '@/components/sections/AmenitiesSection';
 import LocationSection from '@/components/sections/LocationSection';
 import LeadershipSection from '@/components/sections/LeadershipSection';
 import NewsSection from '@/components/sections/NewsSection';
@@ -41,6 +42,7 @@ const Index = () => {
         <VisionSection />
         <StudiosSection />
         <CommunitySection />
+        <AmenitiesSection />
         <LocationSection />
         <LeadershipSection />
         <NewsSection />
