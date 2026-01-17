@@ -14,10 +14,29 @@ import {
   Briefcase,
   Camera,
   Headphones,
-  ParkingCircle
+  ParkingCircle,
+  ArrowRight
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import ContactFormModal from '@/components/ContactFormModal';
+
+// @ts-ignore - vite-imagetools transform
+import cateringImg from '@/assets/amenities/catering.jpg?format=webp&quality=80';
+// @ts-ignore - vite-imagetools transform
+import equipmentImg from '@/assets/amenities/equipment.jpg?format=webp&quality=80';
+// @ts-ignore - vite-imagetools transform
+import parkingImg from '@/assets/amenities/parking.jpg?format=webp&quality=80';
+// @ts-ignore - vite-imagetools transform
+import connectivityImg from '@/assets/amenities/connectivity.jpg?format=webp&quality=80';
+// @ts-ignore - vite-imagetools transform
+import securityImg from '@/assets/amenities/security.jpg?format=webp&quality=80';
+// @ts-ignore - vite-imagetools transform
+import greenroomImg from '@/assets/amenities/greenroom.jpg?format=webp&quality=80';
+// @ts-ignore - vite-imagetools transform
+import fitnessImg from '@/assets/amenities/fitness.jpg?format=webp&quality=80';
+// @ts-ignore - vite-imagetools transform
+import postProductionImg from '@/assets/amenities/post-production.jpg?format=webp&quality=80';
 
 const AmenitiesSection = () => {
   const studioAmenities = [
@@ -25,41 +44,49 @@ const AmenitiesSection = () => {
       title: 'On-Site Catering',
       description: 'Full-service craft services and catering for productions of any size, from breakfast spreads to wrap dinners.',
       icon: Utensils,
+      image: cateringImg,
     },
     {
       title: 'Equipment Rentals',
       description: 'Professional camera, lighting, and grip equipment available on-site, eliminating logistics headaches.',
       icon: Camera,
+      image: equipmentImg,
     },
     {
       title: 'Secure Parking',
       description: 'Dedicated production parking with easy load-in access for equipment trucks and talent vehicles.',
       icon: ParkingCircle,
+      image: parkingImg,
     },
     {
       title: 'High-Speed Connectivity',
       description: 'Fiber-optic internet throughout the campus with dedicated lines for live streaming and remote collaboration.',
       icon: Wifi,
+      image: connectivityImg,
     },
     {
       title: '24/7 Security',
       description: 'Round-the-clock security personnel and surveillance to protect your production and equipment.',
       icon: ShieldCheck,
+      image: securityImg,
     },
     {
       title: 'Green Rooms & Lounges',
       description: 'Comfortable holding areas for talent with premium refreshments, makeup stations, and private spaces.',
       icon: Coffee,
+      image: greenroomImg,
     },
     {
       title: 'Fitness Center',
       description: 'On-site gym and wellness facilities to keep cast and crew energized during long production days.',
       icon: Dumbbell,
+      image: fitnessImg,
     },
     {
       title: 'Post-Production Suites',
       description: 'Sound mixing, color grading, and editing bays equipped with industry-standard software and hardware.',
       icon: Headphones,
+      image: postProductionImg,
     },
   ];
 
@@ -123,26 +150,37 @@ const AmenitiesSection = () => {
           </div>
         </div>
 
-        {/* Studio Amenities Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-12 md:mb-20">
+        {/* Studio Amenities Grid with Images */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 mb-12 md:mb-20">
           {studioAmenities.map((amenity, index) => (
             <div 
               key={index} 
-              className="steel-gradient-card rounded-lg p-4 md:p-6 flex flex-col"
+              className="steel-gradient-card rounded-lg overflow-hidden h-full flex flex-col"
             >
-              <div className="p-2 rounded-lg bg-accent w-fit mb-3 md:mb-4">
-                <amenity.icon className="w-5 h-5 md:w-6 md:h-6 text-foreground" />
+              <div className="aspect-[4/3] overflow-hidden bg-muted">
+                <img 
+                  src={amenity.image} 
+                  alt={amenity.title}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-              <h3 className="text-sm md:text-base font-medium mb-2">{amenity.title}</h3>
-              <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                {amenity.description}
-              </p>
+              <div className="p-3 md:p-5 flex flex-col flex-grow">
+                <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+                  <amenity.icon className="w-4 h-4 md:w-5 md:h-5 text-foreground" />
+                  <h3 className="text-sm md:text-base font-medium">{amenity.title}</h3>
+                </div>
+                <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+                  {amenity.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
 
         {/* Concierge Service Section */}
-        <div className="border-t border-border pt-10 md:pt-16">
+        <div id="initiatives" className="border-t border-border pt-10 md:pt-16">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8 md:mb-12">
             <div className="max-w-2xl">
               <div className="flex items-center gap-3 mb-3 md:mb-4">
@@ -165,13 +203,12 @@ const AmenitiesSection = () => {
                 <Phone className="w-4 h-4" />
                 <span className="text-sm">24/7 Available</span>
               </div>
-              <ContactFormModal
-                trigger={
-                  <Button variant="hero" size="lg">
-                    Contact Concierge
-                  </Button>
-                }
-              />
+              <Link to="/concierge">
+                <Button variant="hero" size="lg" className="gap-2">
+                  Explore Concierge
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </Link>
             </div>
           </div>
 
