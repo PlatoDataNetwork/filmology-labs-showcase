@@ -77,8 +77,8 @@ const AmenitiesSection = () => {
       image: greenroomImg,
     },
     {
-      title: 'Fitness Center',
-      description: 'On-site gym and wellness facilities to keep cast and crew energized during long production days.',
+      title: 'Fitness Center & Yoga',
+      description: 'On-site gym, wellness center, and yoga to keep cast and crew energized during long production days.',
       icon: Dumbbell,
       image: fitnessImg,
     },
