@@ -41,8 +41,8 @@ import postProductionImg from '@/assets/amenities/post-production.jpg?format=web
 const AmenitiesSection = () => {
   const studioAmenities = [
     {
-      title: 'On-Site Catering',
-      description: 'Full-service craft services and catering for productions of any size, from breakfast spreads to wrap dinners.',
+      title: 'On-Site Commissary',
+      description: 'Full-service craft services and commissary for productions of any size, from breakfast spreads to wrap dinners.',
       icon: Utensils,
       image: cateringImg,
     },
