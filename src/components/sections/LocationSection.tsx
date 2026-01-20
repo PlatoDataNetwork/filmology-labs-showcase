@@ -27,10 +27,10 @@ const LocationSection = () => {
     <section id="location" className="section-padding bg-card">
       <div className="container-wide">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-8 md:mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
           <p className="label-editorial mb-3 md:mb-4">Location</p>
-          <p className="text-lg md:text-xl text-muted-foreground mb-2 md:mb-3">Lights, Camera.......Paterson</p>
-          <h2 className="mb-4 md:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl whitespace-nowrap">
+          <p className="text-2xl md:text-3xl lg:text-4xl font-medium text-muted-foreground mb-3 md:mb-4">Lights, Camera.......Paterson</p>
+          <h2 className="mb-4 md:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
             The Heart of the Paterson Film District
           </h2>
           <p className="text-body-large">
