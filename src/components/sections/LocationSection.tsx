@@ -29,7 +29,7 @@ const LocationSection = () => {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
           <p className="label-editorial mb-3 md:mb-4">Location</p>
-          <p className="text-2xl md:text-3xl lg:text-4xl font-medium text-muted-foreground mb-3 md:mb-4">Lights, Camera.......Paterson</p>
+          <p className="text-2xl md:text-3xl lg:text-4xl font-medium text-muted-foreground mb-3 md:mb-4">Lights, Camera.......Paterson!!!</p>
           <h2 className="mb-4 md:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl whitespace-nowrap">
             The Heart of the Paterson Film District
           </h2>
