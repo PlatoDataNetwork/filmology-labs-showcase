@@ -19,6 +19,8 @@ import wardrobeImg from '@/assets/concierge/wardrobe.jpg?format=webp&quality=80'
 import deskImg from '@/assets/concierge/desk.jpg?format=webp&quality=80';
 // @ts-ignore - vite-imagetools transform
 import executiveImg from '@/assets/concierge/executive.jpg?format=webp&quality=80';
+// @ts-ignore - vite-imagetools transform
+import suppliesImg from '@/assets/concierge/supplies.png?format=webp&quality=80';
 
 const Concierge = () => {
   const { isDark, toggleTheme } = useTheme();
@@ -79,7 +81,7 @@ const Concierge = () => {
         'Vendor account management',
       ],
       icon: Truck,
-      image: deskImg,
+      image: suppliesImg,
     },
     {
       id: 'local',
