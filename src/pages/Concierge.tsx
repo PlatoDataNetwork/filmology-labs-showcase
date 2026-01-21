@@ -21,6 +21,8 @@ import deskImg from '@/assets/concierge/desk.jpg?format=webp&quality=80';
 import executiveImg from '@/assets/concierge/executive.jpg?format=webp&quality=80';
 // @ts-ignore - vite-imagetools transform
 import suppliesImg from '@/assets/concierge/supplies.png?format=webp&quality=80';
+// @ts-ignore - vite-imagetools transform
+import localCoordinationImg from '@/assets/concierge/local-coordination.jpg?format=webp&quality=80';
 
 const Concierge = () => {
   const { isDark, toggleTheme } = useTheme();
@@ -95,7 +97,7 @@ const Concierge = () => {
         'Community liaison services',
       ],
       icon: MapPin,
-      image: deskImg,
+      image: localCoordinationImg,
     },
     {
       id: 'afterhours',
