@@ -23,6 +23,8 @@ import executiveImg from '@/assets/concierge/executive.jpg?format=webp&quality=8
 import suppliesImg from '@/assets/concierge/supplies.png?format=webp&quality=80';
 // @ts-ignore - vite-imagetools transform
 import localCoordinationImg from '@/assets/concierge/local-coordination.jpg?format=webp&quality=80';
+// @ts-ignore - vite-imagetools transform
+import afterHoursImg from '@/assets/concierge/after-hours.jpg?format=webp&quality=80';
 
 const Concierge = () => {
   const { isDark, toggleTheme } = useTheme();
@@ -111,7 +113,7 @@ const Concierge = () => {
         'Weekend and holiday coverage',
       ],
       icon: Clock,
-      image: deskImg,
+      image: afterHoursImg,
     },
     {
       id: 'executive',
