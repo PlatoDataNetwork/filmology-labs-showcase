@@ -1,8 +1,8 @@
 import { MapPin, Clock, Building2 } from 'lucide-react';
 // @ts-ignore - vite-imagetools transform
-import vicinityMap from '@/assets/vicinity-map.png?format=webp&quality=80';
+import vicinityMap from '@/assets/hero-aerial-new.png?format=webp&quality=80';
 // @ts-ignore - vite-imagetools transform
-import locationAerial from '@/assets/location-aerial.png?format=webp&quality=80';
+import locationAerial from '@/assets/aerial-view.jpg?format=webp&quality=80';
 
 const LocationSection = () => {
   const features = [
