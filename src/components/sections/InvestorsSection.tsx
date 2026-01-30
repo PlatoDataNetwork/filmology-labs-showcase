@@ -4,6 +4,7 @@ import { useTheme } from '@/hooks/use-theme';
 import verzaTvLogo from '@/assets/verza-tv-logo.png';
 import platoAiLogo from '@/assets/plato-ai-logo.png';
 import architecturaLogoBlack from '@/assets/architectura-logo-black.png';
+import ministryOfFilmLogo from '@/assets/ministry-of-film-logo.jpeg';
 
 const InvestorsSection = () => {
   const { isDark } = useTheme();
@@ -120,6 +121,18 @@ const InvestorsSection = () => {
               style={{ fontFamily: '"Times New Roman", Times, serif' }}
             >
               Architectura
+            </a>
+            <a 
+              href="#" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="transition-all duration-300 hover:scale-110 hover:opacity-80"
+            >
+              <img 
+                src={ministryOfFilmLogo} 
+                alt="The Ministry of Film" 
+                className="h-12 md:h-16 object-contain"
+              />
             </a>
           </div>
         </div>
