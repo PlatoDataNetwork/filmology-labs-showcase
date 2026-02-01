@@ -1,14 +1,10 @@
 import { ArrowRight, Lock, TrendingUp, Building2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useTheme } from '@/hooks/use-theme';
 import verzaTvLogo from '@/assets/verza-tv-logo.png';
 import platoAiLogo from '@/assets/plato-ai-logo.png';
-import architecturaLogoBlack from '@/assets/architectura-logo-black.png';
-import ministryOfFilmLogo from '@/assets/ministry-of-film-logo.png';
+import ministryOfFilmLogo from '@/assets/ministry-of-film-logo-gold.png';
 
 const InvestorsSection = () => {
-  const { isDark } = useTheme();
-  
   return (
     <section id="investors" className="section-padding bg-background">
       <div className="container-wide">
@@ -101,6 +97,20 @@ const InvestorsSection = () => {
                 className="h-10 md:h-14 object-contain"
               />
             </a>
+
+            {/* Ministry of Film - match VerzaTV logo length/height */}
+            <a 
+              href="#" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="transition-all duration-300 hover:scale-110 hover:opacity-80"
+            >
+              <img 
+                src={ministryOfFilmLogo} 
+                alt="The Ministry of Film" 
+                className="h-10 md:h-14 w-[160px] md:w-[220px] object-contain"
+              />
+            </a>
             <a 
               href="https://Platodata.io" 
               target="_blank" 
@@ -121,18 +131,6 @@ const InvestorsSection = () => {
               style={{ fontFamily: '"Times New Roman", Times, serif' }}
             >
               Architectura
-            </a>
-            <a 
-              href="#" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="transition-all duration-300 hover:scale-110 hover:opacity-80"
-            >
-              <img 
-                src={ministryOfFilmLogo} 
-                alt="The Ministry of Film" 
-                className="h-40 md:h-60 w-auto max-h-none shrink-0 object-contain"
-              />
             </a>
           </div>
         </div>
