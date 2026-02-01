@@ -131,7 +131,7 @@ const InvestorsSection = () => {
               <img 
                 src={ministryOfFilmLogo} 
                 alt="The Ministry of Film" 
-                className="h-16 md:h-24 object-contain"
+                className="h-40 md:h-60 w-auto max-h-none shrink-0 object-contain"
               />
             </a>
           </div>
