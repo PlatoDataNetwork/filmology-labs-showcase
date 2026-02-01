@@ -4,7 +4,7 @@ import { useTheme } from '@/hooks/use-theme';
 import verzaTvLogo from '@/assets/verza-tv-logo.png';
 import platoAiLogo from '@/assets/plato-ai-logo.png';
 import architecturaLogoBlack from '@/assets/architectura-logo-black.png';
-import ministryOfFilmLogo from '@/assets/ministry-of-film-logo.jpeg';
+import ministryOfFilmLogo from '@/assets/ministry-of-film-logo.png';
 
 const InvestorsSection = () => {
   const { isDark } = useTheme();
