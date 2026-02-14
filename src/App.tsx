@@ -9,6 +9,8 @@ import GroundbreakingArticle from "./pages/GroundbreakingArticle";
 import VerzaTVArticle from "./pages/VerzaTVArticle";
 import PatersonFilmDistrictArticle from "./pages/PatersonFilmDistrictArticle";
 import TaxCreditArticle from "./pages/TaxCreditArticle";
+import VarietyArticle from "./pages/VarietyArticle";
+import TapIntoArticle from "./pages/TapIntoArticle";
 import PartnerLogin from "./pages/PartnerLogin";
 import PartnerPortal from "./pages/PartnerPortal";
 import Merch from "./pages/Merch";
@@ -73,6 +75,8 @@ const App = () => {
               <Route path="/news/verza-tv-microdramas" element={<VerzaTVArticle />} />
               <Route path="/news/paterson-film-district" element={<PatersonFilmDistrictArticle />} />
               <Route path="/news/nj-tax-credit-expansion" element={<TaxCreditArticle />} />
+              <Route path="/news/variety-filmology-labs" element={<VarietyArticle />} />
+              <Route path="/news/tapinto-paterson-reaction" element={<TapIntoArticle />} />
               <Route path="/partner-login" element={<PartnerLogin />} />
               <Route path="/partner-portal" element={<PartnerPortal />} />
               <Route path="/merch" element={<Merch />} />

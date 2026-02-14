@@ -12,6 +12,22 @@ const newsItems = [
     slug: '/news/groundbreaking-2026',
   },
   {
+    date: 'February 2026',
+    category: 'Exclusive',
+    title: 'Filmology Labs, a $250 Million Studio Built for Content Creation, Set to Open in New Jersey',
+    excerpt: 'Alan Mruvka, co-creator of E! Entertainment Television, announces the launch of a $250 million studio complex in Paterson, New Jersey focused on next-gen content creation like vertical micro-dramas, digital series, podcasts and AI-driven media.',
+    featured: false,
+    slug: '/news/variety-filmology-labs',
+  },
+  {
+    date: 'February 2026',
+    category: 'Community',
+    title: 'Paterson Council, Residents React to $250M Filmology Labs Studio Coming to the City',
+    excerpt: 'Local leaders and residents weigh in on what the $250 million content creation studio development could mean for the city of Paterson, with council members calling it "a transformative moment."',
+    featured: false,
+    slug: '/news/tapinto-paterson-reaction',
+  },
+  {
     date: 'October 2025',
     category: 'Partnership',
     title: 'E! Channel Founder to Launch the First U.S. Platform for Microdramas',
