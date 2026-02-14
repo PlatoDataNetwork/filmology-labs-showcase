@@ -5,13 +5,10 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import Index from "./pages/Index";
-import News from "./pages/News";
 import GroundbreakingArticle from "./pages/GroundbreakingArticle";
 import VerzaTVArticle from "./pages/VerzaTVArticle";
 import PatersonFilmDistrictArticle from "./pages/PatersonFilmDistrictArticle";
 import TaxCreditArticle from "./pages/TaxCreditArticle";
-import VarietyArticle from "./pages/VarietyArticle";
-import PatersonCouncilArticle from "./pages/PatersonCouncilArticle";
 import PartnerLogin from "./pages/PartnerLogin";
 import PartnerPortal from "./pages/PartnerPortal";
 import Merch from "./pages/Merch";
@@ -71,13 +68,10 @@ const App = () => {
           <InitialRedirect>
             <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/news" element={<News />} />
               <Route path="/news/groundbreaking-2026" element={<GroundbreakingArticle />} />
               <Route path="/news/verza-tv-microdramas" element={<VerzaTVArticle />} />
               <Route path="/news/paterson-film-district" element={<PatersonFilmDistrictArticle />} />
               <Route path="/news/nj-tax-credit-expansion" element={<TaxCreditArticle />} />
-              <Route path="/news/variety-filmology-labs" element={<VarietyArticle />} />
-              <Route path="/news/paterson-council-reaction" element={<PatersonCouncilArticle />} />
               <Route path="/partner-login" element={<PartnerLogin />} />
               <Route path="/partner-portal" element={<PartnerPortal />} />
               <Route path="/merch" element={<Merch />} />

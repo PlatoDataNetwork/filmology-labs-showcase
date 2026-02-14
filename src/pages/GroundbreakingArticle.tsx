@@ -20,7 +20,7 @@ const GroundbreakingArticle = () => {
         {/* Article Header */}
         <article className="container-narrow">
           <Link 
-            to="/news" 
+            to="/#news" 
             className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors duration-300 mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -141,7 +141,7 @@ const GroundbreakingArticle = () => {
 
           {/* Back Link */}
           <Link 
-            to="/news" 
+            to="/#news" 
             className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors duration-300"
           >
             <ArrowLeft className="w-4 h-4" />
