@@ -14,7 +14,6 @@ import PartnerPortal from "./pages/PartnerPortal";
 import Merch from "./pages/Merch";
 import ProductDetail from "./pages/ProductDetail";
 import Concierge from "./pages/Concierge";
-import News from "./pages/News";
 import NotFound from "./pages/NotFound";
 import SplashScreen from "./components/SplashScreen";
 
@@ -78,8 +77,8 @@ const App = () => {
               <Route path="/merch" element={<Merch />} />
               <Route path="/product/:handle" element={<ProductDetail />} />
               <Route path="/concierge" element={<Concierge />} />
-              <Route path="/news" element={<News />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </InitialRedirect>

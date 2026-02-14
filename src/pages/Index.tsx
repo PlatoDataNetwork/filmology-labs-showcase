@@ -8,7 +8,7 @@ import CommunitySection from '@/components/sections/CommunitySection';
 import AmenitiesSection from '@/components/sections/AmenitiesSection';
 import LocationSection from '@/components/sections/LocationSection';
 import LeadershipSection from '@/components/sections/LeadershipSection';
-
+import NewsSection from '@/components/sections/NewsSection';
 import InvestorsSection from '@/components/sections/InvestorsSection';
 import CTASection from '@/components/sections/CTASection';
 import Footer from '@/components/Footer';
@@ -45,7 +45,7 @@ const Index = () => {
         <AmenitiesSection />
         <LocationSection />
         <LeadershipSection />
-        
+        <NewsSection />
         <CTASection />
         <InvestorsSection />
       </main>
