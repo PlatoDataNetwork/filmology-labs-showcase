@@ -50,13 +50,6 @@ const NewsSection = () => {
             <p className="label-editorial mb-4">News & Updates</p>
             <h2>Latest from Filmology Labs</h2>
           </div>
-          <a
-            href="#"
-            className="group flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors duration-300 mt-4 md:mt-0"
-          >
-            <span className="text-sm uppercase tracking-wider">View All News</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-          </a>
         </div>
 
         {/* News Grid */}
