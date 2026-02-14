@@ -8,6 +8,8 @@ const newsItems = [
     title: 'Filmology Labs Announces Groundbreaking Ceremony for 2026',
     excerpt: 'The highly anticipated production campus in Paterson\'s historic mill district is set to break ground in early 2026, marking a transformative new chapter for New Jersey\'s film and television industry. This landmark development will bring world-class production facilities to the heart of Paterson\'s Great Falls district, creating hundreds of jobs and establishing the region as a premier destination for filmmakers and content creators.',
     excerpt2: 'The campus will feature multiple sound stages, post-production suites, and collaborative workspaces designed for the creators of tomorrow. Led by E! Entertainment Television founder Alan Mruvka, this ambitious project represents one of the most significant investments in the region\'s creative economy in decades.',
+    excerpt3: 'Located at 61 State Street in the heart of Paterson\'s historic Great Falls district, the sprawling campus will honor the area\'s industrial heritage while providing cutting-edge facilities for modern content creators — including six professional sound stages, dedicated podcast and streaming studios, post-production suites with color grading and sound mixing, and on-site equipment rental and support services.',
+    excerpt4: '"This groundbreaking ceremony represents more than just the start of construction," said Alan Mruvka. "It\'s the beginning of a new era for Paterson and for independent content creators across the region. We\'re building something that will inspire creativity for generations to come."',
     featured: true,
     slug: '/news/groundbreaking-2026',
   },
@@ -90,6 +92,16 @@ const NewsSection = () => {
                   {featuredNews.excerpt2 && (
                     <p className="text-muted-foreground leading-relaxed">
                       {featuredNews.excerpt2}
+                    </p>
+                  )}
+                  {featuredNews.excerpt3 && (
+                    <p className="text-muted-foreground leading-relaxed">
+                      {featuredNews.excerpt3}
+                    </p>
+                  )}
+                  {featuredNews.excerpt4 && (
+                    <p className="text-muted-foreground leading-relaxed italic">
+                      {featuredNews.excerpt4}
                     </p>
                   )}
                 </div>
