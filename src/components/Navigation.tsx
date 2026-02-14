@@ -33,7 +33,7 @@ const Navigation = ({ isDark, toggleTheme }: NavigationProps) => {
     { href: '#initiatives', label: 'Initiatives' },
     { href: '#location', label: 'Location' },
     { href: '#leadership', label: 'Leadership' },
-    { href: '#news', label: 'News' },
+    { href: '/news', label: 'News', isRoute: true },
     { href: '#investors', label: 'Partners' },
     { href: '/merch', label: 'Merch', isRoute: true },
   ];
