@@ -82,9 +82,11 @@ const NewsSection = () => {
                   </span>
                   <span className="text-xs text-muted-foreground">{featuredNews.date}</span>
                 </div>
-                <h3 className="text-2xl md:text-3xl font-light leading-tight mb-6 group-hover:text-primary transition-colors duration-300">
-                  {featuredNews.title}
-                </h3>
+                <Link to={featuredNews.slug}>
+                  <h3 className="text-2xl md:text-3xl font-light leading-tight mb-6 group-hover:text-primary transition-colors duration-300">
+                    {featuredNews.title}
+                  </h3>
+                </Link>
                 <div className="flex-grow space-y-4">
                   <p className="text-muted-foreground leading-relaxed">
                     {featuredNews.excerpt}
@@ -131,9 +133,11 @@ const NewsSection = () => {
                   </span>
                   <span className="text-xs text-muted-foreground">{item.date}</span>
                 </div>
-                <h4 className="text-base md:text-lg font-medium mb-2 group-hover:text-primary transition-colors duration-300 cursor-pointer">
-                  {item.title}
-                </h4>
+                <Link to={item.slug}>
+                  <h4 className="text-base md:text-lg font-medium mb-2 group-hover:text-primary transition-colors duration-300 cursor-pointer">
+                    {item.title}
+                  </h4>
+                </Link>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                   {item.excerpt}
                 </p>
