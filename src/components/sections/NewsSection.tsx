@@ -38,6 +38,14 @@ const newsItems = [
     slug: '/news/verza-tv-microdramas',
   },
   {
+    date: 'February 2026',
+    category: 'Media',
+    title: 'From Silk City to Studio City: Content Creation Studio Coming to Paterson',
+    excerpt: 'A $250 million film and content creation studio campus is coming to Paterson, marking what leaders call a major step forward in the city\'s economic and cultural revival. Mayor Andre Sayegh calls it "a big win" that solidifies Paterson\'s place as "Hollywood East."',
+    featured: false,
+    slug: '/news/news12-silk-city-to-studio-city',
+  },
+  {
     date: 'December 2025',
     category: 'Community',
     title: 'Paterson Film District Vision Unveiled',
