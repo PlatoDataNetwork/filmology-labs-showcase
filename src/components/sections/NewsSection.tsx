@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import exteriorRender from '@/assets/exterior-render.jpg';
 
 const newsItems = [
   {
@@ -114,6 +115,14 @@ const NewsSection = () => {
                       {featuredNews.excerpt4}
                     </p>
                   )}
+                  <div className="mt-6 rounded-lg overflow-hidden">
+                    <img 
+                      src={exteriorRender} 
+                      alt="Filmology Labs campus exterior render" 
+                      className="w-full h-auto object-cover rounded-lg"
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
                 <div className="mt-6">
                   <Link
