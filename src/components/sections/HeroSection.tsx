@@ -1,42 +1,23 @@
-import { useEffect } from 'react';
-// @ts-ignore - vite-imagetools transform
-import heroAerial from '@/assets/hero-aerial-new.png?format=webp&quality=80';
-// @ts-ignore - vite-imagetools transform
-import heroMobile from '@/assets/hero-mobile.jpg?format=webp&quality=80';
-import logoWhite from '@/assets/filmology-logo-white.png';
-import logoBlack from '@/assets/filmology-logo-black.png';
+import heroVideo from '@/assets/hero-video.mp4';
 
 interface HeroSectionProps {
   isDark: boolean;
 }
 
 const HeroSection = ({ isDark }: HeroSectionProps) => {
-  // Preload hero image for faster LCP
-  useEffect(() => {
-    const link = document.createElement('link');
-    link.rel = 'preload';
-    link.as = 'image';
-    link.href = heroAerial;
-    link.fetchPriority = 'high';
-    document.head.appendChild(link);
-    return () => {
-      document.head.removeChild(link);
-    };
-  }, []);
-
   return (
     <>
       {/* Mobile Layout - Stacked */}
       <section className="md:hidden flex flex-col">
-        {/* Mobile Image - Top */}
+        {/* Mobile Video - Top */}
         <div className="w-full h-[50vh]">
-          <img
-            src={heroAerial}
-            alt="Filmology Labs Content Creation Studios aerial view"
+          <video
+            src={heroVideo}
+            autoPlay
+            loop
+            muted
+            playsInline
             className="w-full h-full object-cover object-center"
-            loading="eager"
-            decoding="sync"
-            fetchPriority="high"
           />
         </div>
         
@@ -53,15 +34,15 @@ const HeroSection = ({ isDark }: HeroSectionProps) => {
 
       {/* Desktop Layout - Original overlay style */}
       <section className="hidden md:flex relative flex-row items-end min-h-screen overflow-hidden">
-        {/* Background Image */}
+        {/* Background Video */}
         <div className="absolute inset-0">
-          <img
-            src={heroAerial}
-            alt="Filmology Labs Content Creation Studios aerial view"
+          <video
+            src={heroVideo}
+            autoPlay
+            loop
+            muted
+            playsInline
             className="w-full h-full object-cover object-center"
-            loading="eager"
-            decoding="sync"
-            fetchPriority="high"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-background/10 to-transparent dark:from-background dark:via-background/20" />
         </div>
