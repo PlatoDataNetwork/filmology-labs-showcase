@@ -84,50 +84,49 @@ const InvestorsSection = () => {
         {/* Partners Section - Full Width Bottom */}
         <div className="mt-12 md:mt-16">
           <h2 className="mb-8 text-center">Partners we create with</h2>
-          <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16">
+          <div className="flex flex-wrap items-center justify-center gap-12 md:gap-20">
             <a 
               href="https://VerzaTV.io" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="transition-all duration-300 hover:scale-110 hover:opacity-80"
+              className="h-40 md:h-56 flex items-center transition-all duration-300 hover:scale-110 hover:opacity-80"
             >
               <img 
                 src={verzaTvLogo} 
                 alt="Verza TV" 
-                className="h-10 md:h-14 object-contain"
+                className="h-full object-contain"
               />
             </a>
 
-            {/* Ministry of Film - match VerzaTV logo length/height */}
             <a 
               href="#" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="transition-all duration-300 hover:scale-110 hover:opacity-80"
+              className="h-40 md:h-56 flex items-center transition-all duration-300 hover:scale-110 hover:opacity-80"
             >
               <img 
                 src={ministryOfFilmLogo} 
                 alt="The Ministry of Film" 
-                className="h-40 md:h-56 w-[640px] md:w-[880px] object-contain"
+                className="h-full object-contain"
               />
             </a>
             <a 
               href="https://Platodata.io" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="transition-all duration-300 hover:scale-110 hover:opacity-80"
+              className="h-40 md:h-56 flex items-center transition-all duration-300 hover:scale-110 hover:opacity-80"
             >
               <img 
                 src={platoAiLogo} 
                 alt="Plato AI" 
-                className="h-8 md:h-12 object-contain"
+                className="h-full object-contain"
               />
             </a>
             <a 
               href="https://architectura.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-4xl md:text-5xl font-bold text-foreground transition-all duration-300 hover:scale-110 hover:opacity-80"
+              className="h-40 md:h-56 flex items-center text-7xl md:text-8xl font-bold text-foreground transition-all duration-300 hover:scale-110 hover:opacity-80"
               style={{ fontFamily: '"Times New Roman", Times, serif' }}
             >
               Architectura
