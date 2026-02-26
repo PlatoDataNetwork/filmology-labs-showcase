@@ -89,7 +89,7 @@ const InvestorsSection = () => {
               href="https://VerzaTV.io" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="h-40 md:h-56 flex items-center transition-all duration-300 hover:scale-110 hover:opacity-80"
+              className="h-20 md:h-28 flex items-center transition-all duration-300 hover:scale-110 hover:opacity-80"
             >
               <img 
                 src={verzaTvLogo} 
@@ -114,7 +114,7 @@ const InvestorsSection = () => {
               href="https://Platodata.io" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="h-40 md:h-56 flex items-center transition-all duration-300 hover:scale-110 hover:opacity-80"
+              className="h-20 md:h-28 flex items-center transition-all duration-300 hover:scale-110 hover:opacity-80"
             >
               <img 
                 src={platoAiLogo} 
@@ -126,7 +126,7 @@ const InvestorsSection = () => {
               href="https://architectura.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="h-40 md:h-56 flex items-center text-7xl md:text-8xl font-bold text-foreground transition-all duration-300 hover:scale-110 hover:opacity-80"
+              className="h-20 md:h-28 flex items-center text-4xl md:text-5xl font-bold text-foreground transition-all duration-300 hover:scale-110 hover:opacity-80"
               style={{ fontFamily: '"Times New Roman", Times, serif' }}
             >
               Architectura
