@@ -1,3 +1,4 @@
+import { useLocation } from 'react-router-dom';
 import heroVideo from '@/assets/hero-video.mp4';
 
 interface HeroSectionProps {
@@ -5,23 +6,23 @@ interface HeroSectionProps {
 }
 
 const HeroSection = ({ isDark }: HeroSectionProps) => {
+  const location = useLocation();
+
   return (
     <>
       {/* Mobile Layout - Stacked */}
       <section className="md:hidden flex flex-col">
-        {/* Mobile Video - Top */}
         <div className="w-full h-[50vh]">
           <video
+            key={location.key}
             src={heroVideo}
             autoPlay
-            loop
             muted
             playsInline
             className="w-full h-full object-cover object-center"
           />
         </div>
         
-        {/* Mobile Content - Below */}
         <div className="bg-background py-8 px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-2xl sm:text-3xl font-medium leading-[1.15] text-foreground animate-fade-in-delay-2">
@@ -32,14 +33,13 @@ const HeroSection = ({ isDark }: HeroSectionProps) => {
         </div>
       </section>
 
-      {/* Desktop Layout - Original overlay style */}
+      {/* Desktop Layout */}
       <section className="hidden md:flex relative flex-row items-end min-h-screen overflow-hidden">
-        {/* Background Video */}
         <div className="absolute inset-0">
           <video
+            key={location.key}
             src={heroVideo}
             autoPlay
-            loop
             muted
             playsInline
             className="w-full h-full object-cover object-center"
@@ -47,10 +47,8 @@ const HeroSection = ({ isDark }: HeroSectionProps) => {
           <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-background/10 to-transparent dark:from-background dark:via-background/20" />
         </div>
 
-        {/* Frosted glass strip */}
         <div className="absolute bottom-0 left-0 right-0 backdrop-blur-[1px] bg-background/5 dark:bg-background/10 z-[5] py-16" />
 
-        {/* Content */}
         <div className="container-wide relative z-10 pb-6 absolute bottom-0 left-0 right-0">
           <div className="max-w-4xl mx-auto text-center px-4">
             <h1 className="text-4xl lg:text-5xl font-medium leading-[1.15] text-foreground mb-8 animate-fade-in-delay-2">
