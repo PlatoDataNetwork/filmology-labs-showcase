@@ -114,7 +114,7 @@ const InvestorsSection = () => {
               href="https://Platodata.io" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="h-20 md:h-28 flex items-center transition-all duration-300 hover:scale-110 hover:opacity-80"
+              className="h-10 md:h-14 flex items-center transition-all duration-300 hover:scale-110 hover:opacity-80"
             >
               <img 
                 src={platoAiLogo} 
@@ -126,7 +126,7 @@ const InvestorsSection = () => {
               href="https://architectura.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="h-20 md:h-28 flex items-center text-4xl md:text-5xl font-bold text-foreground transition-all duration-300 hover:scale-110 hover:opacity-80"
+              className="h-28 md:h-40 flex items-center text-5xl md:text-7xl font-bold text-foreground transition-all duration-300 hover:scale-110 hover:opacity-80"
               style={{ fontFamily: '"Times New Roman", Times, serif' }}
             >
               Architectura
