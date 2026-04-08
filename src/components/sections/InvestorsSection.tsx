@@ -11,7 +11,7 @@ const InvestorsSection = () => {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-8 md:mb-10">
           <div>
-            <p className="label-editorial mb-4">Investment Opportunity</p>
+            <p className="label-editorial mb-4">Partnership Opportunities</p>
             <h2 className="text-3xl md:text-4xl lg:text-5xl">Partner with Filmology Labs</h2>
 
           </div>
