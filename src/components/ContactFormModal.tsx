@@ -186,6 +186,9 @@ const ContactFormModal = ({ trigger, onOpenChange }: ContactFormModalProps) => {
               <Label htmlFor="stayInLoop" className="text-sm font-normal cursor-pointer">Stay in the Loop</Label>
             </div>
           </div>
+          {errors.checkboxes && (
+            <p className="text-sm text-destructive">{errors.checkboxes}</p>
+          )}
           <div className="space-y-2">
             <Label htmlFor="message">Message *</Label>
             <Textarea
