@@ -195,10 +195,9 @@ const ContactFormModal = ({ trigger, onOpenChange }: ContactFormModalProps) => {
             <p className="text-sm text-destructive">{errors.checkboxes}</p>
           )}
           <div className="space-y-2">
-            <Label htmlFor="message">Message *</Label>
+            <Label htmlFor="message">Message</Label>
             <Textarea
               id="message"
-              required
               maxLength={2000}
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
