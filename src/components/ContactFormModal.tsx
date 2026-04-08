@@ -68,6 +68,11 @@ const ContactFormModal = ({ trigger, onOpenChange }: ContactFormModalProps) => {
       setErrors(fieldErrors);
       return;
     }
+
+    if (!formData.inquireRent && !formData.stayInLoop) {
+      setErrors({ checkboxes: "Please select at least one option." });
+      return;
+    }
     
     setIsSubmitting(true);
 
