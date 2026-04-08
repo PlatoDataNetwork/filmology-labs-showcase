@@ -1,4 +1,4 @@
-import { ArrowRight, Lock, TrendingUp, Building2 } from 'lucide-react';
+import { ArrowRight, TrendingUp, Building2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import verzaTvLogo from '@/assets/verza-tv-logo.png';
 import platoAiLogo from '@/assets/plato-ai-logo.png';
@@ -11,8 +11,9 @@ const InvestorsSection = () => {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-8 md:mb-10">
           <div>
-            <p className="label-editorial mb-4">Investment Opportunity</p>
+            <p className="label-editorial mb-4">Partnership Opportunities</p>
             <h2 className="text-3xl md:text-4xl lg:text-5xl">Partner with Filmology Labs</h2>
+
           </div>
         </div>
 
@@ -55,15 +56,11 @@ const InvestorsSection = () => {
 
           {/* Right - CTA Card */}
           <div className="steel-gradient-card rounded-lg p-6 sm:p-8 md:p-10 flex flex-col justify-center">
-            <div className="flex items-center gap-3 mb-4 md:mb-6">
-              <Lock className="w-5 h-5 text-primary" />
-              <span className="text-xs uppercase tracking-wider text-primary font-medium">
-                Accredited Investors
-              </span>
+            <div className="mb-4 md:mb-6">
             </div>
             
             <h3 className="text-xl sm:text-2xl md:text-3xl font-light leading-tight mb-3 md:mb-4">
-              Access Exclusive Investment Materials
+              Access Exclusive Partnership Materials
             </h3>
             
             <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-6 md:mb-8">
