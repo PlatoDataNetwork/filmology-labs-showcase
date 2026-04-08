@@ -13,6 +13,7 @@ const InvestorsSection = () => {
           <div>
             <p className="label-editorial mb-4">Investment Opportunity</p>
             <h2 className="text-3xl md:text-4xl lg:text-5xl">Partner with Filmology Labs</h2>
+
           </div>
         </div>
 
