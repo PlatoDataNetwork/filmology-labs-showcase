@@ -19,6 +19,8 @@ import ProductDetail from "./pages/ProductDetail";
 import Concierge from "./pages/Concierge";
 import News from "./pages/News";
 import NotFound from "./pages/NotFound";
+import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
 import SplashScreen from "./components/SplashScreen";
 
 const queryClient = new QueryClient();
