@@ -36,13 +36,6 @@ const CTASection = () => {
                 </Button>
               }
             />
-            <ContactFormModal
-              trigger={
-                <Button variant="hero-outline" size="lg" className="w-full sm:w-auto">
-                  Schedule a Visit
-                </Button>
-              }
-            />
           </div>
           <p className="mt-4 text-sm text-foreground/70 drop-shadow-sm">
             Sign up to stay in the loop of progress.
