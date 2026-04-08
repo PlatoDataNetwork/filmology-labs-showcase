@@ -56,11 +56,7 @@ const InvestorsSection = () => {
 
           {/* Right - CTA Card */}
           <div className="steel-gradient-card rounded-lg p-6 sm:p-8 md:p-10 flex flex-col justify-center">
-            <div className="flex items-center gap-3 mb-4 md:mb-6">
-              <Lock className="w-5 h-5 text-primary" />
-              <span className="text-xs uppercase tracking-wider text-primary font-medium">
-                Accredited Investors
-              </span>
+            <div className="mb-4 md:mb-6">
             </div>
             
             <h3 className="text-xl sm:text-2xl md:text-3xl font-light leading-tight mb-3 md:mb-4">
