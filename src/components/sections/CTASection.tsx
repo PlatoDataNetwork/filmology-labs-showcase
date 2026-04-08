@@ -37,9 +37,6 @@ const CTASection = () => {
               }
             />
           </div>
-          <p className="mt-4 text-sm text-foreground/70 drop-shadow-sm">
-            Sign up to stay in the loop of progress.
-          </p>
         </div>
       </div>
     </section>
