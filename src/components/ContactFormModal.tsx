@@ -40,6 +40,8 @@ const ContactFormModal = ({ trigger, onOpenChange }: ContactFormModalProps) => {
     email: '',
     company: '',
     message: '',
+    inquireRent: false,
+    stayInLoop: false,
   });
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
