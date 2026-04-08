@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
+import { Checkbox } from '@/components/ui/checkbox';
 import {
   Dialog,
   DialogContent,
@@ -37,6 +38,8 @@ const ContactFormModal = ({ trigger, onOpenChange }: ContactFormModalProps) => {
     email: '',
     company: '',
     message: '',
+    inquireRent: false,
+    stayInLoop: false,
   });
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
@@ -94,7 +97,7 @@ const ContactFormModal = ({ trigger, onOpenChange }: ContactFormModalProps) => {
         description: data.message || "Thank you for your inquiry. We'll get back to you shortly.",
       });
 
-      setFormData({ name: '', email: '', company: '', message: '' });
+      setFormData({ name: '', email: '', company: '', message: '', inquireRent: false, stayInLoop: false });
       setIsSubmitting(false);
       handleOpenChange(false);
     } catch (error) {
@@ -164,6 +167,24 @@ const ContactFormModal = ({ trigger, onOpenChange }: ContactFormModalProps) => {
             {errors.company && (
               <p className="text-sm text-destructive">{errors.company}</p>
             )}
+          </div>
+          <div className="flex flex-col gap-3">
+            <div className="flex items-center gap-2">
+              <Checkbox
+                id="inquireRent"
+                checked={formData.inquireRent}
+                onCheckedChange={(checked) => setFormData({ ...formData, inquireRent: checked === true })}
+              />
+              <Label htmlFor="inquireRent" className="text-sm font-normal cursor-pointer">Inquire Rent</Label>
+            </div>
+            <div className="flex items-center gap-2">
+              <Checkbox
+                id="stayInLoop"
+                checked={formData.stayInLoop}
+                onCheckedChange={(checked) => setFormData({ ...formData, stayInLoop: checked === true })}
+              />
+              <Label htmlFor="stayInLoop" className="text-sm font-normal cursor-pointer">Stay in the Loop</Label>
+            </div>
           </div>
           <div className="space-y-2">
             <Label htmlFor="message">Message *</Label>
