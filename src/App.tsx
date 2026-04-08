@@ -19,6 +19,8 @@ import ProductDetail from "./pages/ProductDetail";
 import Concierge from "./pages/Concierge";
 import News from "./pages/News";
 import NotFound from "./pages/NotFound";
+import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
 import SplashScreen from "./components/SplashScreen";
 
 const queryClient = new QueryClient();
@@ -85,6 +87,8 @@ const App = () => {
               <Route path="/product/:handle" element={<ProductDetail />} />
               <Route path="/concierge" element={<Concierge />} />
               <Route path="/news" element={<News />} />
+              <Route path="/admin" element={<AdminLogin />} />
+              <Route path="/admin/dashboard" element={<AdminDashboard />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
               <Route path="*" element={<NotFound />} />
