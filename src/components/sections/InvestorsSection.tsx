@@ -60,7 +60,7 @@ const InvestorsSection = () => {
             </div>
             
             <h3 className="text-xl sm:text-2xl md:text-3xl font-light leading-tight mb-3 md:mb-4">
-              Access Exclusive Investment Materials
+              Access Exclusive Partnership Materials
             </h3>
             
             <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-6 md:mb-8">
