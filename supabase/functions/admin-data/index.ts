@@ -6,7 +6,7 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
 
-const ADMIN_PASSWORD = "Alan1234@";
+const ADMIN_PASSWORD = "Film1234@";
 
 serve(async (req: Request) => {
   if (req.method === "OPTIONS") {

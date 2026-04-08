@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Lock } from "lucide-react";
 
-const ADMIN_PASSWORD = "Alan1234@";
+const ADMIN_PASSWORD = "Film1234@";
 
 const AdminLogin = () => {
   const [password, setPassword] = useState("");
