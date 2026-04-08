@@ -117,7 +117,7 @@ const ContactFormModal = ({ trigger, onOpenChange }: ContactFormModalProps) => {
         <DialogHeader>
           <DialogTitle className="text-2xl font-display tracking-wide">Get in Touch</DialogTitle>
           <DialogDescription className="text-muted-foreground">
-            Interested in Filmology Labs? Fill out the form below and our team will respond promptly.
+            Interested in renting at Filmology Labs? Fill out the form below and our team will respond promptly.
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4 md:space-y-5 mt-4">
