@@ -14,7 +14,7 @@ const AdminLogin = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (password === ADMIN_PASSWORD) {
-      sessionStorage.setItem("adminAuth", "true");
+      sessionStorage.setItem("adminAuth", ADMIN_PASSWORD);
       navigate("/admin/dashboard");
     } else {
       setError("Invalid password. Please try again.");

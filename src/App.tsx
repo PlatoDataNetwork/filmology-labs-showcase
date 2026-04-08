@@ -87,6 +87,8 @@ const App = () => {
               <Route path="/product/:handle" element={<ProductDetail />} />
               <Route path="/concierge" element={<Concierge />} />
               <Route path="/news" element={<News />} />
+              <Route path="/admin" element={<AdminLogin />} />
+              <Route path="/admin/dashboard" element={<AdminDashboard />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
               <Route path="*" element={<NotFound />} />
