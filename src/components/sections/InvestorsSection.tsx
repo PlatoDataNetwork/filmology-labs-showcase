@@ -1,4 +1,4 @@
-import { ArrowRight, Lock, TrendingUp, Building2 } from 'lucide-react';
+import { ArrowRight, TrendingUp, Building2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import verzaTvLogo from '@/assets/verza-tv-logo.png';
 import platoAiLogo from '@/assets/plato-ai-logo.png';
