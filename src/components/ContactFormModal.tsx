@@ -68,6 +68,11 @@ const ContactFormModal = ({ trigger, onOpenChange }: ContactFormModalProps) => {
       setErrors(fieldErrors);
       return;
     }
+
+    if (!formData.inquireRent && !formData.stayInLoop) {
+      setErrors({ checkboxes: "Please select at least one option." });
+      return;
+    }
     
     setIsSubmitting(true);
 
@@ -117,7 +122,7 @@ const ContactFormModal = ({ trigger, onOpenChange }: ContactFormModalProps) => {
         <DialogHeader>
           <DialogTitle className="text-2xl font-display tracking-wide">Get in Touch</DialogTitle>
           <DialogDescription className="text-muted-foreground">
-            Interested in Filmology Labs? Fill out the form below and our team will respond promptly.
+            Interested in renting at Filmology Labs? Fill out the form below and our team will respond promptly.
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4 md:space-y-5 mt-4">
@@ -175,7 +180,7 @@ const ContactFormModal = ({ trigger, onOpenChange }: ContactFormModalProps) => {
                 checked={formData.inquireRent}
                 onCheckedChange={(checked) => setFormData({ ...formData, inquireRent: checked === true })}
               />
-              <Label htmlFor="inquireRent" className="text-sm font-normal cursor-pointer">Inquire Rent</Label>
+              <Label htmlFor="inquireRent" className="text-sm font-normal cursor-pointer">Inquire to Rent</Label>
             </div>
             <div className="flex items-center gap-2">
               <Checkbox
@@ -186,6 +191,9 @@ const ContactFormModal = ({ trigger, onOpenChange }: ContactFormModalProps) => {
               <Label htmlFor="stayInLoop" className="text-sm font-normal cursor-pointer">Stay in the Loop</Label>
             </div>
           </div>
+          {errors.checkboxes && (
+            <p className="text-sm text-destructive">{errors.checkboxes}</p>
+          )}
           <div className="space-y-2">
             <Label htmlFor="message">Message *</Label>
             <Textarea
