@@ -175,7 +175,7 @@ const ContactFormModal = ({ trigger, onOpenChange }: ContactFormModalProps) => {
                 checked={formData.inquireRent}
                 onCheckedChange={(checked) => setFormData({ ...formData, inquireRent: checked === true })}
               />
-              <Label htmlFor="inquireRent" className="text-sm font-normal cursor-pointer">Inquire Rent</Label>
+              <Label htmlFor="inquireRent" className="text-sm font-normal cursor-pointer">Inquire to Rent</Label>
             </div>
             <div className="flex items-center gap-2">
               <Checkbox
