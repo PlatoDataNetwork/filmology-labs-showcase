@@ -188,7 +188,7 @@ const ContactFormModal = ({ trigger, onOpenChange }: ContactFormModalProps) => {
                 checked={formData.stayInLoop}
                 onCheckedChange={(checked) => setFormData({ ...formData, stayInLoop: checked === true })}
               />
-              <Label htmlFor="stayInLoop" className="text-sm font-normal cursor-pointer">Stay in the Loop</Label>
+              <Label htmlFor="stayInLoop" className="text-sm font-normal cursor-pointer">Stay in the Loop – Join our community</Label>
             </div>
           </div>
           {errors.checkboxes && (
