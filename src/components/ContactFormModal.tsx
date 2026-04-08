@@ -99,7 +99,7 @@ const ContactFormModal = ({ trigger, onOpenChange }: ContactFormModalProps) => {
         description: data.message || "Thank you for your inquiry. We'll get back to you shortly.",
       });
 
-      setFormData({ name: '', email: '', company: '', message: '' });
+      setFormData({ name: '', email: '', company: '', message: '', inquireRent: false, stayInLoop: false });
       setIsSubmitting(false);
       handleOpenChange(false);
     } catch (error) {
