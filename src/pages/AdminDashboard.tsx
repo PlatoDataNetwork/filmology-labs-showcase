@@ -4,7 +4,20 @@ import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
-import { Users, Mail, ShieldCheck, LogOut, Activity, Download, LayoutList, LayoutGrid } from "lucide-react";
+import { Users, Mail, ShieldCheck, LogOut, Activity, Download, LayoutList, LayoutGrid, Reply, Pencil, Trash2, ListChecks } from "lucide-react";
+import { toast } from "@/hooks/use-toast";
+import ReplyModal from "@/components/admin/ReplyModal";
+import EditContactModal from "@/components/admin/EditContactModal";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 
 interface ContactSubmission {
   id: string;
@@ -35,8 +48,13 @@ const AdminDashboard = () => {
   const [loginAttempts, setLoginAttempts] = useState<LoginAttempt[]>([]);
   const [sessions, setSessions] = useState<InvestorSession[]>([]);
   const [loading, setLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState<"overview" | "contacts" | "logins" | "sessions">("overview");
+  const [activeTab, setActiveTab] = useState<"overview" | "contacts" | "logins" | "sessions" | "mailing">("overview");
   const [contactView, setContactView] = useState<"list" | "card">("list");
+
+  // CRM state
+  const [replyContact, setReplyContact] = useState<ContactSubmission | null>(null);
+  const [editContact, setEditContact] = useState<ContactSubmission | null>(null);
+  const [deleteContact, setDeleteContact] = useState<ContactSubmission | null>(null);
 
   useEffect(() => {
     const pw = sessionStorage.getItem("adminAuth");
@@ -71,6 +89,22 @@ const AdminDashboard = () => {
     navigate("/admin", { replace: true });
   };
 
+  const handleDelete = async () => {
+    if (!deleteContact) return;
+    try {
+      const pw = sessionStorage.getItem("adminAuth");
+      const { error } = await supabase.functions.invoke("admin-data", {
+        body: { password: pw, action: "delete", id: deleteContact.id },
+      });
+      if (error) throw error;
+      toast({ title: "Contact deleted" });
+      setDeleteContact(null);
+      fetchData();
+    } catch {
+      toast({ title: "Error", description: "Failed to delete contact", variant: "destructive" });
+    }
+  };
+
   const formatDate = (dateStr: string) =>
     new Date(dateStr).toLocaleDateString("en-US", {
       month: "short", day: "numeric", year: "numeric", hour: "2-digit", minute: "2-digit",
@@ -80,11 +114,8 @@ const AdminDashboard = () => {
     const headers = ["Name", "Email", "Company", "Message", "Date"];
     const escapeCSV = (val: string) => `"${val.replace(/"/g, '""')}"`;
     const rows = contacts.map(c => [
-      escapeCSV(c.name),
-      escapeCSV(c.email),
-      escapeCSV(c.company || ""),
-      escapeCSV(c.message),
-      escapeCSV(formatDate(c.created_at)),
+      escapeCSV(c.name), escapeCSV(c.email), escapeCSV(c.company || ""),
+      escapeCSV(c.message), escapeCSV(formatDate(c.created_at)),
     ].join(","));
     const csv = [headers.join(","), ...rows].join("\n");
     const blob = new Blob([csv], { type: "text/csv" });
@@ -96,16 +127,53 @@ const AdminDashboard = () => {
     URL.revokeObjectURL(url);
   };
 
+  const downloadMailingList = () => {
+    const uniqueEmails = new Map<string, ContactSubmission>();
+    contacts.forEach(c => {
+      if (!uniqueEmails.has(c.email)) uniqueEmails.set(c.email, c);
+    });
+    const headers = ["Email", "Name", "Company", "Date Added"];
+    const escapeCSV = (val: string) => `"${val.replace(/"/g, '""')}"`;
+    const rows = Array.from(uniqueEmails.values()).map(c => [
+      escapeCSV(c.email), escapeCSV(c.name), escapeCSV(c.company || ""),
+      escapeCSV(formatDate(c.created_at)),
+    ].join(","));
+    const csv = [headers.join(","), ...rows].join("\n");
+    const blob = new Blob([csv], { type: "text/csv" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `mailing-list-${new Date().toISOString().slice(0, 10)}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
   const successfulLogins = loginAttempts.filter(a => a.was_successful).length;
   const failedLogins = loginAttempts.filter(a => !a.was_successful).length;
   const activeSessions = sessions.filter(s => new Date(s.expires_at) > new Date()).length;
+  const uniqueEmails = new Set(contacts.map(c => c.email)).size;
 
   const tabs = [
     { key: "overview" as const, label: "Overview" },
-    { key: "contacts" as const, label: "Contact Submissions" },
+    { key: "contacts" as const, label: "CRM" },
+    { key: "mailing" as const, label: "Mailing List" },
     { key: "logins" as const, label: "Login Attempts" },
-    { key: "sessions" as const, label: "Active Sessions" },
+    { key: "sessions" as const, label: "Sessions" },
   ];
+
+  const ActionButtons = ({ contact }: { contact: ContactSubmission }) => (
+    <div className="flex items-center gap-1">
+      <Button variant="ghost" size="sm" onClick={() => setReplyContact(contact)} title="Reply">
+        <Reply className="w-4 h-4" />
+      </Button>
+      <Button variant="ghost" size="sm" onClick={() => setEditContact(contact)} title="Edit">
+        <Pencil className="w-4 h-4" />
+      </Button>
+      <Button variant="ghost" size="sm" onClick={() => setDeleteContact(contact)} title="Delete" className="text-destructive hover:text-destructive">
+        <Trash2 className="w-4 h-4" />
+      </Button>
+    </div>
+  );
 
   if (loading) {
     return (
@@ -120,7 +188,7 @@ const AdminDashboard = () => {
       <header className="border-b border-border bg-card px-6 py-4 flex items-center justify-between">
         <div>
           <h1 className="text-xl font-semibold text-foreground">Filmology Labs Admin</h1>
-          <p className="text-sm text-muted-foreground">Analytics & CRM Dashboard</p>
+          <p className="text-sm text-muted-foreground">CRM & Analytics Dashboard</p>
         </div>
         <div className="flex items-center gap-3">
           <Button variant="outline" size="sm" onClick={() => fetchData()}>Refresh</Button>
@@ -151,15 +219,16 @@ const AdminDashboard = () => {
       <div className="p-6 max-w-7xl mx-auto space-y-6">
         {activeTab === "overview" && (
           <>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <StatCard icon={<Mail className="w-5 h-5 text-primary" />} value={contacts.length} label="Contact Submissions" bgClass="bg-primary/10" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+              <StatCard icon={<Mail className="w-5 h-5 text-primary" />} value={contacts.length} label="Total Submissions" bgClass="bg-primary/10" />
+              <StatCard icon={<ListChecks className="w-5 h-5 text-blue-600" />} value={uniqueEmails} label="Unique Contacts" bgClass="bg-blue-500/10" />
               <StatCard icon={<ShieldCheck className="w-5 h-5 text-green-600" />} value={successfulLogins} label="Successful Logins" bgClass="bg-green-500/10" />
               <StatCard icon={<Activity className="w-5 h-5 text-destructive" />} value={failedLogins} label="Failed Logins" bgClass="bg-destructive/10" />
               <StatCard icon={<Users className="w-5 h-5 text-blue-600" />} value={activeSessions} label="Active Sessions" bgClass="bg-blue-500/10" />
             </div>
 
             <Card>
-              <CardHeader><CardTitle className="text-base">Recent Contact Submissions</CardTitle></CardHeader>
+              <CardHeader><CardTitle className="text-base">Recent Submissions</CardTitle></CardHeader>
               <CardContent>
                 {contacts.length === 0 ? (
                   <p className="text-muted-foreground text-sm py-4 text-center">No submissions yet.</p>
@@ -167,7 +236,7 @@ const AdminDashboard = () => {
                   <Table>
                     <TableHeader>
                       <TableRow>
-                        <TableHead>Name</TableHead><TableHead>Email</TableHead><TableHead>Company</TableHead><TableHead>Date</TableHead>
+                        <TableHead>Name</TableHead><TableHead>Email</TableHead><TableHead>Company</TableHead><TableHead>Date</TableHead><TableHead>Actions</TableHead>
                       </TableRow>
                     </TableHeader>
                     <TableBody>
@@ -177,32 +246,7 @@ const AdminDashboard = () => {
                           <TableCell>{c.email}</TableCell>
                           <TableCell>{c.company || "—"}</TableCell>
                           <TableCell className="text-muted-foreground">{formatDate(c.created_at)}</TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                )}
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader><CardTitle className="text-base">Recent Login Attempts</CardTitle></CardHeader>
-              <CardContent>
-                {loginAttempts.length === 0 ? (
-                  <p className="text-muted-foreground text-sm py-4 text-center">No login attempts recorded.</p>
-                ) : (
-                  <Table>
-                    <TableHeader>
-                      <TableRow>
-                        <TableHead>IP Address</TableHead><TableHead>Status</TableHead><TableHead>Date</TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      {loginAttempts.slice(0, 5).map(a => (
-                        <TableRow key={a.id}>
-                          <TableCell className="font-mono text-sm">{a.ip_address}</TableCell>
-                          <TableCell><StatusBadge success={a.was_successful} /></TableCell>
-                          <TableCell className="text-muted-foreground">{formatDate(a.attempted_at)}</TableCell>
+                          <TableCell><ActionButtons contact={c} /></TableCell>
                         </TableRow>
                       ))}
                     </TableBody>
@@ -217,7 +261,7 @@ const AdminDashboard = () => {
           <Card>
             <CardHeader>
               <div className="flex items-center justify-between flex-wrap gap-3">
-                <CardTitle className="text-base">All Contact Submissions ({contacts.length})</CardTitle>
+                <CardTitle className="text-base">Contact CRM ({contacts.length})</CardTitle>
                 <div className="flex items-center gap-2">
                   <div className="flex items-center border border-border rounded-md overflow-hidden">
                     <button
@@ -236,7 +280,7 @@ const AdminDashboard = () => {
                     </button>
                   </div>
                   <Button variant="outline" size="sm" onClick={downloadCSV} disabled={contacts.length === 0}>
-                    <Download className="w-4 h-4 mr-1" /> Download CSV
+                    <Download className="w-4 h-4 mr-1" /> CSV
                   </Button>
                 </div>
               </div>
@@ -248,7 +292,7 @@ const AdminDashboard = () => {
                 <Table>
                   <TableHeader>
                     <TableRow>
-                      <TableHead>Name</TableHead><TableHead>Email</TableHead><TableHead>Company</TableHead><TableHead>Message</TableHead><TableHead>Date</TableHead>
+                      <TableHead>Name</TableHead><TableHead>Email</TableHead><TableHead>Company</TableHead><TableHead>Message</TableHead><TableHead>Date</TableHead><TableHead>Actions</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -259,6 +303,7 @@ const AdminDashboard = () => {
                         <TableCell>{c.company || "—"}</TableCell>
                         <TableCell className="max-w-xs truncate">{c.message}</TableCell>
                         <TableCell className="text-muted-foreground whitespace-nowrap">{formatDate(c.created_at)}</TableCell>
+                        <TableCell><ActionButtons contact={c} /></TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
@@ -270,15 +315,62 @@ const AdminDashboard = () => {
                       <CardContent className="pt-5 space-y-2">
                         <div className="flex items-start justify-between">
                           <p className="font-semibold text-foreground">{c.name}</p>
-                          <span className="text-xs text-muted-foreground whitespace-nowrap ml-2">{formatDate(c.created_at)}</span>
+                          <ActionButtons contact={c} />
                         </div>
                         <p className="text-sm text-muted-foreground">{c.email}</p>
                         {c.company && <p className="text-sm text-muted-foreground">🏢 {c.company}</p>}
                         <p className="text-sm text-foreground/80 pt-1 border-t border-border mt-2 line-clamp-4">{c.message}</p>
+                        <p className="text-xs text-muted-foreground">{formatDate(c.created_at)}</p>
                       </CardContent>
                     </Card>
                   ))}
                 </div>
+              )}
+            </CardContent>
+          </Card>
+        )}
+
+        {activeTab === "mailing" && (
+          <Card>
+            <CardHeader>
+              <div className="flex items-center justify-between flex-wrap gap-3">
+                <div>
+                  <CardTitle className="text-base">Mailing List</CardTitle>
+                  <p className="text-sm text-muted-foreground mt-1">{uniqueEmails} unique email addresses from all submissions</p>
+                </div>
+                <Button variant="outline" size="sm" onClick={downloadMailingList} disabled={contacts.length === 0}>
+                  <Download className="w-4 h-4 mr-1" /> Export Mailing List
+                </Button>
+              </div>
+            </CardHeader>
+            <CardContent>
+              {contacts.length === 0 ? (
+                <p className="text-muted-foreground text-sm py-8 text-center">No contacts yet.</p>
+              ) : (
+                <Table>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead>Email</TableHead><TableHead>Name</TableHead><TableHead>Company</TableHead><TableHead>Date Added</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {(() => {
+                      const seen = new Set<string>();
+                      return contacts.filter(c => {
+                        if (seen.has(c.email)) return false;
+                        seen.add(c.email);
+                        return true;
+                      }).map(c => (
+                        <TableRow key={c.id}>
+                          <TableCell className="font-medium">{c.email}</TableCell>
+                          <TableCell>{c.name}</TableCell>
+                          <TableCell>{c.company || "—"}</TableCell>
+                          <TableCell className="text-muted-foreground">{formatDate(c.created_at)}</TableCell>
+                        </TableRow>
+                      ));
+                    })()}
+                  </TableBody>
+                </Table>
               )}
             </CardContent>
           </Card>
@@ -314,7 +406,7 @@ const AdminDashboard = () => {
 
         {activeTab === "sessions" && (
           <Card>
-            <CardHeader><CardTitle className="text-base">Investor Sessions ({sessions.length})</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="text-base">Partner Sessions ({sessions.length})</CardTitle></CardHeader>
             <CardContent>
               {sessions.length === 0 ? (
                 <p className="text-muted-foreground text-sm py-8 text-center">No sessions recorded.</p>
@@ -350,6 +442,26 @@ const AdminDashboard = () => {
           </Card>
         )}
       </div>
+
+      {/* CRM Modals */}
+      <ReplyModal open={!!replyContact} onClose={() => setReplyContact(null)} contact={replyContact} />
+      <EditContactModal open={!!editContact} onClose={() => setEditContact(null)} contact={editContact} onSaved={() => fetchData()} />
+      <AlertDialog open={!!deleteContact} onOpenChange={() => setDeleteContact(null)}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Delete contact?</AlertDialogTitle>
+            <AlertDialogDescription>
+              This will permanently delete {deleteContact?.name}'s submission. This action cannot be undone.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogAction onClick={handleDelete} className="bg-destructive text-destructive-foreground hover:bg-destructive/90">
+              Delete
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   );
 };
