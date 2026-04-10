@@ -4,7 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
-import { Users, Mail, ShieldCheck, LogOut, Activity } from "lucide-react";
+import { Users, Mail, ShieldCheck, LogOut, Activity, Download, LayoutList, LayoutGrid } from "lucide-react";
 
 interface ContactSubmission {
   id: string;
@@ -36,6 +36,7 @@ const AdminDashboard = () => {
   const [sessions, setSessions] = useState<InvestorSession[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState<"overview" | "contacts" | "logins" | "sessions">("overview");
+  const [contactView, setContactView] = useState<"list" | "card">("list");
 
   useEffect(() => {
     const pw = sessionStorage.getItem("adminAuth");
@@ -74,6 +75,26 @@ const AdminDashboard = () => {
     new Date(dateStr).toLocaleDateString("en-US", {
       month: "short", day: "numeric", year: "numeric", hour: "2-digit", minute: "2-digit",
     });
+
+  const downloadCSV = () => {
+    const headers = ["Name", "Email", "Company", "Message", "Date"];
+    const escapeCSV = (val: string) => `"${val.replace(/"/g, '""')}"`;
+    const rows = contacts.map(c => [
+      escapeCSV(c.name),
+      escapeCSV(c.email),
+      escapeCSV(c.company || ""),
+      escapeCSV(c.message),
+      escapeCSV(formatDate(c.created_at)),
+    ].join(","));
+    const csv = [headers.join(","), ...rows].join("\n");
+    const blob = new Blob([csv], { type: "text/csv" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `contact-submissions-${new Date().toISOString().slice(0, 10)}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
 
   const successfulLogins = loginAttempts.filter(a => a.was_successful).length;
   const failedLogins = loginAttempts.filter(a => !a.was_successful).length;
@@ -194,11 +215,36 @@ const AdminDashboard = () => {
 
         {activeTab === "contacts" && (
           <Card>
-            <CardHeader><CardTitle className="text-base">All Contact Submissions ({contacts.length})</CardTitle></CardHeader>
+            <CardHeader>
+              <div className="flex items-center justify-between flex-wrap gap-3">
+                <CardTitle className="text-base">All Contact Submissions ({contacts.length})</CardTitle>
+                <div className="flex items-center gap-2">
+                  <div className="flex items-center border border-border rounded-md overflow-hidden">
+                    <button
+                      onClick={() => setContactView("list")}
+                      className={`p-2 transition-colors ${contactView === "list" ? "bg-primary text-primary-foreground" : "bg-card text-muted-foreground hover:text-foreground"}`}
+                      title="List view"
+                    >
+                      <LayoutList className="w-4 h-4" />
+                    </button>
+                    <button
+                      onClick={() => setContactView("card")}
+                      className={`p-2 transition-colors ${contactView === "card" ? "bg-primary text-primary-foreground" : "bg-card text-muted-foreground hover:text-foreground"}`}
+                      title="Card view"
+                    >
+                      <LayoutGrid className="w-4 h-4" />
+                    </button>
+                  </div>
+                  <Button variant="outline" size="sm" onClick={downloadCSV} disabled={contacts.length === 0}>
+                    <Download className="w-4 h-4 mr-1" /> Download CSV
+                  </Button>
+                </div>
+              </div>
+            </CardHeader>
             <CardContent>
               {contacts.length === 0 ? (
                 <p className="text-muted-foreground text-sm py-8 text-center">No submissions yet.</p>
-              ) : (
+              ) : contactView === "list" ? (
                 <Table>
                   <TableHeader>
                     <TableRow>
@@ -217,6 +263,22 @@ const AdminDashboard = () => {
                     ))}
                   </TableBody>
                 </Table>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {contacts.map(c => (
+                    <Card key={c.id} className="border border-border">
+                      <CardContent className="pt-5 space-y-2">
+                        <div className="flex items-start justify-between">
+                          <p className="font-semibold text-foreground">{c.name}</p>
+                          <span className="text-xs text-muted-foreground whitespace-nowrap ml-2">{formatDate(c.created_at)}</span>
+                        </div>
+                        <p className="text-sm text-muted-foreground">{c.email}</p>
+                        {c.company && <p className="text-sm text-muted-foreground">🏢 {c.company}</p>}
+                        <p className="text-sm text-foreground/80 pt-1 border-t border-border mt-2 line-clamp-4">{c.message}</p>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
               )}
             </CardContent>
           </Card>
